@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Advanced Biotech Products [P] Ltd</title>
+    <meta name="description" content="Contact Advanced Biotech Products for product inquiries, clinical support, distribution opportunities, and Surgicoll-Mesh information.">
+    <meta property="og:title" content="Contact Us | Advanced Biotech Products [P] Ltd">
+    <meta property="og:description" content="Contact Advanced Biotech Products for product inquiries, clinical support, distribution opportunities, and Surgicoll-Mesh information.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../home/Surgicoll-Mesh%20High%20Res%20Box.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../home/ABP-symbol.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/nav_footer.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+</head>
+
+<body>
+    <!--Header-->
+    <div id="rs-header"></div>
+    <script>
+        fetch("../page/nav.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("rs-header").innerHTML = data;
+                if (typeof initNavbar === "function") { initNavbar(); }
+            });
+    </script>
+    <!-- ═══ PAGE BANNER ══════════════════════════════════════ -->
+    <section class="banner">
+        <div class="sm-hero-art" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="hero">
+            <h1>Contact Us</h1>
+            <p>Connect with our team for product inquiries, clinical support, distribution opportunities, or detailed information about Surgicoll-Mesh® and regenerative biomaterials.</p>
+  </div>
+</div>
+        
+    </section>
+    <section class="abp-contact">
+
+        <div class="abp-container">
+
+           
+
+            <div class="abp-grid">
+
+                <div class="abp-card">
+                    <div class="abp-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3>Our Address</h3>
+                        <p>
+                            New 17, Old 77, 1st Cross Street,
+                            Ragavan Colony, Ashok Nagar,
+                            Chennai – 600083, India.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="abp-card">
+                    <div class="abp-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone Number</h3>
+                        <p>
+                            044-24891659 / 24744650 <br>
+                            044-43521681 / 43597261
+                        </p>
+                    </div>
+                </div>
+
+                <div class="abp-card">
+                    <div class="abp-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email Address</h3>
+                        <a href="mailto:info@abpdermal.com">
+                            info@abpdermal.com
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="abp-map">
+                <iframe
+                    src="https://maps.google.com/maps?q=Advanced%20Biotech%20Products%20Ashok%20Nagar%20Chennai&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    title="Advanced Biotech Products location map" loading="lazy" allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- _____footer______-->
+    <div id="rs-footer"></div>
+    <script>
+        fetch("../page/footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("rs-footer").innerHTML = data;
+            });
+    </script>
+    <script src="../js/nav.js"></script>
+</body>
+
+</html>

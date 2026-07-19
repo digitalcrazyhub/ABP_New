@@ -1,0 +1,1039 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ==========================================================================
+   TOKENS
+   ========================================================================== */
+:root {
+  --sm-primary: #762c69;
+  --sm-plum: #9b3a83;
+  --sm-plum-light: #fff2fc;
+  --sm-ink: #000000;
+  --sm-text: #655f67;
+  --sm-soft: #fff1fc;
+  --sm-line: #e7dce5;
+  --sm-white: #fff;
+  --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
+  --sm-radius: 14px;
+  --sm-container: min(1240px, calc(100% - 40px));
+  --sm-transition: 250ms ease;
+}
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--sm-white);
+  color: var(--sm-text);
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--sm-ink);
+  line-height: 1.25;
+  margin: 0 0 .6em;
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: 18px;
+  color: var(--sm-ink);
+}
+
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   LAYOUT UTILITIES
+   ========================================================================== */
+.container {
+  width: var(--sm-container);
+  margin-inline: auto;
+}
+
+section {
+  padding: 30px 0;
+}
+
+.section--alt {
+  background-color: var(--sm-plum-light);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1.6rem;
+  border-radius: var(--sm-radius);
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-weight: 600;
+  text-align: center;
+  transition: background var(--sm-transition), transform var(--sm-transition);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--sm-plum);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--sm-plum);
+  outline-offset: 3px;
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid var(--sm-ink);
+  color: var(--sm-white);
+  background: var(--sm-primary);
+}
+
+
+/*=========================================
+    Banner
+=========================================*/
+
+.smtr-banner{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:clamp(180px,28vw,320px);
+    margin-top:85px;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.smtr-banner-overlay{
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    background:radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
+}
+
+.smtr-banner-overlay::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 70px,
+            rgba(255,255,255,.08) 70px 72px
+        );
+}
+
+.smtr-circle{
+    position:absolute;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+}
+
+
+.smtr-circle-1{
+    width:28vw;
+    aspect-ratio:1;
+    top:-10%;
+    right:4%;
+}
+
+.smtr-circle-2{
+    width:42vw;
+    aspect-ratio:1;
+    bottom:-35%;
+    left:-8%;
+}
+
+.smtr-circle-3{
+    width:18vw;
+    aspect-ratio:1;
+    bottom:10%;
+    right:25%;
+}
+
+.smtr-banner-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.12;
+    z-index:-1;
+}
+
+.smtr-banner-content{
+    width:var(--sm-container);
+    text-align:center;
+    padding-inline:1rem;
+}
+
+.smtr-banner-title{
+    margin:0;
+    color:var(--sm-white);
+    font-size:clamp(2rem,5vw,4rem);
+    font-weight:800;
+    line-height:1.15;
+    text-wrap:balance;
+}
+
+/*=========================================
+    Large Desktop
+=========================================*/
+
+@media (min-width:1600px){
+
+.smtr-banner{
+    min-height:360px;
+}
+
+}
+
+/*=========================================
+    Laptop
+=========================================*/
+
+@media (max-width:1200px){
+
+.smtr-banner{
+    min-height:260px;
+}
+
+}
+
+/*=========================================
+    Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.smtr-banner{
+    margin-top:80px;
+    min-height:220px;
+}
+
+.smtr-circle-1{
+    width:38vw;
+}
+
+.smtr-circle-2{
+    width:58vw;
+}
+
+.smtr-circle-3{
+    width:28vw;
+}
+
+}
+
+/*=========================================
+    Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+.smtr-banner{
+    margin-top:72px;
+    min-height:180px;
+}
+
+.smtr-banner-title{
+    font-size:clamp(1.8rem,7vw,2.5rem);
+}
+
+.smtr-circle-1{
+    width:55vw;
+}
+
+.smtr-circle-2{
+    width:75vw;
+}
+
+.smtr-circle-3{
+    width:40vw;
+}
+
+}
+
+/*=========================================
+    Small Mobile
+=========================================*/
+
+@media (max-width:480px){
+
+.smtr-banner{
+    min-height:160px;
+}
+
+.smtr-banner-title{
+    font-size:1.8rem;
+}
+.procedure__text h1{
+  font-size: 26px;
+}
+
+.section-title{
+  font-size: 26px;
+}
+.container h1{
+font-size: 28px;
+}
+}
+
+/*=========================================
+    4K Display
+=========================================*/
+
+@media (min-width:2200px){
+
+.smtr-banner{
+    min-height:420px;
+}
+
+.smtr-banner-title{
+    font-size:5rem;
+}
+
+}
+/*=========================================
+    Soft Tissue Reinforcement Hero
+=========================================*/
+
+.smtr-hero-section{
+    padding:4rem 0;
+    background:var(--sm-plum-light);
+}
+
+.smtr-hero-wrapper{
+    width:var(--sm-container);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:4rem;
+}
+
+.smtr-hero-content{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+}
+
+.smtr-hero-title{
+    margin:0;
+    color:var(--sm-ink);
+    font-size:clamp(2rem,5vw,4rem);
+    line-height:1.1;
+}
+
+.smtr-hero-subtitle{
+    margin:0;
+    color:var(--sm-primary);
+    font-size:clamp(1.3rem,2vw,2rem);
+    font-weight:700;
+}
+
+.smtr-hero-description{
+    margin:0;
+    color:var(--sm-text);
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+.smtr-hero-actions{
+    margin-top:.5rem;
+}
+
+.smtr-primary-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.75rem;
+    padding:1rem 2rem;
+    background:var(--sm-primary);
+    color:var(--sm-white);
+    text-decoration:none;
+    border-radius:50px;
+    transition:var(--sm-transition);
+}
+
+.smtr-primary-btn:hover{
+    background:var(--sm-deep);
+}
+
+.smtr-hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.smtr-hero-image img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    display:block;
+}
+
+/*=========================================
+    Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.smtr-hero-wrapper{
+    grid-template-columns:1fr;
+    gap:3rem;
+}
+
+.smtr-hero-content{
+    order:1;
+    text-align:left;
+}
+
+.smtr-hero-actions{
+    display:flex;
+    justify-content:center;
+}
+
+.smtr-hero-image{
+    order:2;
+}
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
+}
+
+/*=========================================
+    Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+.smtr-hero-section{
+    padding:3rem 0;
+}
+
+.smtr-hero-wrapper{
+    gap:2rem;
+}
+
+.smtr-primary-btn{
+    width:100%;
+    justify-content:center;
+}
+
+.smtr-hero-description{
+    font-size:1rem;
+}
+
+.smtr-hero-image img{
+    max-width:260px;
+}
+
+}
+
+/*=========================================
+    Large Desktop
+=========================================*/
+
+@media (min-width:1600px){
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
+.smtr-hero-description{
+    font-size:1.15rem;
+}
+
+}
+
+/* ==========================================================================
+   SECTION HEADING STRIP
+   ========================================================================== */
+.section-strip__title {
+  color: var(--sm-primary);
+  margin: 0;
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 44px);
+}
+
+.title-line {
+  width: 70px;
+  height: 3px;
+  background: var(--sm-primary);
+  margin: 12px 0;
+  border-radius: 50px;
+}
+
+.section-desc {
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   HERNIA REPAIR — INTRO STRIP
+   ========================================================================== */
+.hernia-intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.hernia-intro__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  border: 1px solid var(--sm-line);
+}
+
+.hernia-intro__side {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.stat-card {
+  background: var(--sm-plum-light);
+  border-radius: var(--sm-radius);
+  padding: 1.5rem;
+  border: 1px solid var(--sm-line);
+}
+
+.stat-card__number {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 800;
+  color: var(--sm-primary);
+  margin: 0 0 .25rem;
+}
+
+.stat-card__label {
+  margin: 0;
+}
+
+.quick-facts {
+  list-style: none;
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: 1.5rem;
+  display: grid;
+  gap: .85rem;
+}
+
+.quick-facts li {
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.quick-facts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .5em;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--sm-primary);
+}
+
+/* ==========================================================================
+   HERNIA TYPES
+   ========================================================================== */
+.hernia-types {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.hernia-types__image img {
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  width: 100%;
+  border: 1px solid var(--sm-line);
+}
+
+.hernia-types__image figcaption {
+  margin-top: 1.6rem;
+  font-size: .9rem;
+  color: var(--sm-text);
+  text-align: center;
+}
+
+/* .master-card img {
+  width: 100%;
+} */
+
+.type-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.type-item {
+  background: var(--sm-soft);
+  border-radius: var(--sm-radius);
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--sm-line);
+}
+
+.type-item dt {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--sm-primary);
+  margin-bottom: .25rem;
+}
+
+.type-item dd {
+  margin: 0;
+}
+
+/* ==========================================================================
+   PROCEDURE PATHWAY
+   ========================================================================== */
+.pathway-head {
+  margin-bottom: 1.5rem;
+}
+
+.pathway {
+  list-style: none;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.procedure {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.procedure__media {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.procedure__media img,
+.procedure__body figure img {
+  margin: 0 auto;
+  /* width: 100%; */
+}
+
+.procedure__media figcaption {
+  margin-top: .5rem;
+  font-size: .85rem;
+  text-align: center;
+}
+
+.procedure--urgent {
+  border-color: var(--sm-primary);
+}
+
+.urgent-banner {
+  color: var(--sm-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 1.3rem;
+}
+
+.step-pair {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  grid-template-columns: 1fr;
+}
+
+.step {
+  background: var(--sm-soft);
+  border-radius: var(--sm-radius);
+  padding: 1rem 1.2rem;
+}
+
+.step__num {
+  font-weight: 700;
+  color: var(--sm-primary);
+  font-size: 1.3rem;
+  letter-spacing: .03em;
+  margin-bottom: .35rem;
+}
+
+/* ==========================================================================
+   CARD GRID (shared by prolapse / gallery / case-study / docvault)
+   ========================================================================== */
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card-grid figure {
+  background-color: var(--sm-plum-light);
+  border-radius: 18px;
+  border: 1px solid var(--sm-primary);
+}
+
+.card {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  overflow: hidden;
+  box-shadow: var(--sm-shadow);
+}
+
+.card img {
+  width: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: 1.25rem 1.4rem 1.5rem;
+}
+
+.card__body h4 {
+  font-size: .95rem;
+  margin-top: 1rem;
+}
+
+.card__body ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: .35rem;
+}
+
+.card--gallery {
+  padding: 18px 0 0 0;
+  text-align: center;
+}
+
+.card--gallery img {
+  border-radius: 18px;
+  margin: auto;
+}
+
+.card--gallery figcaption {
+  padding: .9rem 1rem 1.1rem;
+  font-size: 1.3rem;
+  color: var(--sm-ink);
+}
+
+.hand-surgery {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+}
+
+/* Case study figures */
+.case-group-title {
+  margin-top: 2.25rem;
+}
+
+.case-group-title:first-of-type {
+  margin-top: 0;
+}
+
+.case-card {
+  margin: 0;
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  overflow: hidden;
+  box-shadow: var(--sm-shadow);
+  text-align: center;
+}
+
+.case-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.case-card figcaption {
+  padding: .8rem 1rem 1rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--sm-ink);
+}
+.sm-case-content figcaption {
+  padding: .8rem 1rem 1rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--sm-ink);
+}
+
+
+/* Keloid gallery */
+.sm-case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.sm-case-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d9b3cf;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--sm-white);
+  box-shadow: var(--sm-shadow);
+}
+
+.sm-case-media {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  padding: 12px;
+}
+
+.sm-case-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sm-case-content {
+  padding: 14px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+/* ==========================================================================
+   GASTRO CASE HIGHLIGHT
+   ========================================================================== */
+.case-highlight {
+  background: var(--sm-white);
+  border-left: 4px solid var(--sm-primary);
+  border-radius: var(--sm-radius);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  margin-top: 1.5rem;
+}
+
+.case-highlight__label {
+  font-weight: 700;
+  color: var(--sm-primary);
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: .03em;
+  margin-bottom: .5rem;
+}
+
+.case-highlight p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   DOCUMENTATION VAULT
+   ========================================================================== */
+.docvault__header {
+  margin: 0 auto clamp(2rem, 5vw, 2.75rem);
+}
+
+.doc-card {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+  display: grid;
+  gap: .75rem;
+  justify-items: center;
+}
+
+.doc-card > i {
+  font-size: 2rem;
+  color: var(--sm-primary);
+}
+
+.doc-card h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* ==========================================================================
+   AVAILABLE SIZES
+   ========================================================================== */
+.container-align {
+  text-align: center;
+}
+#docvault-heading{
+font-size: clamp(1.75rem, 2.5vw + 1rem, 44px);
+}
+
+.size-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.5rem;
+}
+
+.size-list li {
+  background: var(--sm-soft);
+  border: 1px solid var(--sm-line);
+  border-radius: 50px;
+  padding: 18px 25px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--sm-primary);
+  transition: background var(--sm-transition), color var(--sm-transition);
+}
+
+.size-list li:hover {
+  background: var(--sm-primary);
+  color: var(--sm-white);
+}
+
+/* ==========================================================================
+   RESPONSIVE — MOBILE FIRST (320px → 4K)
+   ========================================================================== */
+
+/* ≥500px — pair up urgent-repair steps */
+@media (min-width: 500px) {
+  .step-pair {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+}
+
+/* ≥576px — small tablets */
+@media (min-width: 576px) {
+  .hernia-intro,
+  .hernia-types,
+  .type-grid,
+  .procedure__media,
+  .sm-case-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  }
+
+  .sm-case-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+}
+
+/* ≥768px — tablets / hero side-by-side */
+@media (min-width: 768px) {
+  .hero__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .hero__image {
+    order: 0;
+  }
+
+  .hero__image img {
+    width: 80%;
+  }
+
+  .card-grid--prolapse,
+  .card-grid--gallery,
+  .card-grid--case {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  }
+
+  .card-grid--docvault {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+
+  .sm-case-media {
+    height: 360px;
+  }
+}
+
+/* ≥992px — laptops */
+@media (min-width: 992px) {
+  /* .card-grid--prolapse {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  } */
+
+  .card-grid--gallery,
+  .card-grid--case {
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  }
+
+  .sm-case-grid {
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+  }
+}
+
+/* ≥1600px — large desktops / 1440p */
+@media (min-width: 1600px) {
+  .hero__image img {
+    width: 70%;
+  }
+}
+
+/* ≥2560px — 4K and ultra-wide */
+@media (min-width: 2560px) {
+  .card-grid--prolapse,
+  .card-grid--gallery,
+  .card-grid--case,
+  .sm-case-grid {
+    grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .size-list li {
+    transition: none;
+  }
+}

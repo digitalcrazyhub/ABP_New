@@ -1,0 +1,1734 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   DESIGN TOKENS
+   Single source of truth — every value used below resolves to one of
+   these tokens (or a plain literal), nothing else is declared.
+   ========================================================================== */
+:root {
+  --sm-primary: #762c69;
+  --sm-plum: #9b3a83;
+  --sm-plum-light: #fff2fc;
+  --sm-ink: #1b1720;
+  --sm-text: #655f67;
+  --sm-soft: #fff1fc;
+  --sm-line: #e7dce5;
+  --sm-white: #fff;
+  --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
+  --sm-radius: 14px;
+  --sm-container: min(1240px, calc(100% - 40px));
+  --sm-transition: 250ms ease;
+
+  /* Shared page padding — every section aligns to this */
+  --page-pad: max(20px, calc((100vw - 1240px) / 2));
+
+  /* Aliases used elsewhere (e.g. inline styles in the markup) */
+  --purple-brand: var(--sm-primary);
+  --text-light: var(--sm-text);
+  --lavender-accent: var(--sm-plum-light);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--sm-ink);
+  line-height: 1.25;
+  margin: 0 0 .6em;
+}
+
+/* All top-level sections share the same horizontal page padding.
+   Section-specific rules below only ever add vertical padding so this
+   never gets overridden by a more specific selector. */
+section {
+  padding: 0 var(--page-pad);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.brochure-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1.6rem;
+  border-radius: var(--sm-radius);
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-weight: 600;
+  text-align: center;
+  transition: background var(--sm-transition), transform var(--sm-transition);
+  text-decoration: none;
+}
+
+.brochure-btn:hover,
+.brochure-btn:focus-visible {
+  background: var(--sm-plum);
+}
+
+.brochure-btn:focus-visible {
+  outline: 2px solid var(--sm-plum);
+  outline-offset: 3px;
+}
+
+/*=========================================
+    Banner
+=========================================*/
+
+.smtr-banner{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:clamp(180px,28vw,320px);
+    margin-top:85px;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.smtr-banner-overlay{
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    background:radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
+}
+
+.smtr-banner-overlay::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 70px,
+            rgba(255,255,255,.08) 70px 72px
+        );
+}
+
+.smtr-circle{
+    position:absolute;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+}
+
+
+.smtr-circle-1{
+    width:28vw;
+    aspect-ratio:1;
+    top:-10%;
+    right:4%;
+}
+
+.smtr-circle-2{
+    width:42vw;
+    aspect-ratio:1;
+    bottom:-35%;
+    left:-8%;
+}
+
+.smtr-circle-3{
+    width:18vw;
+    aspect-ratio:1;
+    bottom:10%;
+    right:25%;
+}
+
+.smtr-banner-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.12;
+    z-index:-1;
+}
+
+.smtr-banner-content{
+    width:var(--sm-container);
+    text-align:center;
+    padding-inline:1rem;
+}
+
+.smtr-banner-title{
+    margin:0;
+    color:var(--sm-white);
+    font-size:clamp(2rem,5vw,4rem);
+    font-weight:800;
+    line-height:1.15;
+    text-wrap:balance;
+}
+
+/*=========================================
+    Large Desktop
+=========================================*/
+
+@media (min-width:1600px){
+
+.smtr-banner{
+    min-height:360px;
+}
+
+}
+
+/*=========================================
+    Laptop
+=========================================*/
+
+@media (max-width:1200px){
+
+.smtr-banner{
+    min-height:260px;
+}
+
+}
+
+/*=========================================
+    Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.smtr-banner{
+    margin-top:80px;
+    min-height:220px;
+}
+
+.smtr-circle-1{
+    width:38vw;
+}
+
+.smtr-circle-2{
+    width:58vw;
+}
+
+.smtr-circle-3{
+    width:28vw;
+}
+
+}
+
+/*=========================================
+    Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+.smtr-banner{
+    margin-top:72px;
+    min-height:180px;
+}
+
+.smtr-banner-title{
+    font-size:clamp(1.8rem,7vw,2.5rem);
+}
+
+.smtr-circle-1{
+    width:55vw;
+}
+
+.smtr-circle-2{
+    width:75vw;
+}
+
+.smtr-circle-3{
+    width:40vw;
+}
+
+}
+
+/*=========================================
+    Small Mobile
+=========================================*/
+
+@media (max-width:480px){
+
+.smtr-banner{
+    min-height:160px;
+}
+
+.smtr-banner-title{
+    font-size:1.8rem;
+}
+.procedure__text h1{
+  font-size: 26px;
+}
+
+.section-title{
+  font-size: 26px;
+}
+.container h1{
+font-size: 28px;
+}
+}
+
+/*=========================================
+    4K Display
+=========================================*/
+
+@media (min-width:2200px){
+
+.smtr-banner{
+    min-height:420px;
+}
+
+.smtr-banner-title{
+    font-size:5rem;
+}
+
+}
+/*=========================================
+    Soft Tissue Reinforcement Hero
+=========================================*/
+
+.smtr-hero-section{
+    padding:4rem 0;
+    background:var(--sm-plum-light);
+}
+
+.smtr-hero-wrapper{
+    width:var(--sm-container);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:4rem;
+}
+
+.smtr-hero-content{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+}
+
+.smtr-hero-title{
+    margin:0;
+    color:var(--sm-ink);
+    font-size:clamp(2rem,5vw,4rem);
+    line-height:1.1;
+}
+
+.smtr-hero-subtitle{
+    margin:0;
+    color:var(--sm-primary);
+    font-size:clamp(1.3rem,2vw,2rem);
+    font-weight:700;
+}
+
+.smtr-hero-description{
+    margin:0;
+    color:var(--sm-text);
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+.smtr-hero-actions{
+    margin-top:.5rem;
+}
+
+.smtr-primary-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.75rem;
+    padding:1rem 2rem;
+    background:var(--sm-primary);
+    color:var(--sm-white);
+    text-decoration:none;
+    border-radius:50px;
+    transition:var(--sm-transition);
+}
+
+.smtr-primary-btn:hover{
+    background:var(--sm-deep);
+}
+
+.smtr-hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.smtr-hero-image img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    display:block;
+}
+
+/*=========================================
+    Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.smtr-hero-wrapper{
+    grid-template-columns:1fr;
+    gap:3rem;
+}
+
+.smtr-hero-content{
+    order:1;
+    text-align:left;
+}
+
+.smtr-hero-actions{
+    display:flex;
+    justify-content:center;
+}
+
+.smtr-hero-image{
+    order:2;
+}
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
+}
+
+/*=========================================
+    Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+.smtr-hero-section{
+    padding:3rem 0;
+}
+
+.smtr-hero-wrapper{
+    gap:2rem;
+}
+
+.smtr-primary-btn{
+    width:100%;
+    justify-content:center;
+}
+
+.smtr-hero-description{
+    font-size:1rem;
+}
+
+.smtr-hero-image img{
+    max-width:260px;
+}
+
+}
+
+/*=========================================
+    Large Desktop
+=========================================*/
+
+@media (min-width:1600px){
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
+.smtr-hero-description{
+    font-size:1.15rem;
+}
+
+}
+
+/* ==========================================================================
+   SECTION HEADING STRIP
+   ========================================================================== */
+.section-strip__title {
+  color: var(--sm-primary);
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: bold;
+}
+
+.title-line {
+  width: 70px;
+  height: 3px;
+  background: var(--sm-primary);
+  margin: 18px 0;
+  border-radius: 50px;
+}
+
+.inner-container {
+  padding: 30px 0;
+}
+
+/*====================================================================
+   intro
+==================================================================== */
+.so-section-inner {
+  margin: 0 auto;
+}
+
+.so-section-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sm-primary);
+  margin-bottom: 10px;
+}
+
+.so-section-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--sm-ink);
+  margin-bottom: 14px;
+}
+
+.so-section-desc {
+  font-size: 15px;
+  color: var(--sm-text);
+}
+
+.so-divider-bar {
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sm-primary), var(--sm-plum));
+  border-radius: 4px;
+  margin: 18px 0;
+}
+
+.so-intro-section {
+  background: var(--sm-white);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: var(--sm-text);
+}
+
+.so-section-label {
+  display: inline-block;
+  color: var(--sm-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.so-intro-title {
+  color: var(--sm-ink);
+  margin-top: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.so-body-text {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: var(--sm-text);
+  margin-bottom: 20px;
+}
+
+.so-definition {
+  background: var(--sm-line);
+  border-left: 5px solid var(--sm-primary);
+  padding: 20px;
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  margin-bottom: 40px;
+}
+
+.so-stat-label {
+  color: #9a93a0;
+  font-size: 0.95rem;
+}
+
+/* Site tags */
+.so-site-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 32px;
+}
+
+.so-site-tag {
+  background: var(--sm-plum-light);
+  border: 1px solid var(--sm-soft);
+  color: var(--sm-primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(63, 23, 55, .08);
+}
+
+/* Highlight box */
+.so-highlight-box {
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  border-radius: var(--sm-radius);
+  padding: 36px 40px;
+  margin-top: 48px;
+  box-shadow: var(--sm-shadow);
+}
+
+.so-highlight-box h3 {
+  font-size: 1.4rem;
+  color: var(--sm-white);
+  margin-bottom: 14px;
+}
+
+.so-highlight-box p {
+  font-size: 0.97rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 12px;
+}
+
+.so-highlight-box p:last-child {
+  margin-bottom: 0;
+}
+
+.so-highlight-box strong {
+  color: #ece1f5;
+}
+
+/* 4-Image Horizontal Grid Layout */
+.so-image-grid-horizontal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.so-image-grid-item {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: 15px;
+  box-shadow: var(--sm-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.so-image-grid-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: calc(10px - 4px);
+}
+
+.so-image-caption {
+  font-size: 1.1rem;
+  color: #000;
+  margin-top: auto;
+  font-weight: 500;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* Srgical Media */
+/*==============================
+    Product Videos
+==============================*/
+
+.sm-media-grid{
+    display:grid;
+    grid-template-columns:repeat(1,1fr);
+    gap:2rem;
+}
+
+.sm-media-card{
+    background:var(--sm-white);
+    border:1px solid var(--sm-line);
+    border-radius:var(--sm-radius);
+    padding:1.5rem;
+    box-shadow:var(--sm-shadow);
+    transition:var(--sm-transition);
+}
+
+.sm-media-card:hover{
+    transform:translateY(-6px);
+}
+
+.sm-media-title{
+    font-size:1.35rem;
+    color:var(--sm-primary);
+    margin-bottom:1.25rem;
+    line-height:1.4;
+    min-height:3.5rem;
+}
+
+.sm-video-wrapper{
+    position:relative;
+    width:100%;
+    aspect-ratio:16 / 9;
+    overflow:hidden;
+    border-radius:12px;
+    background:#000;
+}
+
+.sm-video-wrapper video{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/*==============================
+    Laptop
+==============================*/
+
+@media (max-width:1200px){
+
+.sm-media-title{
+    font-size:1.2rem;
+}
+
+}
+
+/*==============================
+    Tablet
+==============================*/
+
+@media (max-width:992px){
+
+.sm-media-grid{
+    grid-template-columns:1fr;
+}
+
+.sm-media-card{
+    padding:1.25rem;
+}
+
+}
+
+/*==============================
+    Mobile
+==============================*/
+
+@media (max-width:768px){
+
+.sm-media-section{
+    padding:4rem 0;
+}
+
+.sm-media-title{
+    font-size:1.1rem;
+    min-height:auto;
+}
+
+.sm-media-card{
+    padding:1rem;
+}
+
+}
+
+/*==============================
+    Small Mobile
+==============================*/
+
+@media (max-width:480px){
+
+.sm-media-section{
+    padding:3rem 0;
+}
+
+.sm-media-title{
+    font-size:1rem;
+}
+
+.sm-media-card{
+    border-radius:12px;
+}
+
+.sm-video-wrapper{
+    border-radius:10px;
+}
+
+}
+
+/* ─── CLINICAL EVIDENCE ─── */
+.so-clinical-section {
+  background: var(--sm-plum-light);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.so-studies-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 32px 0 0;
+}
+
+.so-tab-btn {
+  padding: 10px 22px;
+  border: 1.5px solid var(--sm-line);
+  border-radius: 30px;
+  background: var(--sm-white);
+  color: var(--sm-text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.so-tab-btn:hover,
+.so-tab-btn.active {
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  border-color: var(--sm-primary);
+}
+
+.so-study-panel {
+  display: none;
+  margin-top: 32px;
+}
+
+.so-study-panel.active {
+  display: block;
+}
+
+.so-study-card {
+  overflow: hidden;
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: 24px;
+  box-shadow: var(--sm-shadow);
+}
+
+.so-study-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 36px;
+  background: linear-gradient(135deg, var(--sm-plum-light), var(--sm-soft));
+  border-bottom: 1px solid var(--sm-line);
+}
+
+.so-study-header-text h3 {
+  margin-bottom: 6px;
+  color: var(--sm-ink);
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.so-study-header-text p {
+  color: #9a93a0;
+  font-size: 12.5px;
+}
+
+.so-study-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 36px;
+}
+
+.so-study-section-label {
+  margin-bottom: 12px;
+  color: var(--sm-primary);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.so-study-text {
+  color: var(--sm-text);
+  
+  line-height: 1.75;
+}
+
+/* Always four boxes in one horizontal line on desktop, wraps on smaller screens */
+.so-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 24px;
+}
+
+.so-stat-box {
+  min-width: 0;
+  padding: 16px 12px;
+  background: #f7f1fa;
+  border: 1px solid var(--sm-line);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.so-stat-box .so-stat-val {
+  margin-bottom: 5px;
+  color: var(--sm-primary);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.so-stat-box .so-stat-label {
+  color: #9a93a0;
+  font-size: 11px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Table wrapper */
+.so-results-table {
+  width: 100%;
+  min-width: 40px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.so-results-table th {
+  padding: 11px 14px;
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.so-results-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--sm-line);
+  color: var(--sm-text);
+}
+
+.so-results-table tr:nth-child(even) td {
+  background: #f7f1fa;
+}
+
+.so-badge-good {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.so-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.so-comparison-box {
+  padding: 18px;
+  border: 1px solid var(--sm-line);
+  border-radius: 10px;
+}
+
+.so-comparison-box.surgicoll {
+  background: linear-gradient(135deg, #fdf4fc, #f5e9f7);
+  border-color: rgba(107, 45, 92, 0.2);
+}
+
+.so-comparison-box.conventional {
+  background: #f7f1fa;
+}
+
+.so-comparison-box h5 {
+  margin-bottom: 12px;
+  color: var(--sm-ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.so-comparison-metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.so-comparison-metric span:first-child {
+  color: var(--sm-text);
+  font-size: 16px;
+}
+
+.so-metric-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.so-metric-bar {
+  width: 100px;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #ece1f5;
+}
+
+.so-metric-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--sm-primary), var(--sm-plum));
+}
+
+.so-metric-pct {
+  min-width: 35px;
+  color: var(--sm-primary);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.so-p-value-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 20px;
+}
+
+.so-p-badge {
+  flex: 1 1 160px;
+  padding: 10px 16px;
+  border: 1px solid rgba(107, 45, 92, 0.15);
+  border-radius: 10px;
+  background: #f1e4f7;
+  font-size: 12px;
+}
+
+.so-p-badge strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--sm-primary);
+  font-size: 14px;
+}
+
+.so-p-badge span {
+  color: #9a93a0;
+}
+
+/* Hero Presentation Styling */
+.so-hero-grid {
+  align-items: center;
+}
+
+@keyframes soPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.4; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Section Header Structure */
+.so-section-header {
+  margin: 0 auto 52px;
+}
+
+.so-section-header p {
+  font-size: 1.1rem;
+  color: var(--sm-text);
+  max-width: 580px;
+  line-height: 1.75;
+}
+
+.so-section-header .eyebrow {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--sm-primary);
+  margin-bottom: 10px;
+}
+
+.so-section-header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.0rem);
+  font-weight: 700;
+  color: var(--sm-ink);
+  line-height: 1.18;
+  margin-bottom: 12px;
+}
+
+.so-section-header.text-center {
+  text-align: center;
+}
+
+.so-section-header.text-center p {
+  margin: 0 auto;
+}
+
+/* Application Profile Cards */
+/* ─── GRID HELPERS ─── */
+.so-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Master Layout Wrapper */
+.so-trial-showcase-container {
+  display: grid;
+  gap: 24px;
+  background: linear-gradient(135deg, var(--sm-plum-light), var(--sm-soft));
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: 30px;
+  box-shadow: 0 20px 45px rgba(63, 23, 55, .18);
+  align-items: center;
+  margin: 20px auto;
+}
+
+/* Meta Card Side */
+.so-trial-meta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: 32px 36px;
+  margin-bottom: 44px;
+  box-shadow: var(--sm-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.so-trial-meta-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(90deg, var(--sm-primary), var(--sm-plum));
+}
+
+.so-trial-badge {
+  align-self: flex-start;
+  background: #f7f1fa;
+  color: var(--sm-primary);
+  border: 1px solid #ece1f5;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.so-trial-badge strong {
+  color: var(--sm-primary);
+}
+
+.so-trial-meta-card h3 {
+  color: var(--sm-ink);
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin: 5px 0;
+  font-weight: 700;
+}
+
+/* =====================================
+   TRIAL IMAGES
+===================================== */
+.so-trial-image-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.so-trial-image-card {
+  background: var(--sm-white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.so-trial-figure-img {
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+  box-shadow: var(--sm-shadow);
+  border: 1px solid var(--sm-line);
+}
+
+.so-data-box {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: 28px;
+  box-shadow: 0 4px 12px rgba(63, 23, 55, .08);
+  transition: transform .22s, box-shadow .22s;
+}
+
+.so-data-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sm-shadow);
+}
+
+.so-data-box h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--sm-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.so-data-box h4::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--sm-primary), var(--sm-plum));
+  flex-shrink: 0;
+}
+
+.so-data-box p {
+  font-size: 13.5px;
+  color: var(--sm-text);
+  line-height: 1.7;
+}
+
+/* Breast Cancer Reconstruction Section */
+.so-bcr-section {
+  background: var(--sm-white);
+  overflow: hidden;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.so-bcr-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.so-bcr-content {
+  flex: 1;
+  min-width: 320px;
+}
+
+.so-bcr-tag {
+  display: inline-block;
+  background: #f1e4f7;
+  color: var(--sm-primary);
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.so-bcr-content h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: #000;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.so-bcr-content h2 span {
+  color: var(--sm-primary);
+}
+
+.so-bcr-content p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #5d6673;
+  margin-bottom: 35px;
+}
+
+.so-bcr-highlight {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.so-bcr-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.so-bcr-card:hover {
+  transform: translateY(-8px);
+}
+
+.so-bcr-card h4 {
+  font-size: 18px;
+  color: var(--sm-primary);
+  margin-bottom: 10px;
+}
+
+.so-bcr-card p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ─── SHARED LAYOUT ─── */
+.so-container {
+  margin: 0 auto;
+}
+
+.so-bar {
+  width: 44px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--sm-primary), var(--sm-plum));
+  border-radius: 4px;
+  margin: 14px 0 0;
+}
+
+.so-section-header.text-center .so-bar {
+  margin: 14px auto 0;
+}
+
+/* ─── SCROLL REVEAL ─── */
+.so-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+
+.so-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   Case Study
+   (previously duplicated with a hard-coded `width:1000px` block that had
+   no responsive fallback; consolidated into this single definition with
+   full breakpoint coverage)
+=========================== */
+.so-case-study {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.so-case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.so-case_video {
+  width: 100%;
+  display: block;
+}
+
+/* Aspect-ratio responsive container wrapper for Google Drive IFrames */
+.so-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+  /* 4:3 aspect ratio matching the 640x480 source (480/640 = 75%) */
+  height: 0;
+  overflow: hidden;
+  border: 4px solid var(--sm-primary);
+  border-radius: var(--sm-radius);
+  box-shadow: 0 4px 12px rgba(63, 23, 55, .08);
+}
+
+.so-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =====================================
+   BREAST EXCISION RECONSTRUCTION
+===================================== */
+.so-process-section {
+  background: linear-gradient(135deg, var(--sm-plum-light), var(--sm-soft));
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.so-process-card {
+  margin: 0 auto;
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  overflow: hidden;
+}
+
+/* Header */
+.so-process-header {
+  background: var(--sm-primary);
+  background-image: linear-gradient(90deg, var(--sm-primary), var(--sm-plum));
+  padding: 20px 30px;
+}
+
+.so-process-header h2 {
+  margin: 0;
+  color: var(--sm-white);
+  text-align: center;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.so-process-header strong {
+  font-weight: 800;
+}
+
+/* Images */
+.so-process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.so-process-step {
+  background: #fff;
+}
+
+.so-process-step img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Summary */
+.so-process-summary {
+  background: #f7f1fa;
+  border-top: 1px solid var(--sm-line);
+  padding: 40px;
+}
+
+.so-process-summary p {
+  margin: 0 auto;
+  text-align: justify;
+  color: var(--sm-text);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.so-process-summary strong {
+  color: var(--sm-primary);
+}
+
+/* ==========================================================================
+   CLINICAL DOCUMENTATION VAULT (PDF cards)
+   ========================================================================== */
+.so-docvault-section {
+  background: var(--sm-plum-light);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.so-docvault-header h2 {
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.25;
+  margin: 0 0 .6em;
+}
+
+.so-docvault-bar {
+  width: 64px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--sm-primary), var(--sm-plum));
+}
+
+.so-docvault-subtext {
+  margin: 0 auto 1em;
+  max-width: 580px;
+  color: var(--sm-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.so-docvault-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 20px 0;
+}
+
+.so-docvault-card {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+  display: grid;
+  gap: .75rem;
+  justify-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.so-docvault-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(63, 23, 55, .18);
+}
+
+.so-docvault-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sm-primary);
+  font-size: 2rem;
+}
+
+.so-docvault-card h3 {
+  color: var(--sm-ink);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.so-docvault-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1.6rem;
+  border-radius: var(--sm-radius);
+  border: 1px solid var(--sm-primary);
+  color: var(--sm-primary);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background var(--sm-transition), transform var(--sm-transition);
+}
+
+.so-docvault-btn:hover {
+  background: var(--sm-primary);
+  transform: translateY(-2px);
+  border: 2px solid var(--sm-plum);
+  color: var(--sm-white);
+}
+
+/* ==========================================================================
+   PROSPECTIVE CLINICAL TRIAL SECTION
+   ========================================================================== */
+.section-padding {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   Grids and split layouts collapse in stages so nothing overflows or
+   crowds out on tablet and mobile. Horizontal page padding (--page-pad)
+   is untouched at every size. Consolidated all breakpoints (including the
+   ones that used to live in a separate block further up) into one place.
+   ========================================================================== */
+
+/* Large desktop */
+@media (min-width: 1600px) {
+  .so-case-study {
+    max-width: 1200px;
+  }
+
+  .so-case-study-grid {
+    gap: 50px;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1200px) {
+  .so-case-study {
+    max-width: 900px;
+  }
+
+  .so-case-study-grid {
+    gap: 30px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 32px 0;
+  }
+
+  .hero__image {
+    order: -1;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .so-study-body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .so-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .so-case-study {
+    max-width: 100%;
+    padding: 0 18px;
+  }
+
+  .so-case-study-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .so-trial-image-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .so-image-grid-horizontal {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .so-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+   
+  }
+
+  .so-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .so-bcr-highlight {
+    grid-template-columns: 1fr;
+  }
+
+  .so-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .so-process-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .so-docvault-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .so-case-study {
+    padding: 0 15px;
+  }
+
+  .so-case-study-grid {
+    gap: 20px;
+  }
+
+  .so-study-header {
+    padding: 24px;
+  }
+
+  .so-process-summary,
+  .so-highlight-box {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .so-image-grid-horizontal {
+    grid-template-columns: 1fr;
+  }
+.so-study-text
+ { font-size: 1rem;
+    color: var(--sm-text);
+    line-height: 1.75;
+    padding: 10px;
+}
+  .so-stats-grid {
+    grid-template-columns: 1fr;
+  }
+.so-study-section-label {
+  padding: 10px;
+}
+  .so-results-table{
+    padding: 10px;
+  }
+  .so-process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .so-docvault-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .so-tab-btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .so-study-body {
+    padding:0px;
+  }
+
+  .so-trial-meta-card {
+    padding: 22px 20px;
+  }
+
+  .so-case-study {
+    padding: 0 12px;
+  }
+
+  .so-case-study-grid {
+    gap: 16px;
+  }
+
+  .so-trial-image-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
