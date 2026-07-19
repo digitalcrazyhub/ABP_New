@@ -124,19 +124,7 @@ margin-bottom: 15px;
     border-radius:28px;
     padding:35px;
     box-shadow: 0 10px 35px rgba(0,0,0,.05);
-
-}
-
-.pf-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    padding:1px;
-    border-radius:28px;
-    background:linear-gradient(135deg,#762c69,#ffffff,#762c69);
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-    pointer-events:none;
+    border: 1px solid var(--sm-primary);
 
 }
 
