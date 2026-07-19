@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --sm-primary: #762c69;
+    --sm-deep: #3d193c;
+    --sm-plum: #9b3a83;
+    --sm-plum-light: #fff2fc;
+    --sm-ink: #1b1720;
+    --sm-text: #655f67;
+    --sm-soft: #fff1fc;
+    --sm-line: #e7dce5;
+    --sm-white: #fff;
+    --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
+    --sm-radius: 14px;
+    --sm-container: min(1240px, calc(100% - 40px));
+    --sm-transition: 250ms ease;
+}
+
+body {
+    background: var(--sm-plum-light);
+    overflow-x: hidden;
+}
+p {
+    font-size: clamp(16px, 1.4vw, 18px);
+}
+
+/* ==========================================================================
+   SERVICES SECTION
+   ========================================================================== */
+.services-section {
+    /* Fluid, capped side padding so content never smashes edge-to-edge
+       on phones and never stretches edge-to-edge on ultra-wide/4K */
+    padding: 0 max(20px, calc((100vw - 1240px) / 2));
+    position: relative;
+    overflow: hidden;
+}
+
+.service_inner {
+    padding: 30px 0;
+    /* Cap the inner content width so it stays readable on very large
+       (1600px+, 4K) screens instead of stretching full-bleed */
+    margin: 0 auto;
+}
+
+.services-section::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter: blur(10px);
+}
+
+.services-header {
+    text-align: center;
+    margin: 0 auto 56px;
+    position: relative;
+    z-index: 1;
+}
+
+.services-header h2,
+.services-header h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--sm-ink);
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.services-header h2 span {
+    color: var(--sm-primary);
+}
+
+.services-header p {
+    line-height: 1.6;
+    font-size: clamp(15px, 1.1vw, 18px);
+}
+
+/* ─── GRID: responsive column count, every card stretched to equal height ─── */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: clamp(16px, 2vw, 24px);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    align-items: stretch;
+}
+
+.service-card {
+    background: var(--sm-white);
+    border-radius: var(--sm-radius);
+    padding: clamp(22px, 2.4vw, 32px) clamp(18px, 1.8vw, 26px);
+    box-shadow: var(--sm-shadow);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+
+    /* Equal-height card with footer pinned to the bottom */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Animated fill layer that expands from the cursor point */
+.service-card::before {
+    content: "";
+    position: absolute;
+    left: var(--mx, 50%);
+    top: var(--my, 50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.service-card:hover::before {
+    transform: translate(-50%, -50%) scale(22);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: transparent;
+}
+
+.service-icon,
+.service-card h3,
+.service-card p,
+.service-card .indi-link {
+    position: relative;
+    z-index: 1;
+}
+
+.service-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--sm-radius);
+    background: var(--sm-plum-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: background 0.4s ease 0.05s, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.service-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--sm-primary);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.4s ease 0.05s;
+}
+
+.service-card h3 {
+    color: var(--sm-ink);
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 700;
+    margin-bottom: 10px;
+    transition: color 0.4s ease 0.05s, transform 0.4s ease 0.05s;
+    flex-shrink: 0;
+}
+
+.service-card p {
+    line-height: 1.6;
+    color: var(--sm-ink);
+    transition: color 0.4s ease 0.08s;
+    flex-grow: 1;
+    text-align: justify;
+}
+
+.service-card:hover h3 {
+    transform: translateX(2px);
+}
+
+/*=========================================
+    Banner
+=========================================*/
+
+.smtr-banner{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:clamp(180px,28vw,320px);
+    margin-top:85px;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.smtr-banner-overlay{
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    background:radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
+}
+
+.smtr-banner-overlay::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 70px,
+            rgba(255,255,255,.08) 70px 72px
+        );
+}
+
+.smtr-circle{
+    position:absolute;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+}
+
+.smtr-circle-1{
+    width:28vw;
+    aspect-ratio:1;
+    top:-10%;
+    right:4%;
+}
+
+.smtr-circle-2{
+    width:42vw;
+    aspect-ratio:1;
+    bottom:-35%;
+    left:-8%;
+}
+
+.smtr-circle-3{
+    width:18vw;
+    aspect-ratio:1;
+    bottom:10%;
+    right:25%;
+}
+
+.smtr-banner-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.12;
+    z-index:-1;
+}
+
+.smtr-banner-content{
+    width:var(--sm-container);
+    text-align:center;
+    padding-inline:1rem;
+}
+
+.smtr-banner-title{
+    margin:0;
+    color:var(--sm-white);
+    font-size:clamp(2rem,5vw,4rem);
+    font-weight:800;
+    line-height:1.15;
+    text-wrap:balance;
+}
+
+/*=========================================
+    Large Desktop
+=========================================*/
+
+@media (min-width:1600px){
+
+.smtr-banner{
+    min-height:360px;
+}
+
+}
+
+/*=========================================
+    Laptop
+=========================================*/
+
+@media (max-width:1200px){
+
+.smtr-banner{
+    min-height:260px;
+}
+
+}
+
+/*=========================================
+    Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.smtr-banner{
+    margin-top:80px;
+    min-height:220px;
+}
+
+.smtr-circle-1{
+    width:38vw;
+}
+
+.smtr-circle-2{
+    width:58vw;
+}
+
+.smtr-circle-3{
+    width:28vw;
+}
+
+}
+
+/*=========================================
+    Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+.smtr-banner{
+    margin-top:72px;
+    min-height:180px;
+}
+
+.smtr-banner-title{
+    font-size:clamp(1.8rem,7vw,2.5rem);
+}
+
+.smtr-circle-1{
+    width:55vw;
+}
+
+.smtr-circle-2{
+    width:75vw;
+}
+
+.smtr-circle-3{
+    width:40vw;
+}
+
+}
+
+/*=========================================
+    Small Mobile
+=========================================*/
+
+@media (max-width:480px){
+
+.smtr-banner{
+    min-height:160px;
+}
+
+.smtr-banner-title{
+    font-size:1.8rem;
+}
+
+}
+
+/*=========================================
+    4K Display
+=========================================*/
+
+@media (min-width:2200px){
+
+.smtr-banner{
+    min-height:420px;
+}
+
+.smtr-banner-title{
+    font-size:5rem;
+}}
+
+/* Container styling */
+.indi-link {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0;
+    padding: 0 15px;
+    flex-shrink: 0;
+    margin-top: 14px;
+}
+
+/* Responsive Link/Button styling */
+.indi-link a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: var(--sm-primary);
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.indi-link a:hover {
+    background-color: var(--sm-plum);
+}
+
+.indi-link a:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS — mobile → tablet → laptop → desktop → 4K
+   ========================================================================== */
+
+/* Extra small phones (≤380px) */
+@media (max-width: 380px) {
+    .services-header p,
+    .service-card p {
+        text-align: left;
+    }
+    .services-header h2,
+.services-header h1 {
+    text-align: left;
+}
+
+    .banner {
+        margin-top: 64px;
+    }
+
+    .service-card {
+        padding: 20px 16px;
+    }
+}
+
+/* Phones (≤576px) */
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-header {
+        margin-bottom: 36px;
+    }
+
+    .banner {
+        margin-top: 64px;
+        min-height: 160px;
+    }
+
+    .service_inner {
+        padding: 20px 0;
+    }
+
+    .indi-link a {
+        max-width: 100%;
+    }
+}
+
+/* Large phones / small tablets (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablets / small laptops (769px–991px) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Laptops / small desktops (992px–1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large desktops / 1440p (1600px–2559px) */
+@media (min-width: 1600px) {
+   
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+}
+
+/* 4K and ultra-wide (2560px and up) */
+@media (min-width: 2560px) {
+
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 36px;
+    }
+
+    .banner__title {
+        font-size: 3.2rem;
+    }
+
+    .services-header h2,
+    .services-header h1 {
+        font-size: 48px;
+    }
+}
+
+/* Landscape phones with limited height */
+@media (max-height: 480px) and (orientation: landscape) {
+    .banner {
+        min-height: 140px;
+        margin-top: 56px;
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .service-card::before,
+    .service-icon,
+    .service-card h3,
+    .service-card p,
+    .indi-link a {
+        transition: none !important;
+    }
+}
