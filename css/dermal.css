@@ -1,0 +1,1232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   DESIGN TOKENS
+   Single source of truth. New semantic tokens alias the base --sm-* palette
+   so colors stay consistent across the page.
+   ========================================================================== */
+:root {
+  --sm-primary: #762c69;
+  --sm-plum: #9b3a83;
+  --sm-plum-light: #fff2fc;
+  --sm-ink: #1b1720;
+  --sm-text: #655f67;
+  --sm-soft: #fff1fc;
+  --sm-line: #e7dce5;
+  --sm-white: #fff;
+  --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
+  --sm-radius: 14px;
+  --sm-container: min(1240px, calc(100% - 40px));
+  --sm-transition: 250ms ease;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--sm-ink);
+  line-height: 1.25;
+  margin: 0 0 .6em;
+}
+section{
+    padding: 0 max(20px, calc((100vw - 1240px) / 2));
+}
+
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1.6rem;
+  border-radius: var(--sm-radius);
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-weight: 600;
+  text-align: center;
+  transition: background var(--sm-transition), transform var(--sm-transition);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--sm-plum);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--sm-plum);
+  outline-offset: 3px;
+}
+/*=========================================
+    Banner
+=========================================*/
+
+.smtr-banner{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:clamp(180px,28vw,320px);
+    margin-top:85px;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.smtr-banner-overlay{
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    background:radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
+}
+
+.smtr-banner-overlay::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 70px,
+            rgba(255,255,255,.08) 70px 72px
+        );
+}
+
+.smtr-circle{
+    position:absolute;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+}
+
+
+.smtr-circle-1{
+    width:28vw;
+    aspect-ratio:1;
+    top:-10%;
+    right:4%;
+}
+
+.smtr-circle-2{
+    width:42vw;
+    aspect-ratio:1;
+    bottom:-35%;
+    left:-8%;
+}
+
+.smtr-circle-3{
+    width:18vw;
+    aspect-ratio:1;
+    bottom:10%;
+    right:25%;
+}
+
+.smtr-banner-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.12;
+    z-index:-1;
+}
+
+.smtr-banner-content{
+    width:var(--sm-container);
+    text-align:center;
+    padding-inline:1rem;
+}
+
+.smtr-banner-title{
+    margin:0;
+    color:var(--sm-white);
+    font-size:clamp(2rem,5vw,4rem);
+    font-weight:800;
+    line-height:1.15;
+    text-wrap:balance;
+}
+
+/*=========================================
+    Large Desktop
+=========================================*/
+
+@media (min-width:1600px){
+
+.smtr-banner{
+    min-height:360px;
+}
+
+}
+
+/*=========================================
+    Laptop
+=========================================*/
+
+@media (max-width:1200px){
+
+.smtr-banner{
+    min-height:260px;
+}
+
+}
+
+/*=========================================
+    Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.smtr-banner{
+    margin-top:80px;
+    min-height:220px;
+}
+
+.smtr-circle-1{
+    width:38vw;
+}
+
+.smtr-circle-2{
+    width:58vw;
+}
+
+.smtr-circle-3{
+    width:28vw;
+}
+
+}
+
+/*=========================================
+    Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+.smtr-banner{
+    margin-top:72px;
+    min-height:180px;
+}
+
+.smtr-banner-title{
+    font-size:clamp(1.8rem,7vw,2.5rem);
+}
+
+.smtr-circle-1{
+    width:55vw;
+}
+
+.smtr-circle-2{
+    width:75vw;
+}
+
+.smtr-circle-3{
+    width:40vw;
+}
+
+}
+
+/*=========================================
+    Small Mobile
+=========================================*/
+
+@media (max-width:480px){
+
+.smtr-banner{
+    min-height:160px;
+}
+
+.smtr-banner-title{
+    font-size:1.8rem;
+}
+.procedure__text h1{
+  font-size: 26px;
+}
+
+.section-title{
+  font-size: 26px;
+}
+.container h1{
+font-size: 28px;
+}
+}
+
+/*=========================================
+    4K Display
+=========================================*/
+
+@media (min-width:2200px){
+
+.smtr-banner{
+    min-height:420px;
+}
+
+.smtr-banner-title{
+    font-size:5rem;
+}
+
+}
+/*=========================================
+    Soft Tissue Reinforcement Hero
+=========================================*/
+
+.smtr-hero-section{
+    padding:4rem 0;
+    background:var(--sm-plum-light);
+}
+
+.smtr-hero-wrapper{
+    width:var(--sm-container);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:4rem;
+}
+
+.smtr-hero-content{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+}
+
+.smtr-hero-title{
+    margin:0;
+    color:var(--sm-ink);
+    font-size:clamp(2rem,5vw,4rem);
+    line-height:1.1;
+}
+
+.smtr-hero-subtitle{
+    margin:0;
+    color:var(--sm-primary);
+    font-size:clamp(1.3rem,2vw,2rem);
+    font-weight:700;
+}
+
+.smtr-hero-description{
+    margin:0;
+    color:var(--sm-text);
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+.smtr-hero-actions{
+    margin-top:.5rem;
+}
+
+.smtr-primary-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.75rem;
+    padding:1rem 2rem;
+    background:var(--sm-primary);
+    color:var(--sm-white);
+    text-decoration:none;
+    border-radius:50px;
+    transition:var(--sm-transition);
+}
+
+.smtr-primary-btn:hover{
+    background:var(--sm-deep);
+}
+
+.smtr-hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.smtr-hero-image img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    display:block;
+}
+
+/*=========================================
+    Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.smtr-hero-wrapper{
+    grid-template-columns:1fr;
+    gap:3rem;
+}
+
+.smtr-hero-content{
+    order:1;
+    text-align:left;
+}
+
+.smtr-hero-actions{
+    display:flex;
+    justify-content:center;
+}
+
+.smtr-hero-image{
+    order:2;
+}
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
+}
+
+/*=========================================
+    Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+.smtr-hero-section{
+    padding:3rem 0;
+}
+
+.smtr-hero-wrapper{
+    gap:2rem;
+}
+
+.smtr-primary-btn{
+    width:100%;
+    justify-content:center;
+}
+
+.smtr-hero-description{
+    font-size:1rem;
+}
+
+.smtr-hero-image img{
+    max-width:260px;
+}
+
+}
+
+/*=========================================
+    Large Desktop
+=========================================*/
+
+@media (min-width:1600px){
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
+.smtr-hero-description{
+    font-size:1.15rem;
+}
+
+}
+
+
+/* ==========================================================================
+   SECTION HEADING STRIP
+   ========================================================================== */
+
+.section-strip__title {
+  color: var(--sm-primary);
+  margin: 0;
+  font-size: 44px;
+}
+
+.title-line {
+  width: 70px;
+  height: 3px;
+  background: var(--sm-primary);
+  margin: 18px 0;
+  border-radius: 50px;
+}
+
+.inner-container{
+    padding: 30px 0;
+}
+
+/* ==========================================================================
+   INTRO / SECTION TITLES
+   ========================================================================== */
+
+.abp-intro__tag {
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--sm-primary);
+  margin-bottom: 8px;
+}
+
+.abp-intro__body {
+  line-height: 1.85;
+}
+
+.abp-nano-callout {
+  margin: 28px 0;
+  display: inline-block;
+  background: var(--sm-plum);
+  border-left: 4px solid var(--sm-primary);
+  padding: 16px 24px;
+  border-radius: 0 var(--sm-radius) var(--sm-radius) 0;
+  font-size: 1.1rem;
+  color: var(--sm-white);
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   TECHNICAL REASONS BLOCK (dfu-treatment-*-x91)
+   ========================================================================== */
+.dfu-treatment-heading-x91 {
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.dfu-treatment-wrap-x91{
+    background-color: var(--sm-plum-light);
+}
+
+.dfu-treatment-para-x91 {
+  line-height: 1.85;
+}
+
+.dfu-treatment-highlight-x91 {
+  background: var(--sm-plum);
+  border-left: var(--sm-primary);
+  padding: 16px 24px;
+  border-radius: var(--sm-radius);
+  color: var(--sm-white);
+}
+
+/* ==========================================================================
+   DFU CAUSES SECTION
+   ========================================================================== */
+.main-title {
+  border-radius: 12px;
+  font-size: clamp(1.2rem, 1.2vw + 1rem, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.sub-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 30px;
+  background: var(--sm-plum);
+  padding: 14px clamp(18px, 2.5vw, 35px);
+  border-radius: 10px;
+  font-size: clamp(1rem, 1vw + .85rem, 1.35rem);
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-bottom: 40px;
+}
+
+.concept-card {
+  background: var(--sm-soft);
+  border: 1px solid var(--sm-line);
+  padding: clamp(20px, 2vw, 28px);
+  border-radius: 25px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.concept-card h3 {
+  text-align: center;
+  font-size: clamp(1.2rem, .6vw + 1.05rem, 1.6rem);
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+
+.concept-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.orange-title {
+  width: fit-content;
+  max-width: 100%;
+  margin: auto;
+  background: var(--sm-plum);
+  padding: 14px clamp(18px, 2.5vw, 35px);
+  border-radius: 10px;
+  font-size: clamp(1.1rem, 1vw + .95rem, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.highlight-box {
+  background: var(--sm-soft);
+  border: 1px solid var(--sm-line);
+  padding: clamp(20px, 2vw, 28px);
+  border-radius: 10px;
+}
+
+.highlight-box h3 {
+  color: #111a5c;
+  text-align: center;
+  font-size: clamp(1.25rem, .6vw + 1.1rem, 1.8rem);
+  margin-bottom: 15px;
+}
+
+.highlight-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #111a5c;
+  text-align: justify;
+}
+/* Srgical Media */
+/*==============================
+    Product Videos
+==============================*/
+
+.sm-media-card{
+    background:var(--sm-white);
+    border:1px solid var(--sm-line);
+    border-radius:var(--sm-radius);
+    padding:1.5rem;
+    box-shadow:var(--sm-shadow);
+    transition:var(--sm-transition);
+}
+
+.sm-media-card:hover{
+    transform:translateY(-6px);
+}
+
+.sm-media-title{
+    font-size:1.35rem;
+    color:var(--sm-primary);
+    margin-bottom:1.25rem;
+    line-height:1.4;
+    min-height:3.5rem;
+}
+
+.sm-video-wrapper{
+    position:relative;
+    width:100%;
+    aspect-ratio:16 / 9;
+    overflow:hidden;
+    border-radius:12px;
+    background:#000;
+}
+
+.sm-video-wrapper video{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/*==============================
+    Laptop
+==============================*/
+
+@media (max-width:1200px){
+
+.sm-media-title{
+    font-size:1.2rem;
+}
+
+}
+
+/*==============================
+    Tablet
+==============================*/
+
+@media (max-width:992px){
+
+.sm-media-grid{
+    grid-template-columns:1fr;
+}
+
+.sm-media-card{
+    padding:1.25rem;
+}
+
+}
+
+/*==============================
+    Mobile
+==============================*/
+
+@media (max-width:768px){
+
+.sm-media-section{
+    padding:4rem 0;
+}
+
+.sm-media-title{
+    font-size:1.1rem;
+    min-height:auto;
+}
+
+.sm-media-card{
+    padding:1rem;
+}
+
+}
+
+/*==============================
+    Small Mobile
+==============================*/
+
+@media (max-width:480px){
+
+.sm-media-section{
+    padding:3rem 0;
+}
+
+.sm-media-title{
+    font-size:1rem;
+}
+
+.sm-media-card{
+    border-radius:12px;
+}
+
+.sm-video-wrapper{
+    border-radius:10px;
+}
+
+}
+/* ==========================================================================
+   PHOTO TIMELINE CARDS
+   .abp-cards-grid and .abp-cards__grid are both used in the markup;
+   they share identical grid behavior.
+   ========================================================================== */
+.abp-cards-grid,
+.abp-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+.abp-card__title{
+font-size: 16px;
+font-weight: 500;
+}
+.abp-card {
+  background: var(--sm-plum-light);
+  padding: 12px;
+  border: 1px solid var(--sm-plum);
+  border-radius: var(--sm-radius);
+  overflow: hidden;
+  box-shadow: var(--sm-shadow);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.abp-card:hover {
+  transform: translateY(-10px);
+}
+
+.abp-card__img {
+  width: 100%;
+  border-radius: var(--sm-radius);
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.abp-card__body {
+  padding: 14px 0 0 0 ;
+  text-align: center;
+}
+
+/* ==========================================================================
+   CASE STUDY VIDEO
+   ========================================================================== */
+.case-study {
+  width: 100%;
+  margin: 30px 0 0 0;
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.case_video {
+  width: 100%;
+}
+
+.case-study h2.mv-case {
+  font-size: clamp(1.05rem, .3vw + .95rem, 1.3rem);
+  color: var(--navy-brand);
+  margin-bottom: 15px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 45%;
+  height: 0;
+  overflow: hidden;
+  border: 4px solid var(--sm-ink);
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   NANO MECHANISM STEPS
+   ========================================================================== */
+.abp-nano {
+  background: var(--lavender-light);
+}
+
+.abp-nano__steps {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 24px) 0;
+  position: relative;
+}
+
+.abp-nano__steps::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 12.5%;
+  width: 75%;
+  height: 2px;
+  background: var(--sm-plum);
+  z-index: 0;
+}
+
+.abp-nano__step {
+  text-align: center;
+  padding: 0 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.abp-nano__dot {
+  width: clamp(60px, 5vw, 80px);
+  height: clamp(60px, 5vw, 80px);
+  border-radius: 50%;
+  background: var(--sm-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-size: clamp(1.3rem, .4vw + 1.15rem, 1.65rem);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(107, 45, 92, .25);
+}
+
+.abp-nano__step h4 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--sm-primary);
+  margin-bottom: 8px;
+}
+
+.abp-nano__step p {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   TREATMENT OPTIONS (dark video band)
+   ========================================================================== */
+.so-video-section {
+  background: var(--sm-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.so-video-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.so-section-inner {
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.so-video-inner {
+  width: 100%;
+  margin-inline: auto;
+  
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.so-video-text {
+  text-align: left;
+}
+
+.so-section-eyebrow {
+  display: inline-block;
+  color: var(--sm-white);
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.so-section-title {
+  font-weight: 800;
+  color: var(--sm-white);
+}
+
+.so-divider-bar {
+  width: 64px;
+  height: 4px;
+  margin: 16px 0 22px;
+  border-radius: 4px;
+  background: var(--lavender-accent);
+}
+
+.so-video-text p {
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.85;
+}
+
+.so-dfu-treatment-subtitle {
+  font-size: clamp(1rem, .4vw + .9rem, 1.35rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.so-dfu-treatment-list {
+  padding-left: 28px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.so-dfu-treatment-item {
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.so-dfu-treatment-highlight {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid var(--lavender-accent);
+  padding: 16px 24px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--white);
+  line-height: 1.7;
+}
+
+.so-dfu-treatment-highlight strong {
+  color: var(--lavender-accent);
+}
+
+.so-case-study,
+.so-case_video {
+  width: 100%;
+}
+
+.so-case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.so-mv-case {
+  color: var(--sm-white);
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.so-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.so-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   CLINICAL DOCUMENTATION VAULT (PDF cards)
+   ========================================================================== */
+.docvault-section {
+  background: var(--sm-plum-light);
+}
+
+/* .docvault-header {
+  margin: 0 auto 56px;
+} */
+
+.docvault-header h1 {
+  font-weight: 700;
+  text-align: left;
+      line-height: 1.25;
+    margin: 0 0 .6em;
+}
+
+.docvault-bar {
+  width: 64px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 4px;
+  background: var(--gradient-bar);
+}
+
+.docvault-subtext {
+      margin: 0 0 1em;
+  color: var(--text-mid);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.docvault-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 20px;
+}
+
+.docvault-card {
+    background: var(--sm-white);
+    border: 1px solid var(--sm-line);
+    border-radius: var(--sm-radius);
+    box-shadow: var(--sm-shadow);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    text-align: center;
+    display: grid;
+    gap: .75rem;
+    justify-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.docvault-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sm-primary);
+  font-size: 2rem;
+}
+
+.docvault-card h3 {
+  color: var(--text-dark);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.docvault-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .8rem 1.6rem;
+    border-radius: var(--sm-radius);
+    border: 1px solid var(--sm-ink);
+    background: var(--sm-primary);
+    color: var(--sm-white);
+    font-weight: 600;
+    text-align: center;
+    transition: background var(--sm-transition), transform var(--sm-transition);
+}
+
+.docvault-btn:hover {
+  background: var(--sm-primary);
+  transform: translateY(-2px);
+  border: 2px solid var(--plum-bright);
+  color: var(--sm-white);
+}
+
+/* ==========================================================================
+   SCROLL REVEAL
+   ========================================================================== */
+.abp-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .65s cubic-bezier(0.16, 1, 0.3, 1), transform .65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.abp-reveal.abp-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   ADVANCED BIOTECH RESPONSIVE SYSTEM — 9-tier breakpoint set
+   ========================================================================== */
+
+/* Mobile (<=479px) */
+@media (max-width:479px) {
+
+  .hero__grid,
+  .concept-grid,
+  .abp-cards__grid,
+  .abp-cards-grid,
+  .docvault-grid,
+  .so-video-inner,
+  .abp-nano__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__grid {
+    text-align: center;
+  }
+
+  .banner__title {
+    font-size: 1.8rem;
+  }
+
+  .abp-card__img {
+    aspect-ratio: 3 / 4;
+  }
+
+  .so-video-container,
+  .video-container {
+    padding-bottom: 56.25%;
+  }
+}
+
+/* Large Mobile (480px - 767px) */
+@media (min-width:480px) and (max-width:767px) {
+  .hero__grid,
+  .concept-grid,
+  .so-video-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .abp-cards__grid,
+  .abp-cards-grid,
+  .docvault-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .abp-nano__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet (768px - 991px) */
+@media (min-width:768px) and (max-width:991px) {
+ 
+
+  .hero__grid,
+  .so-video-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .concept-grid,
+  .abp-cards__grid,
+  .abp-cards-grid,
+  .docvault-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .abp-nano__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Laptop (992px - 1199px) */
+@media (min-width:992px) and (max-width:1199px) {
+
+  .abp-cards__grid,
+  .abp-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .docvault-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Full HD (1920px - 2559px) */
+@media (min-width:1920px) and (max-width:2559px) {
+
+  .abp-card__img {
+    max-height: 520px;
+  }
+}
+
+/* 2K (2560px - 3839px) */
+@media (min-width:2560px) and (max-width:3839px) {
+
+  .banner {
+    min-height: 700px;
+  }
+
+  .abp-card__img {
+    max-height: 650px;
+  }
+}

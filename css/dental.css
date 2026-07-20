@@ -1,0 +1,709 @@
+
+  
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+:root {
+  --sm-primary: #762c69;
+  --sm-plum: #9b3a83;
+  --sm-plum-light: #fff2fc;
+  --sm-ink: #000;
+  /* --sm-ink: #655f67; */
+  --sm-soft: #fff1fc;
+  --sm-line: #e7dce5;
+  --sm-white: #fff;
+  --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
+  --sm-radius: 14px;
+  --sm-container: min(1240px, calc(100% - 40px));
+  --sm-transition: 250ms ease;
+  --page-pad: max(20px, calc((100vw - 1240px) / 2));
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+}
+
+h1, h2, h3, h4 {
+  color: var(--sm-ink);
+  line-height: 1.25;
+  margin: 0 0 .6em;
+}
+
+section {
+  padding: 0 var(--page-pad);
+}
+
+.gr-container {
+  max-width: var(--sm-container);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.brochure-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1.6rem;
+  border-radius: var(--sm-radius);
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-weight: 600;
+  text-align: center;
+  transition: background var(--sm-transition), transform var(--sm-transition);
+  text-decoration: none;
+}
+
+.brochure-btn:hover,
+.brochure-btn:focus-visible {
+  background: var(--sm-plum);
+}
+
+.brochure-btn:focus-visible {
+  outline: 2px solid var(--sm-plum);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   PAGE BANNER
+   ========================================================================== */
+.banner {
+  margin-top: 85px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(160px, 28vw, 280px);
+  overflow: hidden;
+}
+
+.sm-hero-art,
+.sm-hero-art::before {
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.sm-hero-art {
+  background: radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
+}
+
+.sm-hero-art::before {
+  content: "";
+  opacity: .35;
+  background: repeating-linear-gradient(45deg, transparent 0 70px, color-mix(in srgb, var(--sm-white) 12%, transparent) 71px 72px);
+}
+
+.sm-hero-art span {
+  position: absolute;
+  width: 32vw;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--sm-white) 12%, transparent);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.sm-hero-art span:nth-child(1) {
+  right: 4%;
+  top: -15%;
+}
+
+.sm-hero-art span:nth-child(2) {
+  left: -10%;
+  bottom: -40%;
+  width: 48vw;
+}
+
+.banner__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 10%;
+}
+
+.banner__title {
+  position: relative;
+  color: var(--sm-white);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-align: center;
+  padding-inline: 1rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  background-color: var(--sm-plum-light);
+}
+
+.hero__heading {
+  font-size: clamp(2rem, 1.4vw + 1.6rem, 3rem);
+  font-weight: bold;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 0;
+}
+
+.hero__sub {
+  font-weight: 600;
+  color: var(--sm-primary);
+}
+
+.hero__lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.hero__image img {
+  margin-inline: auto;
+  width: 80%;
+}
+
+/* ==========================================================================
+   SECTION HEADING STRIP
+   ========================================================================== */
+.section-strip__title {
+  color: var(--sm-primary);
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: bold;
+  text-align: left;
+}
+
+.title-line {
+  width: 70px;
+  height: 3px;
+  background: var(--sm-primary);
+  margin: 18px 0;
+  border-radius: 50px;
+}
+
+.inner-container {
+  padding: 30px 0;
+}
+
+/* ===== PROCEDURE TIMELINE ===== */
+.gr-timeline {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 2.4rem;
+}
+
+.gr-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  width: 2px;
+  background: var(--sm-line);
+}
+
+.gr-tl-item {
+  position: relative;
+  padding-bottom: 2.6rem;
+}
+
+.gr-tl-item:last-child {
+  padding-bottom: 0;
+}
+
+.gr-tl-item::before {
+  content: "";
+  position: absolute;
+  left: -2.4rem;
+  top: 0.25rem;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--sm-primary);
+  border: 3px solid var(--sm-white);
+  box-shadow: 0 0 0 2px var(--sm-plum-light);
+}
+
+/* Highlighted step — the Surgicoll-Mesh application step */
+/* .gr-tl-item.is-flagged {
+  
+  border: 1px solid var(--sm-line);
+  box-shadow: var(--sm-shadow);
+  border-radius: var(--sm-radius);
+  padding: 1.2rem 1.4rem 2.2rem;
+  margin-left: -1.4rem;
+} */
+
+/* .gr-tl-item.is-flagged::before {
+  left: -1rem;
+} */
+
+.gr-tl-tag {
+  font-size: 1.5rem;
+  color: var(--sm-plum);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.gr-tl-item h4 {
+  font-size: 1.5rem;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.gr-tl-item p {
+  
+  color: var(--sm-ink);
+  margin-bottom: 1rem;
+}
+
+.gr-tl-imgs
+ {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 1rem;
+}
+
+.gr-tl-imgs figure {
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.gr-tl-imgs img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  width:100%;
+    max-width:650px;         /* Adjust as needed */
+    height:auto;
+    display:block;
+    border-radius:12px;
+}
+
+
+.gr-tl-imgs figcaption {
+  font-size: 1.5rem;
+  color: var(--sm-ink);
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+.gr-mesh-flag {
+  display: inline-block;
+  margin-top: 0.6rem;
+  background: var(--sm-plum-light);
+  color: var(--sm-primary);
+  font-size: 1.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--sm-line);
+}
+.last-images{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.last-images figure{
+    margin: 0;
+    text-align: center;
+}
+
+.last-images figure img{
+    display: block;
+    width: 100%;
+    max-width: 650px; /* Adjust as needed */
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.last-images figure figcaption{
+    margin-top: 12px;
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+}
+/* ===== GENERIC SECTION ===== */
+.gr-section {
+  padding: clamp(2.8rem, 6vw, 5rem) 0;
+}
+
+/* .gr-section-alt {
+  background: linear-gradient(180deg, var(--sm-plum-light), var(--sm-white));
+} */
+
+.gr-section-head {
+  text-align: center;
+  margin: 0 auto clamp(2.2rem, 4.5vw, 3rem);
+}
+
+.gr-section-head.center {
+  text-align: center;
+}
+
+.gr-section-head h1 {
+  
+  margin: 0.5rem 0 0.7rem;
+}
+
+.gr-section-head p {
+  color: var(--sm-ink);
+  font-size: 0.98rem;
+}
+
+.gr-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 1.4rem;
+  color: #000;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== ABSTRACT ===== */
+.gr-abstract {
+  background: var(--sm-white);
+  border-left: 4px solid var(--sm-primary);
+  border-radius: var(--sm-radius);
+  padding: 1.8rem 2rem;
+  box-shadow: var(--sm-shadow);
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+}
+
+.gr-keywords {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.gr-kw {
+  font-size: 1rem;
+  background: var(--sm-plum-light);
+  color: var(--sm-primary);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* ===== RESULTS BAND ===== */
+.gr-results-band {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: 1.2rem;
+}
+
+.gr-result-tile {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  padding: 1.6rem 1.2rem;
+  text-align: center;
+}
+
+.gr-result-tile .num {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--sm-primary);
+  margin-bottom: 0.4rem;
+}
+
+.gr-result-tile .cap {
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+}
+
+/* ===== CTA / CONCLUSION ===== */
+.gr-cta {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gr-cta h1 {
+  color: var(--sm-primary);
+}
+
+.gr-cta p {
+  color: var(--sm-ink);
+  
+}
+
+/* ─── BEFORE / AFTER CASE STUDIES ──────────────────── */
+.cases-section {
+  background: var(--sm-soft);
+  padding-top: clamp(2.8rem, 6vw, 5rem);
+  padding-bottom: clamp(2.8rem, 6vw, 5rem);
+}
+
+.section-inner {
+  max-width: var(--sm-container);
+  margin: 0 auto;
+}
+
+.cases-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--sm-plum);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  color: var(--sm-primary);
+  font-size: clamp(24px, 3.4vw, 36px);
+}
+
+.section-desc {
+  color: var(--sm-ink);
+  
+  text-align: justify;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: 30px;
+}
+
+.case-card {
+  background: var(--sm-white);
+  border-radius: var(--sm-radius);
+  overflow: hidden;
+  box-shadow: var(--sm-shadow);
+  border: 1px solid var(--sm-line);
+}
+
+.case-img-pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.case-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.case-img-wrap img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.case-body {
+  padding: 20px;
+}
+
+.case-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sm-ink);
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.case-num h2 {
+  padding: 30px 0;
+  max-width: 900px;
+  color: #000;
+}
+
+/* ─── SCROLL ANIMATIONS ─────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ================= CASE STUDIES VIDEO ================= */
+.case-study {
+  width: 90%;
+  margin: 60px auto;
+}
+
+.case-study-grid {
+  display: block;
+}
+
+.case_video {
+  width: 100%;
+}
+
+.case-study h2.mv-case {
+  font-size: 20px;
+  color: var(--sm-ink);
+  margin-bottom: 15px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+/* Aspect-ratio responsive container wrapper for Google Drive IFrames */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%;
+  /* 4:3 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border: 4px solid var(--sm-primary);
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  .hero__image {
+    order: -1;
+  }
+
+  .hero__image img {
+    width: 60%;
+  }
+}
+
+@media (max-width: 640px) {
+  .banner {
+    margin-top: 70px;
+  }
+
+  .hero__image img {
+    width: 75%;
+  }
+
+  .gr-tl-item.is-flagged {
+    margin-left: 0;
+    padding: 1rem 1rem 1.8rem;
+  }
+
+  .gr-timeline {
+    padding-left: 2rem;
+  }
+
+  .gr-tl-item::before {
+    left: -2rem;
+  }
+
+  .case-img-wrap img {
+    height: 200px;
+  }
+
+  .cases-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .video-container {
+    border-width: 2px;
+  }
+
+  .gr-abstract {
+    padding: 1.4rem 1.2rem;
+  }
+}
+

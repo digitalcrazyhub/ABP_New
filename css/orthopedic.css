@@ -1,0 +1,600 @@
+
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   DESIGN TOKENS
+   Single source of truth — every value used below resolves to one of
+   these tokens (or a plain literal), nothing else is declared.
+   ========================================================================== */
+:root {
+  --sm-primary: #762c69;
+  --sm-plum: #9b3a83;
+  --sm-plum-light: #fff2fc;
+  --sm-ink: #1b1720;
+  --sm-text: #655f67;
+  --sm-soft: #fff1fc;
+  --sm-line: #e7dce5;
+  --sm-white: #fff;
+  --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
+  --sm-radius: 14px;
+  --sm-container: min(1240px, calc(100% - 40px));
+  --sm-transition: 250ms ease;
+
+  /* Shared page padding — every section aligns to this */
+  --page-pad: max(20px, calc((100vw - 1240px) / 2));
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+  text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--sm-ink);
+  line-height: 1.25;
+  margin: 0 0 .6em;
+}
+
+/* All top-level sections share the same horizontal page padding.
+   Section-specific rules below only ever add vertical padding so this
+   never gets overridden by a more specific selector. */
+section {
+  padding: 0 var(--page-pad);
+}
+
+.container {
+  max-width: var(--sm-container);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.brochure-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1.6rem;
+  border-radius: var(--sm-radius);
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-weight: 600;
+  text-align: center;
+  transition: background var(--sm-transition), transform var(--sm-transition);
+  text-decoration: none;
+}
+
+.brochure-btn:hover,
+.brochure-btn:focus-visible {
+  background: var(--sm-plum);
+}
+
+.brochure-btn:focus-visible {
+  outline: 2px solid var(--sm-plum);
+  outline-offset: 3px;
+}
+/* ==========================================================================
+   PAGE BANNER
+   ========================================================================== */
+.banner {
+  margin-top: 85px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(160px, 28vw, 280px);
+  overflow: hidden;
+}
+
+.sm-hero-art,
+.sm-hero-art::before {
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.sm-hero-art {
+  background: radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);}
+
+.sm-hero-art::before {
+  content: "";
+  opacity: .35;
+  background: repeating-linear-gradient(45deg, transparent 0 70px, color-mix(in srgb, var(--sm-white) 12%, transparent) 71px 72px);
+}
+
+.sm-hero-art span {
+  position: absolute;
+  width: 32vw;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--sm-white) 12%, transparent);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.sm-hero-art span:nth-child(1) {
+  right: 4%;
+  top: -15%;
+}
+
+.sm-hero-art span:nth-child(2) {
+  left: -10%;
+  bottom: -40%;
+  width: 48vw;
+}
+
+.banner__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 10%;
+}
+
+.banner__title {
+  position: relative;
+  color: var(--sm-white);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-align: center;
+  padding-inline: 1rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  background-color: var(--sm-plum-light);
+}
+
+.hero__heading {
+  font-size: clamp(2rem, 1.4vw + 1.6rem, 3rem);
+  font-weight: bold;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 0;
+}
+
+.hero__sub {
+  font-weight: 600;
+  color: var(--sm-primary);
+}
+
+.hero__lead {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.hero__image img {
+  margin-inline: auto;
+  width: 80%;
+}
+/* ==========================================================================
+   SECTION HEADING STRIP
+   ========================================================================== */
+
+.section-strip__title {
+  color: var(--sm-primary);
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: bold;
+}
+
+.title-line {
+  width: 70px;
+  height: 3px;
+  background: var(--sm-primary);
+  margin: 18px 0;
+  border-radius: 50px;
+}
+
+.inner-container{
+    padding: 30px 0;
+}
+
+/* ── Ortho card ──────────────────────────────────────────── */
+.orth-card {
+  background: var(--sm-white);
+  border: 0.5px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  /* box-shadow: var(--sm-shadow); */
+  overflow: hidden;
+}
+
+.orth-card:last-of-type {
+  margin-bottom: 0;
+}
+
+/*============== Top Grid ==============*/
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.content-box p {
+  margin-bottom: 20px;
+  line-height: 1.9;
+  color: var(--sm-text);
+}
+
+/*============== Flowchart / diagram box ==============*/
+
+.visual-box {
+  background: var(--sm-soft);
+  border: 0.5px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.visual-box svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+.visual-box figcaption {
+  font-size: 11px;
+  color: var(--sm-ink);
+  margin-top: .5rem;
+  font-style: italic;
+}
+
+/*============== Steps ==============*/
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: .85rem 0;
+}
+
+.step {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--sm-plum-light);
+  border: 0.5px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: .6rem .9rem;
+  font-size: 15px;
+  color: var(--sm-ink);
+}
+
+.step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/*============== Highlight ==============*/
+
+.highlight {
+  background: var(--sm-soft);
+  border-left: 3px solid var(--sm-primary);
+  border-radius: 0 var(--sm-radius) var(--sm-radius) 0;
+  padding: .8rem 1rem;
+  margin: .85rem 0 0;
+  font-size: 1rem;
+  color: var(--sm-primary);
+  line-height: 1.65;
+}
+
+/*============== Image ==============*/
+
+.ortho-img img {
+  width: 100%;
+  display: block;
+  border-radius: var(--sm-radius);
+}
+
+.orth-card p {
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+  line-height: 1.75;
+}
+
+/* ── Gallery section title ──────────────────────────────── */
+.gallery-title {
+  color: var(--sm-primary);
+  text-align: center;
+  font-size: clamp(20px, 3.2vw, 32px);
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+/* ── Healing stages ──────────────────────────────────────── */
+.stages {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+  margin: 1rem 0 .5rem;
+}
+
+.stage {
+  background: var(--sm-white);
+  border: 0.5px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: .85rem .75rem;
+  text-align: center;
+}
+
+.stage img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 615 / 459;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.stage-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--sm-ink);
+  line-height: 1.45;
+}
+
+.stage.healed .stage-label {
+  color: var(--sm-primary);
+}
+
+
+/* ── References ──────────────────────────────────────────── */
+.ref-card {
+  background: var(--sm-white);
+  border: 0.5px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  padding: 1.5rem;
+  /* box-shadow: var(--sm-shadow); */
+}
+
+.ref-list {
+  list-style: none;
+}
+
+.ref-list li {
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+  padding: .5rem 0;
+  border-bottom: 0.5px solid var(--sm-line);
+  line-height: 1.65;
+}
+
+.ref-list li:last-child {
+  border-bottom: none;
+}
+
+.ref-num {
+  color: var(--sm-plum);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* ── Knee gallery ────────────────────────────────────────── */
+.knee-gallery{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:30px;
+    margin:50px 0;
+    align-items:start;
+}
+
+.gallery-right{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery-card{
+    margin:0;
+    background:#fff;
+    border:1px solid #e6dce8;
+    border-radius:16px;
+    overflow:hidden;
+    /* box-shadow:0 8px 25px rgba(0,0,0,.08); */
+    transition:.3s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-5px);
+    /* box-shadow:0 15px 35px rgba(0,0,0,.12); */
+}
+
+.gallery-card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:contain;
+    background:#fff;
+    padding:15px;
+    display:block;
+}
+
+.gallery-card figcaption{
+    padding:15px;
+    text-align:center;
+    font-size:15px;
+    line-height:1.6;
+    color:#444;
+    border-top:1px solid #eee;
+    background:#fafafa;
+}
+
+.gallery-description{
+    grid-column:1 / -1;   /* Span all columns */
+}
+
+.gallery-description p{
+    margin:0;
+    padding:18px 20px;
+    background:#f8f8f8;
+    border-left:4px solid var(--sm-primary);
+    border-radius:10px;
+    text-align:justify;
+    line-height:1.8;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   Horizontal page padding (--page-pad) never changes; only layout,
+   type scale and image sizing adapt per breakpoint. Each property is set
+   in exactly one breakpoint block to avoid conflicting overrides.
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .knee-gallery {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 36px 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 32px 0;
+  }
+
+  .hero__image {
+    order: -1;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .two-col .visual-box {
+    order: -1;
+  }
+
+  .orth-card {
+    padding: 1.25rem;
+  }
+
+  .gallery-right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    margin-top: 70px;
+  }
+
+  .stages {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .ref-card {
+    padding: 1.25rem;
+  }
+
+  .step {
+    gap: 8px;
+    padding: .6rem .8rem;
+  }
+
+  .content-box p {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .step {
+    flex-direction: column;
+  }
+
+  .step-num {
+    margin-bottom: 6px;
+  }
+
+  .gallery-right {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner__title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .hero__lead {
+    font-size: 1rem;
+  }
+
+  .orth-card p {
+    font-size: 1rem;
+  }
+
+  .stages {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    font-size: 14px;
+  }
+
+  .ref-list li {
+    font-size: 14px;
+  }
+}
+
