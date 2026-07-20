@@ -34,7 +34,7 @@ a {
   --sm-primary: #762c69;
   --sm-plum: #9b3a83;
   --sm-plum-light: #fff2fc;
-  --sm-ink: #1b1720;
+  --sm-ink: #000;
   --sm-text: #655f67;
   --sm-soft: #fff1fc;
   --sm-line: #e7dce5;
@@ -49,7 +49,7 @@ a {
 
   /* Aliases used elsewhere (e.g. inline styles in the markup) */
   --purple-brand: var(--sm-primary);
-  --text-light: var(--sm-text);
+  --text-light: var(--sm-ink);
   --lavender-accent: var(--sm-plum-light);
 }
 
@@ -352,7 +352,7 @@ font-size: 28px;
 
 .smtr-hero-description{
     margin:0;
-    color:var(--sm-text);
+    color:var(--sm-ink);
     line-height:1.9;
     font-size:1.05rem;
 }
@@ -514,8 +514,8 @@ font-size: 28px;
 }
 
 .so-section-desc {
-  font-size: 15px;
-  color: var(--sm-text);
+
+  color: var(--sm-ink);
 }
 
 .so-divider-bar {
@@ -530,17 +530,16 @@ font-size: 28px;
   background: var(--sm-white);
   padding-top: 30px;
   padding-bottom: 30px;
-  color: var(--sm-text);
+  color: var(--sm-ink);
 }
 
 .so-section-label {
   display: inline-block;
   color: var(--sm-primary);
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 15px;
-  font-size: 22px;
+ 
 }
 
 .so-intro-title {
@@ -552,8 +551,8 @@ font-size: 28px;
 
 .so-body-text {
   line-height: 1.7;
-  font-size: 1.1rem;
-  color: var(--sm-text);
+
+  color: var(--sm-ink);
   margin-bottom: 20px;
 }
 
@@ -585,7 +584,7 @@ font-size: 28px;
   color: var(--sm-primary);
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.88rem;
+  font-size: 1.2rem;
   font-weight: 500;
   box-shadow: 0 4px 12px rgba(63, 23, 55, .08);
 }
@@ -607,7 +606,7 @@ font-size: 28px;
 }
 
 .so-highlight-box p {
-  font-size: 0.97rem;
+ 
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 12px;
 }
@@ -623,7 +622,7 @@ font-size: 28px;
 /* 4-Image Horizontal Grid Layout */
 .so-image-grid-horizontal {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin: 40px 0;
 }
@@ -795,7 +794,7 @@ font-size: 28px;
   border: 1.5px solid var(--sm-line);
   border-radius: 30px;
   background: var(--sm-white);
-  color: var(--sm-text);
+  color: var(--sm-ink);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -831,7 +830,7 @@ font-size: 28px;
   align-items: flex-start;
   gap: 20px;
   padding: 28px 36px;
-  background: linear-gradient(135deg, var(--sm-plum-light), var(--sm-soft));
+ 
   border-bottom: 1px solid var(--sm-line);
 }
 
@@ -844,7 +843,7 @@ font-size: 28px;
 
 .so-study-header-text p {
   color: #9a93a0;
-  font-size: 12.5px;
+
 }
 
 .so-study-body {
@@ -864,7 +863,7 @@ font-size: 28px;
 }
 
 .so-study-text {
-  color: var(--sm-text);
+  color: var(--sm-ink);
   
   line-height: 1.75;
 }
@@ -923,7 +922,7 @@ font-size: 28px;
 .so-results-table td {
   padding: 11px 14px;
   border-bottom: 1px solid var(--sm-line);
-  color: var(--sm-text);
+  color: var(--sm-ink);
 }
 
 .so-results-table tr:nth-child(even) td {
@@ -979,7 +978,7 @@ font-size: 28px;
 }
 
 .so-comparison-metric span:first-child {
-  color: var(--sm-text);
+  color: var(--sm-ink);
   font-size: 16px;
 }
 
@@ -1059,8 +1058,7 @@ font-size: 28px;
 
 .so-section-header p {
   font-size: 1.1rem;
-  color: var(--sm-text);
-  max-width: 580px;
+  color: var(--sm-ink);
   line-height: 1.75;
 }
 
@@ -1203,7 +1201,7 @@ font-size: 28px;
 }
 
 .so-data-box h4 {
-  font-size: 1.15rem;
+
   font-weight: 700;
   color: var(--sm-primary);
   margin-bottom: 12px;
@@ -1223,8 +1221,8 @@ font-size: 28px;
 }
 
 .so-data-box p {
-  font-size: 13.5px;
-  color: var(--sm-text);
+
+  color: var(--sm-ink);
   line-height: 1.7;
 }
 
@@ -1271,9 +1269,9 @@ font-size: 28px;
 }
 
 .so-bcr-content p {
-  font-size: 17px;
+  
   line-height: 1.9;
-  color: #5d6673;
+  color: #000;
   margin-bottom: 35px;
 }
 
@@ -1296,13 +1294,13 @@ font-size: 28px;
 }
 
 .so-bcr-card h4 {
-  font-size: 18px;
+  
   color: var(--sm-primary);
   margin-bottom: 10px;
 }
 
 .so-bcr-card p {
-  font-size: 14px;
+ 
   margin: 0;
   line-height: 1.7;
 }
@@ -1449,9 +1447,8 @@ font-size: 28px;
 .so-process-summary p {
   margin: 0 auto;
   text-align: justify;
-  color: var(--sm-text);
+  color: var(--sm-ink);
   line-height: 1.8;
-  font-size: 16px;
 }
 
 .so-process-summary strong {
@@ -1469,7 +1466,7 @@ font-size: 28px;
 
 .so-docvault-header h2 {
   font-weight: 700;
-  text-align: center;
+ 
   line-height: 1.25;
   margin: 0 0 .6em;
 }
@@ -1477,18 +1474,14 @@ font-size: 28px;
 .so-docvault-bar {
   width: 64px;
   height: 4px;
-  margin: 14px auto 0;
   border-radius: 4px;
   background: linear-gradient(90deg, var(--sm-primary), var(--sm-plum));
 }
 
 .so-docvault-subtext {
   margin: 0 auto 1em;
-  max-width: 580px;
-  color: var(--sm-text);
-  font-size: 1.1rem;
+  color: var(--sm-ink);
   line-height: 1.6;
-  text-align: center;
 }
 
 .so-docvault-grid {
@@ -1542,11 +1535,12 @@ font-size: 28px;
   padding: .8rem 1.6rem;
   border-radius: var(--sm-radius);
   border: 1px solid var(--sm-primary);
-  color: var(--sm-primary);
+  color: var(--sm-white);
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   transition: background var(--sm-transition), transform var(--sm-transition);
+  background-color: var(--sm-primary);
 }
 
 .so-docvault-btn:hover {
@@ -1686,7 +1680,7 @@ font-size: 28px;
   }
 .so-study-text
  { font-size: 1rem;
-    color: var(--sm-text);
+    color: var(--sm-ink);
     line-height: 1.75;
     padding: 10px;
 }
