@@ -179,40 +179,161 @@ section {
 }
 
 
-/* ==========================================================================
-   HERO
-   ========================================================================== */
-.hero {
-  background-color: var(--sm-plum-light);
+/*=========================================
+    Soft Tissue Reinforcement Hero
+=========================================*/
+
+.smtr-hero-section{
+    padding:4rem 0;
+    background:var(--sm-plum-light);
 }
 
-.hero__heading {
-  font-size: clamp(2rem, 1.4vw + 1.6rem, 3rem);
-  font-weight: bold;
+.smtr-hero-wrapper{
+    width:var(--sm-container);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:4rem;
 }
 
-.hero__grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  align-items: center;
-  gap: 24px;
-  padding: 40px 0;
+.smtr-hero-content{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
 }
 
-.hero__sub {
-  font-weight: 600;
-  color: var(--sm-primary);
+.smtr-hero-title{
+    margin:0;
+    color:var(--sm-ink);
+    font-size:clamp(2rem,5vw,4rem);
+    line-height:1.1;
 }
 
-.hero__lead {
-  font-size: 1.1rem;
-  line-height: 1.8;
+.smtr-hero-subtitle{
+    margin:0;
+    color:var(--sm-primary);
+    font-size:clamp(1.3rem,2vw,2rem);
+    font-weight:700;
 }
 
-.hero__image img {
-  margin-inline: auto;
-  width: 80%;
+.smtr-hero-description{
+    margin:0;
+    color:var(--sm-ink);
+    line-height:1.9;
+    font-size:1.05rem;
 }
+
+.smtr-hero-actions{
+    margin-top:.5rem;
+}
+
+.smtr-primary-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.75rem;
+    padding:1rem 2rem;
+    background:var(--sm-primary);
+    color:var(--sm-white);
+    text-decoration:none;
+    border-radius:50px;
+    transition:var(--sm-transition);
+}
+
+.smtr-primary-btn:hover{
+    background:var(--sm-deep);
+}
+
+.smtr-hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.smtr-hero-image img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    display:block;
+}
+
+/*=========================================
+    Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.smtr-hero-wrapper{
+    grid-template-columns:1fr;
+    gap:3rem;
+}
+
+.smtr-hero-content{
+    order:1;
+    text-align:left;
+}
+
+.smtr-hero-actions{
+    display:flex;
+    justify-content:center;
+}
+
+.smtr-hero-image{
+    order:2;
+}
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
+}
+
+/*=========================================
+    Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+.smtr-hero-section{
+    padding:3rem 0;
+}
+
+.smtr-hero-wrapper{
+    gap:2rem;
+}
+
+.smtr-primary-btn{
+    width:100%;
+    justify-content:center;
+}
+
+.smtr-hero-description{
+    font-size:1rem;
+}
+
+.smtr-hero-image img{
+    max-width:260px;
+}
+
+}
+
+/*=========================================
+    Large Desktop
+=========================================*/
+
+@media (min-width:1600px){
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
+.smtr-hero-description{
+    font-size:1.15rem;
+}
+
+}
+
 /* ==========================================================================
    SECTION HEADING STRIP
    ========================================================================== */
