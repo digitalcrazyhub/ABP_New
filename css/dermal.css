@@ -885,7 +885,7 @@ font-weight: 500;
    TREATMENT OPTIONS (dark video band)
    ========================================================================== */
 .so-video-section {
-  background: var(--sm-primary);
+  background: var(--sm-plum-light);
   position: relative;
   overflow: hidden;
 }
@@ -917,18 +917,9 @@ font-weight: 500;
   text-align: left;
 }
 
-.so-section-eyebrow {
-  display: inline-block;
-  color: var(--sm-white);
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
 .so-section-title {
   font-weight: 800;
-  color: var(--sm-white);
+  color: var(--sm-ink);
 }
 
 .so-divider-bar {
@@ -940,7 +931,7 @@ font-weight: 500;
 }
 
 .so-video-text p {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--sm-ink);
   line-height: 1.85;
 }
 
@@ -961,13 +952,12 @@ font-weight: 500;
 
 .so-dfu-treatment-item {
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
+   color: var(--sm-ink);
 }
 
 .so-dfu-treatment-highlight {
   background: rgba(255, 255, 255, 0.08);
   border-left: 4px solid var(--lavender-accent);
-  padding: 16px 24px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   color: var(--white);
   line-height: 1.7;
