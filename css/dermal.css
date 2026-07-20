@@ -885,7 +885,11 @@ font-weight: 500;
    TREATMENT OPTIONS (dark video band)
    ========================================================================== */
 .so-video-section {
+<<<<<<< HEAD
+  background: var(--sm-plum-light);
+=======
   background: var(--sm-primary);
+>>>>>>> cc47a937e9e3e1c52e38e2351a3b074f550a8398
   position: relative;
   overflow: hidden;
 }
@@ -917,6 +921,11 @@ font-weight: 500;
   text-align: left;
 }
 
+<<<<<<< HEAD
+.so-section-title {
+  font-weight: 800;
+  color: var(--sm-ink);
+=======
 .so-section-eyebrow {
   display: inline-block;
   color: var(--sm-white);
@@ -929,6 +938,7 @@ font-weight: 500;
 .so-section-title {
   font-weight: 800;
   color: var(--sm-white);
+>>>>>>> cc47a937e9e3e1c52e38e2351a3b074f550a8398
 }
 
 .so-divider-bar {
@@ -940,7 +950,11 @@ font-weight: 500;
 }
 
 .so-video-text p {
+<<<<<<< HEAD
+  color: var(--sm-ink);
+=======
   color: rgba(255, 255, 255, 0.82);
+>>>>>>> cc47a937e9e3e1c52e38e2351a3b074f550a8398
   line-height: 1.85;
 }
 
@@ -961,13 +975,20 @@ font-weight: 500;
 
 .so-dfu-treatment-item {
   line-height: 1.7;
+<<<<<<< HEAD
+   color: var(--sm-ink);
+=======
   color: rgba(255, 255, 255, 0.82);
+>>>>>>> cc47a937e9e3e1c52e38e2351a3b074f550a8398
 }
 
 .so-dfu-treatment-highlight {
   background: rgba(255, 255, 255, 0.08);
   border-left: 4px solid var(--lavender-accent);
+<<<<<<< HEAD
+=======
   padding: 16px 24px;
+>>>>>>> cc47a937e9e3e1c52e38e2351a3b074f550a8398
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   color: var(--white);
   line-height: 1.7;
