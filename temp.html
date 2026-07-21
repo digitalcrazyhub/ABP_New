@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usage of Surgicoll-Mesh® for Application in Orthopedic Surgeries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sm-primary: #762c69;
+    --sm-plum: #9b3a83;
+    --sm-plum-light: #fff2fc;
+    --sm-ink: #000;
+    --sm-soft: #fff1fc;
+    --sm-line: #e7dce5;
+    --sm-white: #fff;
+    --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
+    --sm-radius: 14px;
+    --sm-container: min(1240px, calc(100% - 40px));
+    --sm-transition: 250ms ease;
+    --page-pad: 0 max(20px, calc((100vw - 1240px) / 2));
+    --sm-font-display: "Poppins", sans-serif;
+    --sm-text: #655f67;
+    --sm-gold: #d8a63c;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Inter", sans-serif;
+    color: var(--sm-text);
+    background: var(--sm-white);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: var(--sm-primary); }
+
+  .wrap {
+    width: var(--sm-container);
+    margin-inline: auto;
+  }
+
+  /* ---------- Top strip ---------- */
+  .topstrip {
+    background: var(--sm-primary);
+    color: var(--sm-white);
+    font-size: .82rem;
+    letter-spacing: .02em;
+  }
+  .topstrip .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    padding: 10px 0;
+    justify-content: space-between;
+  }
+  .topstrip a { color: var(--sm-white); text-decoration: none; }
+  .topstrip a:hover { text-decoration: underline; }
+
+  /* ---------- Header / Hero ---------- */
+  header.hero {
+    background:
+      radial-gradient(1100px 480px at 85% -10%, rgba(216,166,60,.18), transparent 60%),
+      linear-gradient(155deg, var(--sm-primary) 0%, var(--sm-plum) 68%, #6b2359 100%);
+    color: var(--sm-white);
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 1px, transparent 1px 64px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0 1px, transparent 1px 64px);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    padding: 64px 0 56px;
+    display: grid;
+    gap: 10px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--sm-font-display);
+    font-weight: 600;
+    font-size: .78rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--sm-gold);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--sm-gold);
+    display: inline-block;
+  }
+  h1.title {
+    font-family: var(--sm-font-display);
+    font-weight: 800;
+    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+    letter-spacing: -0.01em;
+    max-width: 16ch;
+  }
+  h1.title .accent { color: var(--sm-gold); }
+  .hero-sub {
+    font-family: var(--sm-font-display);
+    font-weight: 600;
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    color: rgba(255,255,255,.9);
+    max-width: 46ch;
+  }
+  .hero-meta {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    font-size: .88rem;
+    color: rgba(255,255,255,.82);
+  }
+  .hero-meta strong {
+    display: block;
+    color: var(--sm-white);
+    font-family: var(--sm-font-display);
+    font-weight: 600;
+    font-size: .78rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    color: var(--sm-gold);
+  }
+
+  /* ---------- Section shell ---------- */
+  section { padding: 64px 0; }
+  section.tint { background: var(--sm-soft); }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 34px;
+    border-bottom: 2px solid var(--sm-line);
+    padding-bottom: 16px;
+  }
+  .section-head h2 {
+    font-family: var(--sm-font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    color: var(--sm-primary);
+  }
+
+  /* ---------- About: features + advantages ---------- */
+  .about-lead {
+    font-size: 1.08rem;
+    color: var(--sm-ink);
+    max-width: 78ch;
+    margin-bottom: 28px;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+    margin-bottom: 44px;
+  }
+  .feature-card {
+    background: var(--sm-white);
+    border: 1px solid var(--sm-line);
+    border-radius: var(--sm-radius);
+    box-shadow: var(--sm-shadow);
+    padding: 20px 20px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: transform var(--sm-transition), box-shadow var(--sm-transition);
+  }
+  .feature-card:hover { transform: translateY(-4px); box-shadow: 0 22px 42px rgba(63,23,55,.16); }
+  .feature-num {
+    font-family: var(--sm-font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--sm-white);
+    background: var(--sm-primary);
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .feature-card p { font-size: .93rem; color: var(--sm-text); }
+
+  .subhead {
+    font-family: var(--sm-font-display);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--sm-primary);
+    margin: 0 0 18px;
+  }
+
+  /* Indications box */
+  .indications {
+    background: var(--sm-white);
+    border: 1px solid var(--sm-line);
+    border-radius: var(--sm-radius);
+    box-shadow: var(--sm-shadow);
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+  .ind-row {
+    padding: 16px 24px;
+    font-size: .95rem;
+    color: var(--sm-ink);
+    border-bottom: 1px solid var(--sm-line);
+  }
+  .ind-row:last-child { border-bottom: none; }
+  .ind-row:nth-child(odd) { background: var(--sm-plum-light); }
+  .ind-row strong { color: var(--sm-primary); }
+  .ind-row ul { margin: 0; padding-left: 1.1em; }
+  .ind-row li { margin-bottom: 4px; }
+  .ind-row li:last-child { margin-bottom: 0; }
+
+  /* Advantage list */
+  .advantages {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+  }
+  .advantages li {
+    background: var(--sm-white);
+    border-left: 4px solid var(--sm-gold);
+    border-radius: 0 10px 10px 0;
+    box-shadow: var(--sm-shadow);
+    padding: 14px 20px;
+    font-size: .95rem;
+  }
+  .advantages li strong {
+    display: block;
+    font-family: var(--sm-font-display);
+    color: var(--sm-primary);
+    font-size: .98rem;
+    margin-bottom: 2px;
+  }
+
+  /* ---------- Orthopedic surgeries ---------- */
+  .ortho-block { margin-bottom: 56px; }
+  .ortho-block:last-child { margin-bottom: 0; }
+
+  .osteo-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 22px 0 14px;
+  }
+  .osteo-gallery figure {
+    background: var(--sm-white);
+    border: 1px solid var(--sm-line);
+    border-radius: var(--sm-radius);
+    box-shadow: var(--sm-shadow);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .osteo-gallery img { border-radius: 6px; width: 100%; height: auto; object-fit: contain; }
+
+  .caption-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+  .caption-box {
+    font-family: var(--sm-font-display);
+    font-weight: 600;
+    font-size: .88rem;
+    color: var(--sm-primary);
+    background: var(--sm-plum-light);
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .link-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    font-size: .9rem;
+    margin-top: 6px;
+  }
+  .link-list li strong {
+    color: var(--sm-ink);
+    font-weight: 600;
+  }
+  .link-list a { word-break: break-all; }
+
+  .media-text {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .media-text.reverse .figure-col { order: 2; }
+  .media-text.reverse .text-col { order: 1; }
+  .text-col p { margin-bottom: 14px; font-size: .97rem; }
+  .text-col p:last-child { margin-bottom: 0; }
+  .figure-col {
+    background: var(--sm-white);
+    border: 1px solid var(--sm-line);
+    border-radius: var(--sm-radius);
+    box-shadow: var(--sm-shadow);
+    padding: 14px;
+  }
+  .figure-col img { border-radius: 8px; }
+
+  /* ---------- References ---------- */
+  .refs {
+    list-style: none;
+    counter-reset: ref;
+    display: grid;
+    gap: 14px;
+  }
+  .refs li {
+    counter-increment: ref;
+    position: relative;
+    padding-left: 44px;
+    font-size: .9rem;
+    color: var(--sm-text);
+  }
+  .refs li::before {
+    content: counter(ref);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--sm-primary);
+    color: var(--sm-white);
+    font-family: var(--sm-font-display);
+    font-weight: 700;
+    font-size: .82rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .refs a { word-break: break-all; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--sm-ink);
+    color: rgba(255,255,255,.72);
+  }
+  footer .wrap {
+    padding: 34px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    font-size: .85rem;
+  }
+  footer strong { color: var(--sm-white); font-family: var(--sm-font-display); }
+  footer a { color: var(--sm-gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 880px) {
+    .osteo-gallery { grid-template-columns: repeat(2, 1fr); }
+    .caption-row { grid-template-columns: 1fr; }
+    .media-text, .media-text.reverse { grid-template-columns: 1fr; }
+    .media-text .figure-col, .media-text.reverse .figure-col { order: 1; }
+    .media-text .text-col, .media-text.reverse .text-col { order: 2; }
+  }
+
+  @media (max-width: 560px) {
+    .osteo-gallery { grid-template-columns: repeat(2, 1fr); }
+    header.hero .hero-inner { padding: 48px 0 40px; }
+    section { padding: 46px 0; }
+    .ind-row { padding: 14px 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .feature-card { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- FOR ORTHOPEDIC SURGERIES -->
+  <section class="tint" id="ortho">
+    <div class="wrap">
+      <div class="section-head"><h2>For Orthopedic Surgeries</h2></div>
+
+      <!-- Osteochondral Resurfacing -->
+      <div class="ortho-block">
+        <h3 class="subhead">Osteochondral Resurfacing</h3>
+
+        <div class="osteo-gallery">
+          <figure><img src="/image/O1.jpeg" alt="Traditional incision (8 inches to 10 inches) versus quadriceps-sparing incision (about 4 inches) on the knee, showing thigh bone, shin bone and quadriceps tendon"></figure>
+          <figure><img src="/image/O2.jpeg" alt="Knee joint prepared with marked insertion points for minimally invasive surgery"></figure>
+          <figure><img src="/image/O3.jpeg" alt="Arthroscopic instrument inserting Surgicoll-Mesh into the knee joint"></figure>
+          <figure><img src="/image/O4.jpeg" alt="Post-operative X-ray of the knee joint after cartilage repair"></figure>
+        </div>
+
+        <div class="caption-row">
+          <div class="caption-box">To treat injuries to bones, cartilage, ligaments, muscles and tendons.</div>
+          <div class="caption-box">The damaged cartilage parts can be repaired by inserting Surgicoll-Mesh or can be removed altogether and replaced with Surgicoll-Mesh.</div>
+        </div>
+
+        <ul class="link-list">
+          <li><strong>Arthroscopic Meniscus Repair of Knee PreOp URL:</strong> <a href="http://www.youtube.com/watch?v=Gc8LtPUQ13E" target="_blank" rel="noopener">http://www.youtube.com/watch?v=Gc8LtPUQ13E</a></li>
+          <li><strong>Competing product info URL:</strong> <a href="http://www.geistlich-surgery.com/chondro-gide.html" target="_blank" rel="noopener">http://www.geistlich-surgery.com/chondro-gide.html</a></li>
+        </ul>
+      </div>
+
+      <!-- Synovial Tissue Implant -->
+      <div class="ortho-block">
+        <h3 class="subhead">Synovial Tissue Implant</h3>
+        <div class="media-text">
+          <div class="text-col">
+            <p>Surgicoll-Mesh can be effective in reducing inflammation of joints and in promoting repair of synovial membrane and articulating cartilage. It can be used in surgical repair of damaged joints that would cover/replace synovial membrane while also reducing pain.</p>
+            <p>Surgicoll-Mesh may readily conform to the size and structure of the human synovial capsule thereby ensuring appropriate coverage of the damaged synovial membrane. Usage of Surgicoll-Mesh could also eliminate the need for removal/replacement of the joints.</p>
+          </div>
+          <div class="figure-col">
+            <img src="/image/Synovial Tissue Implant.png" alt="Diagram showing torn or damaged synovial membrane, application of Surgicoll-Mesh over the joint, and the healed synovial membrane">
+          </div>
+        </div>
+      </div>
+
+      <!-- Repair of Rotator Cuff Tear -->
+      <div class="ortho-block">
+        <h3 class="subhead">Repair of Rotator Cuff Tear</h3>
+        <div class="media-text reverse">
+          <div class="text-col">
+            <p>Surgicoll-Mesh can be used for the treatment of both partial- and full-thickness rotator cuff tears. In case of partial-thickness tears, the product can be directly applied on the site of injury. However, in the treatment of full-thickness tears, it is advisable to repair the injury as per the Surgeon's preferred method and then apply Surgicoll-Mesh over the repaired site.</p>
+            <p>The absorbable Surgicoll-Mesh would support the body's natural healing mechanism by facilitating the formation of new tendon-like tissue at the site of rotator cuff tear. As this product gradually degrades over time, a significant increase in the overall thickness of the native tendon can be observed through the induction and remodeling of tendinous tissues.</p>
+          </div>
+          <div class="figure-col">
+            <img src="/image/Rotator Cuff Tear.png" alt="Rotator cuff tears diagram showing supraspinatus, bursa, subscapularis and teres minor, and Surgicoll-Mesh placed over the tear and secured with sutures">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section id="references">
+    <div class="wrap">
+      <div class="section-head"><h2>References</h2></div>
+      <ul class="refs">
+        <li>Gunasekaran S, Inventor. US Patent 5814328. Preparation of collagen using papain and a reducing agent. 1998.</li>
+        <li>Gunasekaran S, Inventor. US Patent 6548077. Purifying type I collagen using two papain treatments and reducing and delipidation agents. 2003.</li>
+        <li>Gunasekaran S KM, Dhanraj P. Bioactive Collagen Dressing for the Treatment of Burns, Donor Sites, and Ulcers. World Biomaterials Congress Meeting. 2008.</li>
+        <li>Dhanraj P GS, DeWeese J, Sutkin H. How Native, Pure Type-I Collagen Dressing Cures Ulcers Better Than Other Comparable Skin Substitutes. Association of Plastic Surgeons of India. 2008.</li>
+        <li>Gunasekaran S KM, Dhanikachalam A, Narayan R. A comparative second-degree burn treatment trial collagen dressing vs. silver sulphadiazine alone. American Society for Dermatological Surgery. 2005.</li>
+        <li><a href="https://www.advanced-biotech.com/img/Comparison_of_type_I_collagen_with_Integra_skin_substitute_2015.pdf" target="_blank" rel="noopener">https://www.advanced-biotech.com/img/Comparison_of_type_I_collagen_with_Integra_skin_substitute_2015.pdf</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    // Reveal-on-scroll for content blocks (respects reduced motion).
+    (function () {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const targets = document.querySelectorAll('.feature-card, .advantages li, .ortho-block, .refs li');
+
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        return;
+      }
+
+      targets.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(14px)';
+        el.style.transition = 'opacity 500ms ease, transform 500ms ease';
+      });
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      targets.forEach(el => io.observe(el));
+    })();
+  </script>
+
+</body>
+</html>

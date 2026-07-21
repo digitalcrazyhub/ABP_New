@@ -1,8 +1,8 @@
 
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* ==========================================================================
-   RESET
+   1. RESET & BASE STYLES
    ========================================================================== */
 * {
   margin: 0;
@@ -27,9 +27,7 @@ a {
 }
 
 /* ==========================================================================
-   DESIGN TOKENS
-   Single source of truth — every value used below resolves to one of
-   these tokens (or a plain literal), nothing else is declared.
+   2. DESIGN TOKENS
    ========================================================================== */
 :root {
   --sm-primary: #762c69;
@@ -44,6 +42,7 @@ a {
   --sm-radius: 14px;
   --sm-container: min(1240px, calc(100% - 40px));
   --sm-transition: 250ms ease;
+  --sm-font-display: "Poppins", sans-serif;
 
   /* Shared page padding — every section aligns to this */
   --page-pad: max(20px, calc((100vw - 1240px) / 2));
@@ -60,29 +59,24 @@ p {
   text-align: justify;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   color: var(--sm-ink);
   line-height: 1.25;
   margin: 0 0 .6em;
 }
 
-/* All top-level sections share the same horizontal page padding.
-   Section-specific rules below only ever add vertical padding so this
-   never gets overridden by a more specific selector. */
 section {
-  padding: 0 var(--page-pad);
+  padding: clamp(40px, 6vw, 72px) var(--page-pad);
 }
 
-.container {
+.container,
+.wrap {
   max-width: var(--sm-container);
   margin: 0 auto;
 }
 
 /* ==========================================================================
-   BUTTONS
+   3. BUTTONS
    ========================================================================== */
 .brochure-btn {
   display: inline-flex;
@@ -108,8 +102,9 @@ section {
   outline: 2px solid var(--sm-plum);
   outline-offset: 3px;
 }
+
 /* ==========================================================================
-   PAGE BANNER
+   4. PAGE BANNER
    ========================================================================== */
 .banner {
   margin-top: 85px;
@@ -118,6 +113,7 @@ section {
   place-items: center;
   min-height: clamp(160px, 28vw, 280px);
   overflow: hidden;
+  padding: 0;
 }
 
 .sm-hero-art,
@@ -128,10 +124,8 @@ section {
 }
 
 .sm-hero-art {
-  background: radial-gradient(ellipse at 80% 80%, color-mix(in srgb, var(--sm-plum) 70%, transparent), transparent 36%),
-              linear-gradient(126deg, var(--sm-ink) 0%, var(--sm-text) 45%, var(--sm-plum) 100%);
+  background:radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
 }
- 
 
 .sm-hero-art::before {
   content: "";
@@ -165,7 +159,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 10%;
+  opacity: 0.10;
 }
 
 .banner__title {
@@ -177,7 +171,6 @@ section {
   margin: 0;
   font-weight: bold;
 }
-
 
 /*=========================================
     Soft Tissue Reinforcement Hero
@@ -258,91 +251,15 @@ section {
     display:block;
 }
 
-/*=========================================
-    Tablet
-=========================================*/
-
-@media (max-width:992px){
-
-.smtr-hero-wrapper{
-    grid-template-columns:1fr;
-    gap:3rem;
-}
-
-.smtr-hero-content{
-    order:1;
-    text-align:left;
-}
-
-.smtr-hero-actions{
-    display:flex;
-    justify-content:center;
-}
-
-.smtr-hero-image{
-    order:2;
-}
-
-.smtr-hero-image img{
-    max-width:320px;
-}
-
-}
-
-/*=========================================
-    Mobile
-=========================================*/
-
-@media (max-width:768px){
-
-.smtr-hero-section{
-    padding:3rem 0;
-}
-
-.smtr-hero-wrapper{
-    gap:2rem;
-}
-
-.smtr-primary-btn{
-    width:100%;
-    justify-content:center;
-}
-
-.smtr-hero-description{
-    font-size:1rem;
-}
-
-.smtr-hero-image img{
-    max-width:260px;
-}
-
-}
-
-/*=========================================
-    Large Desktop
-=========================================*/
-
-@media (min-width:1600px){
-
-.smtr-hero-image img{
-    max-width:320px;
-}
-
-.smtr-hero-description{
-    font-size:1.15rem;
-}
-
-}
-
 /* ==========================================================================
    SECTION HEADING STRIP
    ========================================================================== */
-
 .section-strip__title {
   color: var(--sm-primary);
   margin: 0;
   font-size: clamp(28px, 4vw, 44px);
   font-weight: bold;
+  text-align: left;
 }
 
 .title-line {
@@ -353,376 +270,305 @@ section {
   border-radius: 50px;
 }
 
-.inner-container{
-    padding: 30px 0;
+/* ==========================================================================
+   6. ORTHOPEDIC SECTIONS & GALLERIES
+   ========================================================================== */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+ 
+ 
+  padding-bottom: 16px;
 }
 
-/* ── Ortho card ──────────────────────────────────────────── */
-.orth-card {
-  background: var(--sm-white);
-  border: 0.5px solid var(--sm-line);
-  border-radius: var(--sm-radius);
-  padding: 1.5rem;
-  margin-bottom: 1.25rem;
-  box-shadow: var(--sm-shadow);
-  /* box-shadow: var(--sm-shadow); */
-  overflow: hidden;
+.section-head h2 {
+  font-family: var(--sm-font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  color: var(--sm-primary);
+  margin: 0;
 }
 
-.orth-card:last-of-type {
+.subhead {
+  font-family: var(--sm-font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--sm-primary);
+  margin: 0 0 18px;
+}
+
+.ortho-block {
+  margin-bottom: 56px;
+}
+
+.ortho-block:last-child {
   margin-bottom: 0;
 }
 
-/*============== Top Grid ==============*/
-
-.two-col {
+.osteo-gallery,
+.exposed-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  align-items: start;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 22px 0 14px;
 }
 
-.content-box p {
-  margin-bottom: 20px;
-  line-height: 1.9;
-  color: var(--sm-text);
-}
-
-/*============== Flowchart / diagram box ==============*/
-
-.visual-box {
-  background: var(--sm-soft);
-  border: 0.5px solid var(--sm-line);
+.osteo-gallery figure,
+.exposed-gallery figure {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
   border-radius: var(--sm-radius);
-  padding: 1.25rem;
-  text-align: center;
-}
-
-.visual-box svg {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-}
-
-.visual-box figcaption {
-  font-size: 11px;
-  color: var(--sm-ink);
-  margin-top: .5rem;
-  font-style: italic;
-}
-
-/*============== Steps ==============*/
-
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: .85rem 0;
-}
-
-.step {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  background: var(--sm-plum-light);
-  border: 0.5px solid var(--sm-line);
-  border-radius: var(--sm-radius);
-  padding: .6rem .9rem;
-  font-size: 15px;
-  color: var(--sm-ink);
-}
-
-.step-num {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--sm-primary);
-  color: var(--sm-white);
-  font-size: 11px;
-  font-weight: 600;
+  box-shadow: var(--sm-shadow);
+  padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1px;
 }
 
-/*============== Highlight ==============*/
-
-.highlight {
-  background: var(--sm-soft);
-  border-left: 3px solid var(--sm-primary);
-  border-radius: 0 var(--sm-radius) var(--sm-radius) 0;
-  padding: .8rem 1rem;
-  margin: .85rem 0 0;
-  font-size: 1rem;
-  color: var(--sm-primary);
-  line-height: 1.65;
-}
-
-/*============== Image ==============*/
-
-.ortho-img img {
-  width: 100%;
-  display: block;
-  border-radius: var(--sm-radius);
-}
-
-.orth-card p {
-  font-size: 1.1rem;
-  color: var(--sm-ink);
-  line-height: 1.75;
-}
-
-/* ── Gallery section title ──────────────────────────────── */
-.gallery-title {
-  color: var(--sm-primary);
-  text-align: center;
-  font-size: clamp(20px, 3.2vw, 32px);
-  font-weight: bold;
-  margin: 0 0 20px;
-}
-
-/* ── Healing stages ──────────────────────────────────────── */
-.stages {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 10px;
-  margin: 1rem 0 .5rem;
-}
-
-.stage {
-  background: var(--sm-white);
-  border: 0.5px solid var(--sm-line);
-  border-radius: var(--sm-radius);
-  padding: .85rem .75rem;
-  text-align: center;
-}
-
-.stage img{
+.osteo-gallery img,
+.exposed-gallery img {
+  border-radius: 6px;
   width: 100%;
   height: auto;
-  aspect-ratio: 615 / 459;
-  object-fit: cover;
-  border-radius: 5px;
+  object-fit: contain;
 }
 
-.stage-label {
-  font-size: 1.1rem;
+.exposed-gallery figure {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.exposed-gallery figcaption {
+  font-family: var(--sm-font-display);
+  font-weight: 700;
+  font-size:1.1rem;
+  color: var(--sm-primary);
+  text-align: center;
+  line-height: 1.35;
+}
+
+.caption-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.caption-box {
+  font-family: var(--sm-font-display);
+  font-weight: 600;
+  
+  color: var(--sm-primary);
+  background: var(--sm-plum-light);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.exposed-caption {
+  justify-content: center;
+  text-align: center;
   font-weight: 500;
-  color: var(--sm-ink);
-  line-height: 1.45;
+  margin-top: 4px;
 }
 
-.stage.healed .stage-label {
+.link-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  font-size: .9rem;
+  margin-top: 6px;
+}
+
+.link-list li strong {
+  color: var(--sm-ink);
+  font-weight: 600;
+}
+
+.link-list a {
+  word-break: break-all;
   color: var(--sm-primary);
 }
 
+.link-list a:hover,
+.link-list a:focus-visible {
+  text-decoration: underline;
+}
 
-/* ── References ──────────────────────────────────────────── */
-.ref-card {
+.media-text {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.media-text.reverse .figure-col {
+  order: 2;
+}
+
+.media-text.reverse .text-col {
+  order: 1;
+}
+
+.text-col p {
+  margin-bottom: 14px;
+  
+  text-align: justify;
+}
+
+.text-col p:last-child {
+  margin-bottom: 0;
+}
+
+.figure-col {
   background: var(--sm-white);
-  border: 0.5px solid var(--sm-line);
+  border: 1px solid var(--sm-line);
   border-radius: var(--sm-radius);
-  padding: 1.5rem;
   box-shadow: var(--sm-shadow);
-  /* box-shadow: var(--sm-shadow); */
+  padding: 14px;
 }
 
-.ref-list {
-  list-style: none;
-}
-
-.ref-list li {
-  font-size: 1.1rem;
-  color: var(--sm-ink);
-  padding: .5rem 0;
-  border-bottom: 0.5px solid var(--sm-line);
-  line-height: 1.65;
-}
-
-.ref-list li:last-child {
-  border-bottom: none;
-}
-
-.ref-num {
-  color: var(--sm-plum);
-  font-weight: 600;
-  margin-right: 6px;
-}
-
-/* ── Knee gallery ────────────────────────────────────────── */
-.knee-gallery{
-    display:grid;
-    grid-template-columns:280px 1fr;
-    gap:30px;
-    margin:50px 0;
-    align-items:start;
-}
-
-.gallery-right{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.gallery-card{
-    margin:0;
-    background:#fff;
-    border:1px solid #e6dce8;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    /* box-shadow:0 8px 25px rgba(0,0,0,.08); */
-    transition:.3s;
-}
-
-.gallery-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-    /* box-shadow:0 15px 35px rgba(0,0,0,.12); */
-}
-
-.gallery-card img{
-    width:100%;
-    aspect-ratio:1/1;
-    object-fit:contain;
-    background:#fff;
-    padding:15px;
-    display:block;
-}
-
-.gallery-card figcaption{
-    padding:15px;
-    text-align:center;
-    font-size:15px;
-    line-height:1.6;
-    color:#444;
-    border-top:1px solid #eee;
-    background:#fafafa;
-}
-
-.gallery-description{
-    grid-column:1 / -1;   /* Span all columns */
-}
-
-.gallery-description p{
-    margin:0;
-    padding:18px 20px;
-    background:#f8f8f8;
-    border-left:4px solid var(--sm-primary);
-    border-radius:10px;
-    text-align:justify;
-    line-height:1.8;
+.figure-col img {
+  border-radius: 8px;
+  margin: 0 auto;
 }
 
 /* ==========================================================================
-   RESPONSIVE BREAKPOINTS
-   Horizontal page padding (--page-pad) never changes; only layout,
-   type scale and image sizing adapt per breakpoint. Each property is set
-   in exactly one breakpoint block to avoid conflicting overrides.
+   7. REFERENCES
    ========================================================================== */
-@media (max-width: 1200px) {
-  .knee-gallery {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    margin: 36px 0;
-  }
+.refs {
+  list-style: none;
+  counter-reset: ref;
+  display: grid;
+  gap: 14px;
+  padding: 0;
 }
 
-@media (max-width: 992px) {
-  .hero__grid {
+.refs li {
+  counter-increment: ref;
+  position: relative;
+  padding-left: 44px;
+  
+  color: var(--sm-text);
+  text-align: left;
+}
+
+.refs li::before {
+  content: counter(ref);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-family: var(--sm-font-display);
+  font-weight: 700;
+  font-size: .82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refs a {
+  word-break: break-all;
+  color: var(--sm-primary);
+}
+
+.refs a:hover,
+.refs a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .smtr-hero-wrapper {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
     text-align: center;
-    padding: 32px 0;
   }
 
-  .hero__image {
-    order: -1;
-    max-width: 320px;
-    margin-inline: auto;
+  .smtr-hero-content {
+    align-items: center;
   }
 
-  .two-col {
+  .smtr-hero-description {
+    text-align: center;
+  }
+
+  .osteo-gallery,
+  .exposed-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 880px) {
+  .caption-row {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
   }
 
-  .two-col .visual-box {
-    order: -1;
+  .media-text,
+  .media-text.reverse {
+    grid-template-columns: 1fr;
   }
 
-  .orth-card {
-    padding: 1.25rem;
+  .media-text .figure-col,
+  .media-text.reverse .figure-col {
+    order: 1;
   }
 
-  .gallery-right {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .banner {
-    margin-top: 70px;
-  }
-
-  .stages {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .ref-card {
-    padding: 1.25rem;
-  }
-
-  .step {
-    gap: 8px;
-    padding: .6rem .8rem;
-  }
-
-  .content-box p {
-    text-align: left !important;
+  .media-text .text-col,
+  .media-text.reverse .text-col {
+    order: 2;
   }
 }
 
-@media (max-width: 576px) {
-  .step {
+@media (max-width: 560px) {
+  section {
+    padding: clamp(32px, 8vw, 48px) var(--page-pad);
+  }
+
+  .section-head {
     flex-direction: column;
+    gap: 4px;
   }
 
-  .step-num {
-    margin-bottom: 6px;
+  p,
+  .text-col p {
+    text-align: left;
   }
 
-  .gallery-right {
+  .osteo-gallery,
+  .exposed-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .osteo-gallery,
+  .exposed-gallery {
+    grid-template-columns: 1fr;
+  }
+  .tint-grid .osteo-gallery, .exposed-gallery {
+    display: grid;
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 480px) {
-  .banner__title {
-    font-size: clamp(1.5rem, 7vw, 2rem);
-  }
-
-  .hero__lead {
-    font-size: 1rem;
-  }
-
-  .orth-card p {
-    font-size: 1rem;
-  }
-
-  .stages {
-    grid-template-columns: 1fr;
-  }
-
-  .step {
-    font-size: 14px;
-  }
-
-  .ref-list li {
-    font-size: 14px;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
-
+.tint-grid .osteo-gallery, .exposed-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 22px 0 14px;
+}
