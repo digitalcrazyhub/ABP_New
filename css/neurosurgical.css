@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Focus States */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--sm-gold);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   2. DESIGN TOKENS
+   ========================================================================== */
+:root {
+  --sm-primary: #762c69;
+  --sm-plum: #9b3a83;
+  --sm-plum-light: #fff2fc;
+  --sm-ink: #000;
+  --sm-soft: #fff1fc;
+  --sm-line: #e7dce5;
+  --sm-white: #fff;
+  --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
+  --sm-radius: 14px;
+  --sm-container: min(1240px, calc(100% - 40px));
+  --sm-transition: 250ms ease;
+  --page-pad: max(20px, calc((100vw - 1240px) / 2));
+  --sm-font-display: "Poppins", sans-serif;
+  --sm-text: #655f67;
+  --sm-gold: #d8a63c;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--sm-ink);
+  background-color: var(--sm-white);
+  line-height: 1.6;
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: 1.1rem;
+  color: var(--sm-ink);
+  line-height: 1.7;
+}
+
+p strong {
+  color: var(--sm-ink);
+  font-weight: 600;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4 {
+  color: var(--sm-ink);
+  line-height: 1.25;
+  margin: 0 0 .6em;
+}
+
+sup {
+  font-size: 11px;
+  color: var(--sm-plum);
+  font-weight: 700;
+}
+
+section {
+  padding: clamp(40px, 5vw, 64px) var(--page-pad);
+}
+
+.gr-container, 
+.smtr-container, 
+.section-inner, 
+.sm-container, 
+.container {
+  max-width: var(--sm-container);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. BUTTONS
+   ========================================================================== */
+.brochure-btn, 
+.smtr-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1.6rem;
+  border-radius: var(--sm-radius);
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-weight: 600;
+  text-align: center;
+  transition: background var(--sm-transition), transform var(--sm-transition);
+  text-decoration: none;
+}
+
+.brochure-btn:hover,
+.brochure-btn:focus-visible,
+.smtr-primary-btn:hover {
+  background: var(--sm-plum);
+}
+
+/* ==========================================================================
+   4. PAGE BANNER & HEROES
+   ========================================================================== */
+.banner {
+  margin-top: 85px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(160px, 28vw, 280px);
+  overflow: hidden;
+  padding: 0 var(--page-pad);
+}
+
+.sm-hero-art,
+.sm-hero-art::before {
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.sm-hero-art {
+  background: radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
+}
+
+.sm-hero-art::before {
+  content: "";
+  opacity: .35;
+  background: repeating-linear-gradient(45deg, transparent 0 70px, color-mix(in srgb, var(--sm-white) 12%, transparent) 71px 72px);
+}
+
+.banner__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+}
+
+.banner__title {
+  position: relative;
+  color: var(--sm-white);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-align: center;
+  padding-inline: 1rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+/*=========================================
+    Soft Tissue Reinforcement Hero
+=========================================*/
+
+.smtr-hero-section{
+    padding:4rem 0;
+    background:var(--sm-plum-light);
+}
+
+.smtr-hero-wrapper{
+    width:var(--sm-container);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:4rem;
+}
+
+.smtr-hero-content{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+}
+
+.smtr-hero-title{
+    margin:0;
+    color:var(--sm-ink);
+    font-size:clamp(2rem,5vw,4rem);
+    line-height:1.1;
+}
+
+.smtr-hero-subtitle{
+    margin:0;
+    color:var(--sm-primary);
+    font-size:clamp(1.3rem,2vw,2rem);
+    font-weight:700;
+}
+
+.smtr-hero-description{
+    margin:0;
+    color:var(--sm-ink);
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+.smtr-hero-actions{
+    margin-top:.5rem;
+}
+
+.smtr-primary-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.75rem;
+    padding:1rem 2rem;
+    background:var(--sm-primary);
+    color:var(--sm-white);
+    text-decoration:none;
+    border-radius:50px;
+    transition:var(--sm-transition);
+}
+
+.smtr-primary-btn:hover{
+    background:var(--sm-deep);
+}
+
+.smtr-hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+}
+
+.smtr-hero-image img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    display:block;
+}
+
+
+/* White Paper Hero */
+.wp-hero {
+ 
+  padding-top: 64px;
+  padding-bottom: 48px;
+ 
+}
+
+
+
+.wp-hero-tag::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sm-gold);
+  display: inline-block;
+}
+
+.wp-hero h1 {
+  font-size: clamp(30px, 4.4vw, 50px);
+  font-weight: 800;
+  color: var(--sm-ink);
+  letter-spacing: -.02em;
+  line-height: 1.15;
+
+}
+
+.wp-hero h1 .wp-reg {
+  color: var(--sm-primary);
+}
+
+
+.wp-hero-lede {
+
+  color: var(--sm-ink);
+ 
+}
+
+.wp-hero-lede strong {
+  color: var(--sm-ink);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   5. SECTIONS & CONTENT CARDS
+   ========================================================================== */
+.section-strip__title {
+  color: var(--sm-primary);
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: bold;
+  text-align: left;
+}
+
+.title-line {
+  width: 70px;
+  height: 3px;
+  background: var(--sm-primary);
+  margin: 18px 0;
+  border-radius: 50px;
+}
+
+.wp-section {
+  border-bottom: 1px solid var(--sm-line);
+}
+
+.wp-section:last-of-type {
+  border-bottom: none;
+}
+
+.wp-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.wp-section-head .wp-mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--sm-plum);
+  flex: none;
+  transform: translateY(-4px);
+}
+
+.wp-section h2 {
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 700;
+  color: var(--sm-primary);
+  letter-spacing: -.01em;
+}
+
+.wp-section h3 {
+  font-size: clamp(18px, 2vw, 23px);
+  font-weight: 700;
+  color: var(--sm-ink);
+  margin: 24px 0 16px;
+}
+
+.wp-section p {
+  max-width: 78ch;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+
+.wp-intro-card p {
+  max-width: none;
+}
+
+/* ==========================================================================
+   6. FIGURES & MEDIA
+   ========================================================================== */
+.wp-figure {
+  background: var(--sm-white);
+  border: 1px solid var(--sm-line);
+  border-radius: var(--sm-radius);
+  box-shadow: var(--sm-shadow);
+  padding: clamp(16px, 3vw, 28px);
+  margin: 28px 0;
+  transition: transform var(--sm-transition), box-shadow var(--sm-transition);
+}
+
+.wp-figure:hover {
+  transform: translateY(-3px);
+}
+
+.wp-figure img {
+  border-radius: calc(var(--sm-radius) - 6px);
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.wp-figure.wp-figure--narrow img {
+  max-width: 460px;
+}
+
+.wp-figure.wp-figure--wide img {
+  max-width: 100%;
+}
+
+.wp-figure.wp-figure--medium img {
+  max-width: 420px;
+}
+
+
+/* ==========================================================================
+   8. REFERENCES
+   ========================================================================== */
+.wp-refs h2 {
+ 
+  color: var(--sm-primary);
+  margin-bottom: 20px;
+}
+
+.wp-refs ol {
+  list-style: none;
+  counter-reset: refs;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-left: 0;
+}
+
+.wp-refs li {
+  counter-increment: refs;
+  display: flex;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--sm-ink);
+  align-items: center;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.wp-refs li::before {
+  content: counter(refs);
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wp-refs a {
+  color: var(--sm-plum);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--sm-transition), color var(--sm-transition);
+}
+
+.wp-refs a:hover,
+.wp-refs a:focus-visible {
+  border-color: var(--sm-plum);
+  color: var(--sm-primary);
+}
+
+/* ==========================================================================
+   9. FOOTER & ANIMATIONS
+   ========================================================================== */
+.wp-footer {
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  padding: 26px 0;
+}
+
+.wp-footer p {
+  font-size: 13px;
+  color: #f0dced;
+  max-width: none;
+  margin: 0;
+}
+
+.wp-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.wp-reveal.wp-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   10. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .smtr-hero-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .smtr-hero-content {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    margin-top: 70px;
+  }
+
+  .wp-hero-tag {
+    font-size: 11px;
+    padding: 7px 13px;
+  }
+
+  .wp-hero-rule {
+    margin: 20px 0;
+  }
+
+  .wp-section h2 {
+    font-size: 22px;
+  }
+
+  .wp-figure.wp-figure--narrow img,
+  .wp-figure.wp-figure--medium img {
+    max-width: 100%;
+  }
+
+  .wp-refs li {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  .wp-note {
+    flex-direction: row;
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .wp-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .wp-figure:hover {
+    transform: none;
+  }
+}
+.wp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .wp-grid--reverse .wp-grid-text {
+      order: 2;
+    }
+
+    .wp-grid--reverse .wp-grid-media {
+      order: 1;
+    }
+
+    .wp-grid-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wp-grid-media .wp-figure {
+      margin: 0;
+      width: 100%;
+    }
+
+    /* Responsive adjustments for mobile and tablets */
+    @media (max-width: 880px) {
+      .wp-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .wp-grid--reverse .wp-grid-text {
+        order: 1;
+      }
+
+      .wp-grid--reverse .wp-grid-media {
+        order: 2;
+      }
+    }
