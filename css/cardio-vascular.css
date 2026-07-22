@@ -133,7 +133,7 @@ section {
 .banner__title {
   position: relative;
   color: var(--sm-white);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+      font-size: clamp(2rem, 5vw, 4rem);
   text-align: center;
   padding-inline: 1rem;
   margin: 0;
@@ -146,7 +146,7 @@ section {
 =========================================*/
 
 .smtr-hero-section {
-  padding: 4rem 0;
+  padding: 2rem 0;
   background: var(--sm-plum-light);
 }
 
@@ -168,7 +168,7 @@ section {
 .smtr-hero-title {
   margin: 0;
   color: var(--sm-ink);
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.1;
 }
 
@@ -289,7 +289,7 @@ section {
    ========================================================================== */
 .sm-hero {
   position: relative;
-  padding: clamp(40px, 6vw, 80px) 0;
+  padding: clamp(40px, 6vw, 40px) 0;
   overflow: hidden;
   isolation: isolate;
 }
@@ -391,7 +391,7 @@ section {
 }
 
 .sm-section--head {
-  padding-top: clamp(56px, 8vw, 84px);
+  padding-top: clamp(56px, 8vw, 40px);
   padding-bottom: 0;
   background-color: var(--sm-soft);
 }

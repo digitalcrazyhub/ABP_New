@@ -336,7 +336,7 @@ font-size: 28px;
 =========================================*/
 
 .smtr-hero-section{
-    padding:4rem 0;
+   
     background:var(--sm-plum-light);
 }
 
@@ -358,7 +358,7 @@ font-size: 28px;
 .smtr-hero-title{
     margin:0;
     color:var(--sm-ink);
-    font-size:clamp(2rem,5vw,4rem);
+    font-size:clamp(2rem,5vw,3rem);
     line-height:1.1;
 }
 
@@ -371,7 +371,7 @@ font-size: 28px;
 
 .smtr-hero-description{
     margin:0;
-    color:var(--sm-text);
+    color:var(--sm-ink);
     line-height:1.9;
     font-size:1.05rem;
 }
@@ -394,6 +394,7 @@ font-size: 28px;
 
 .smtr-primary-btn:hover{
     background:var(--sm-deep);
+    
 }
 
 .smtr-hero-image{
