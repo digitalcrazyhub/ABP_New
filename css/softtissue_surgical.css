@@ -27,8 +27,6 @@ a {
 
 /* ==========================================================================
    DESIGN TOKENS
-   Single source of truth. New semantic tokens alias the base --sm-* palette
-   so colors stay consistent across the page.
    ========================================================================== */
 :root {
   --sm-primary: #762c69;
@@ -83,12 +81,14 @@ section{
   color: var(--sm-white);
   font-weight: 600;
   text-align: center;
-  transition: background var(--sm-transition), transform var(--sm-transition);
+  transition: background var(--sm-transition), transform var(--sm-transition), box-shadow var(--sm-transition);
 }
 
 .btn:hover,
 .btn:focus-visible {
   background: var(--sm-plum);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(118, 44, 105, 0.25);
 }
 
 .btn:focus-visible {
@@ -121,20 +121,26 @@ section{
     content:"";
     position:absolute;
     inset:0;
-       
+        
     opacity: .35;
     background: repeating-linear-gradient(45deg, transparent 0 70px, 
 color-mix(in srgb, var(--sm-white) 12%, transparent) 71px 72px);
 }
 
 .smtr-circle{
-       position: absolute;
+   position: absolute;
     width: 32vw;
     aspect-ratio: 1;
     border: 1px solid 
 color-mix(in srgb, var(--sm-white) 12%, transparent);
     border-radius: 50%;
     filter: blur(2px);
+    animation: floatShape 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatShape {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(15px, -15px) scale(1.05); }
 }
 
 
@@ -143,6 +149,7 @@ color-mix(in srgb, var(--sm-white) 12%, transparent);
     aspect-ratio:1;
     top:-10%;
     right:4%;
+    animation-delay: 0s;
 }
 
 .smtr-circle-2{
@@ -150,6 +157,7 @@ color-mix(in srgb, var(--sm-white) 12%, transparent);
     aspect-ratio:1;
     bottom:-35%;
     left:-8%;
+    animation-delay: -4s;
 }
 
 .smtr-circle-3{
@@ -157,6 +165,7 @@ color-mix(in srgb, var(--sm-white) 12%, transparent);
     aspect-ratio:1;
     bottom:10%;
     right:25%;
+    animation-delay: -8s;
 }
 
 .smtr-banner-bg{
@@ -364,7 +373,10 @@ font-size: 28px;
 }
 
 .smtr-primary-btn:hover{
-       background: var(--sm-deep);}
+       background: var(--sm-deep);
+       transform: translateY(-2px);
+       box-shadow: 0 8px 20px rgba(89, 33, 79, 0.3);
+}
 
 .smtr-hero-image{
     display:flex;
@@ -378,6 +390,11 @@ font-size: 28px;
     max-width:420px;
     height:auto;
     display:block;
+    transition: transform var(--sm-transition);
+}
+
+.smtr-hero-image:hover img {
+    transform: scale(1.03);
 }
 
 /*=========================================
@@ -473,6 +490,11 @@ font-size: 28px;
   background: var(--sm-primary);
   margin: 18px 0;
   border-radius: 50px;
+  transition: width var(--sm-transition);
+}
+
+section:hover .title-line {
+  width: 100px;
 }
 
 .inner-container{
@@ -504,6 +526,11 @@ font-size: 28px;
   font-size: 1.1rem;
   color: var(--sm-white);
   line-height: 1.7;
+  transition: transform var(--sm-transition);
+}
+
+.abp-nano-callout:hover {
+  transform: translateX(4px);
 }
 
 /* ==========================================================================
@@ -569,6 +596,12 @@ font-size: 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: transform var(--sm-transition), background var(--sm-transition);
+}
+
+.concept-card:hover {
+  transform: translateY(-4px);
+  background: var(--sm-plum-light);
 }
 
 .concept-card h3 {
@@ -603,6 +636,11 @@ font-size: 28px;
   border: 1px solid var(--sm-line);
   padding: clamp(20px, 2vw, 28px);
   border-radius: 10px;
+  transition: transform var(--sm-transition);
+}
+
+.highlight-box:hover {
+  transform: translateY(-3px);
 }
 
 .highlight-box h3 {
@@ -634,6 +672,7 @@ font-size: 28px;
 
 .sm-media-card:hover{
     transform:translateY(-6px);
+    box-shadow: 0 20px 40px rgba(63, 23, 55, .16);
 }
 
 .sm-media-title{
@@ -756,11 +795,12 @@ font-weight: 500;
   border-radius: var(--sm-radius);
   overflow: hidden;
   box-shadow: var(--sm-shadow);
-  transition: transform .4s ease, box-shadow .4s ease;
+  transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .abp-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 38px rgba(63, 23, 55, .18);
 }
 
 .abp-card__img {
@@ -769,7 +809,11 @@ font-weight: 500;
   aspect-ratio: 4 / 5;
   height: auto;
   object-fit: cover;
-  transition: transform .5s ease;
+  transition: transform .4s ease;
+}
+
+.abp-card:hover .abp-card__img {
+  transform: scale(1.03);
 }
 
 .abp-card__body {
@@ -868,6 +912,12 @@ font-weight: 500;
   font-size: clamp(1.3rem, .4vw + 1.15rem, 1.65rem);
   color: #fff;
   box-shadow: 0 6px 20px rgba(107, 45, 92, .25);
+  transition: transform var(--sm-transition), background var(--sm-transition);
+}
+
+.abp-nano__step:hover .abp-nano__dot {
+  transform: scale(1.1);
+  background: var(--sm-plum);
 }
 
 .abp-nano__step h4 {
@@ -911,7 +961,7 @@ color: #000;
 .so-video-inner {
   width: 100%;
   margin-inline: auto;
-  
+ 
   align-items: center;
   position: relative;
   z-index: 1;
@@ -1035,10 +1085,6 @@ font-weight: 700;
   background: var(--sm-plum-light);
 }
 
-/* .docvault-header {
-  margin: 0 auto 56px;
-} */
-
 .docvault-header h1 {
   font-weight: 700;
   text-align: left;
@@ -1082,6 +1128,11 @@ font-weight: 700;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.docvault-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(63, 23, 55, .16);
+}
+
 .docvault-icon {
   width: 64px;
   height: 64px;
@@ -1091,6 +1142,11 @@ font-weight: 700;
   justify-content: center;
   color: var(--sm-primary);
   font-size: 2rem;
+  transition: transform var(--sm-transition);
+}
+
+.docvault-card:hover .docvault-icon {
+  transform: scale(1.15);
 }
 
 .docvault-card h3 {
@@ -1112,23 +1168,24 @@ font-weight: 700;
     color: var(--sm-white);
     font-weight: 600;
     text-align: center;
-    transition: background var(--sm-transition), transform var(--sm-transition);
+    transition: background var(--sm-transition), transform var(--sm-transition), box-shadow var(--sm-transition);
 }
 
 .docvault-btn:hover {
-  background: var(--sm-primary);
+  background: var(--sm-plum);
   transform: translateY(-2px);
-  border: 2px solid var(--plum-bright);
+  box-shadow: 0 5px 15px rgba(118, 44, 105, 0.25);
   color: var(--sm-white);
 }
 
 /* ==========================================================================
-   SCROLL REVEAL
+   SCROLL REVEAL ANIMATIONS
    ========================================================================== */
 .abp-reveal {
   opacity: 0;
-  transform: translateY(36px);
-  transition: opacity .65s cubic-bezier(0.16, 1, 0.3, 1), transform .65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .abp-reveal.abp-visible {
@@ -1241,5 +1298,26 @@ font-weight: 700;
 
   .abp-card__img {
     max-height: 650px;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .docvault-btn,
+  .abp-card,
+  .concept-card,
+  .sm-media-card,
+  .docvault-card,
+  .smtr-circle,
+  .abp-reveal {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

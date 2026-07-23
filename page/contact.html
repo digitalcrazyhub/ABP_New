@@ -33,33 +33,31 @@
                 if (typeof initNavbar === "function") { initNavbar(); }
             });
     </script>
+
     <!-- ═══ PAGE BANNER ══════════════════════════════════════ -->
     <section class="banner">
         <div class="sm-hero-art" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="hero">
+        <div class="hero abp-reveal">
             <h1>Contact Us</h1>
             <p>Connect with our team for product inquiries, clinical support, distribution opportunities, or detailed information about Surgicoll-Mesh® and regenerative biomaterials.</p>
-  </div>
-</div>
-        
+        </div>
     </section>
-    <section class="abp-contact">
 
+    <!-- ═══ CONTACT CONTENT ══════════════════════════════════ -->
+    <section class="abp-contact">
         <div class="abp-container">
 
-           
-
-            <div class="abp-grid">
+            <div class="abp-grid abp-reveal">
 
                 <div class="abp-card">
                     <div class="abp-icon">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                     </div>
                     <div>
                         <h3>Our Address</h3>
                         <p>
-                            New 17, Old 77, 1st Cross Street,
-                            Ragavan Colony, Ashok Nagar,
+                            New 17, Old 77, 1st Cross Street,<br>
+                            Ragavan Colony, Ashok Nagar,<br>
                             Chennai – 600083, India.
                         </p>
                     </div>
@@ -67,7 +65,7 @@
 
                 <div class="abp-card">
                     <div class="abp-icon">
-                        <i class="fa-solid fa-phone"></i>
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
                     </div>
                     <div>
                         <h3>Phone Number</h3>
@@ -80,7 +78,7 @@
 
                 <div class="abp-card">
                     <div class="abp-icon">
-                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                     </div>
                     <div>
                         <h3>Email Address</h3>
@@ -92,7 +90,7 @@
 
             </div>
 
-            <div class="abp-map">
+            <div class="abp-map abp-reveal">
                 <iframe
                     src="https://maps.google.com/maps?q=Advanced%20Biotech%20Products%20Ashok%20Nagar%20Chennai&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     title="Advanced Biotech Products location map" loading="lazy" allowfullscreen>
@@ -100,8 +98,8 @@
             </div>
 
         </div>
-
     </section>
+
     <!-- _____footer______-->
     <div id="rs-footer"></div>
     <script>
@@ -112,6 +110,29 @@
             });
     </script>
     <script src="../js/nav.js"></script>
+
+    <!-- Intersection Observer Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var reveals = document.querySelectorAll('.abp-reveal');
+
+            if (!('IntersectionObserver' in window)) {
+                reveals.forEach(function (el) { el.classList.add('abp-visible'); });
+                return;
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('abp-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+            reveals.forEach(function (el) { observer.observe(el); });
+        });
+    </script>
 </body>
 
 </html>

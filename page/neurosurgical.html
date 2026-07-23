@@ -19,7 +19,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-
 </head>
 <body>
 <!--Header-->
@@ -37,12 +36,12 @@
   <section class="banner" id="banner-section">
     <div class="sm-hero-art" aria-hidden="true"><span></span><span></span></div>
     <img class="banner__bg" src="../home/page_banner.png" alt="" role="presentation">
-    <h1 class="banner__title">Neurosurgical</h1>
+    <h1 class="banner__title wp-reveal">Neurosurgical</h1>
   </section>
 
   <!-- Product Hero Section -->
   <section class="smtr-hero-section" id="hero-section" aria-labelledby="smtr-hero-title">
-    <div class="smtr-container smtr-hero-wrapper">
+    <div class="smtr-container smtr-hero-wrapper wp-reveal">
       <article class="smtr-hero-content">
         <h2 id="smtr-hero-title" class="smtr-hero-title">
           Surgicoll-Mesh<sup>&reg;</sup>
@@ -72,7 +71,7 @@
 
   <!-- Whitepaper Intro Hero -->
   <section class="wp-hero">
-    <div class="wp-container">
+    <div class="wp-container wp-reveal">
       <header class="section-strip">
         <h2 id="osteo-heading" class="section-strip__title">Surgicoll-Mesh<span class="wp-reg">®</span> for Dural Repair and Nerve Wrap</h2>
         <div class="title-line"></div>
@@ -91,11 +90,10 @@
   <section class="wp-section wp-reveal" id="dural-repair" style="background-color: #fff2fc;">
     <div class="wp-container">
       <div class="wp-section-head">
-       
         <header class="section-strip">
-        <h2 id="osteo-heading" class="section-strip__title">Dural Repair</h2>
-        <div class="title-line"></div>
-      </header>
+          <h2 id="dural-heading" class="section-strip__title">Dural Repair</h2>
+          <div class="title-line"></div>
+        </header>
       </div>
 
       <div class="wp-grid">
@@ -123,12 +121,10 @@
   <section class="wp-section wp-reveal" id="chiari-surgery">
     <div class="wp-container">
       <div class="wp-section-head">
-        
-        
-         <header class="section-strip">
-        <h2 id="osteo-heading" class="section-strip__title">Chiari Surgery — Herniated Tonsil</h2>
-        <div class="title-line"></div>
-      </header>
+        <header class="section-strip">
+          <h2 id="chiari-heading" class="section-strip__title">Chiari Surgery — Herniated Tonsil</h2>
+          <div class="title-line"></div>
+        </header>
       </div>
 
       <div class="wp-grid wp-grid--reverse">
@@ -159,11 +155,10 @@
   <section class="wp-section wp-reveal" id="nerve-wrap" style="background-color: #fff2fc;">
     <div class="wp-container">
       <div class="wp-section-head">
-       
         <header class="section-strip">
-        <h2 id="osteo-heading" class="section-strip__title">Nerve Wrap</h2>
-        <div class="title-line"></div>
-      </header>
+          <h2 id="nerve-heading" class="section-strip__title">Nerve Wrap</h2>
+          <div class="title-line"></div>
+        </header>
       </div>
 
       <div class="wp-grid">
@@ -183,8 +178,6 @@
           </figure>
         </div>
       </div>
-
-      
     </div>
   </section>
 
@@ -192,7 +185,7 @@
   <section class="wp-section wp-refs wp-reveal" id="references">
     <div class="wp-container">
       <header class="section-strip">
-        <h2 id="osteo-heading" class="section-strip__title">References</h2>
+        <h2 id="refs-heading" class="section-strip__title">References</h2>
         <div class="title-line"></div>
       </header>
       <ol>
@@ -203,7 +196,7 @@
     </div>
   </section>
 
-
+  <!-- Footer -->
   <div id="rs-footer"></div>
   <script>
     fetch("../page/footer.html")
@@ -215,8 +208,9 @@
 
   <script src="../js/nav.js"></script>
 
+  <!-- Intersection Observer Script -->
   <script>
-    (function () {
+    document.addEventListener("DOMContentLoaded", function () {
       var reveals = document.querySelectorAll('.wp-reveal');
 
       if (!('IntersectionObserver' in window)) {
@@ -231,10 +225,10 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
       reveals.forEach(function (el) { observer.observe(el); });
-    })();
+    });
   </script>
 </body>
 </html>
