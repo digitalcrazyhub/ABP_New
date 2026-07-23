@@ -152,18 +152,20 @@ section {
     content:"";
     position:absolute;
     inset:0;
-    background:
-        repeating-linear-gradient(
-            45deg,
-            transparent 0 70px,
-            rgba(255,255,255,.08) 70px 72px
-        );
+      
+    opacity: .35;
+    background: repeating-linear-gradient(45deg, transparent 0 70px, 
+color-mix(in srgb, var(--sm-white) 12%, transparent) 71px 72px);
 }
 
 .smtr-circle{
-    position:absolute;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:50%;
+       position: absolute;
+    width: 32vw;
+    aspect-ratio: 1;
+    border: 1px solid 
+color-mix(in srgb, var(--sm-white) 12%, transparent);
+    border-radius: 50%;
+    filter: blur(2px);
 }
 
 
