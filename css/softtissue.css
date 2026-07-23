@@ -152,18 +152,20 @@ section {
     content:"";
     position:absolute;
     inset:0;
-    background:
-        repeating-linear-gradient(
-            45deg,
-            transparent 0 70px,
-            rgba(255,255,255,.08) 70px 72px
-        );
+      
+    opacity: .35;
+    background: repeating-linear-gradient(45deg, transparent 0 70px, 
+color-mix(in srgb, var(--sm-white) 12%, transparent) 71px 72px);
 }
 
 .smtr-circle{
-    position:absolute;
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:50%;
+       position: absolute;
+    width: 32vw;
+    aspect-ratio: 1;
+    border: 1px solid 
+color-mix(in srgb, var(--sm-white) 12%, transparent);
+    border-radius: 50%;
+    filter: blur(2px);
 }
 
 
@@ -336,7 +338,7 @@ font-size: 28px;
 =========================================*/
 
 .smtr-hero-section{
-    padding:4rem 0;
+   
     background:var(--sm-plum-light);
 }
 
@@ -358,7 +360,7 @@ font-size: 28px;
 .smtr-hero-title{
     margin:0;
     color:var(--sm-ink);
-    font-size:clamp(2rem,5vw,4rem);
+    font-size:clamp(2rem,5vw,3rem);
     line-height:1.1;
 }
 
@@ -371,7 +373,7 @@ font-size: 28px;
 
 .smtr-hero-description{
     margin:0;
-    color:var(--sm-text);
+    color:var(--sm-ink);
     line-height:1.9;
     font-size:1.05rem;
 }
@@ -394,6 +396,7 @@ font-size: 28px;
 
 .smtr-primary-btn:hover{
     background:var(--sm-deep);
+    
 }
 
 .smtr-hero-image{

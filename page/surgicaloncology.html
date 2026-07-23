@@ -21,7 +21,7 @@
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
- 
+
 </head>
 
 <body>
@@ -147,16 +147,16 @@
         Oral cancer can develop at multiple sites within the oral cavity and oropharynx.
         The most frequently involved locations include:
       </p>
-      <div class="so-site-list">
-        <span class="so-site-tag">Tongue (lateral border)</span>
-        <span class="so-site-tag">Floor of the Mouth</span>
-        <span class="so-site-tag">Lips</span>
-        <span class="so-site-tag">Buccal Mucosa (inner cheek)</span>
-        <span class="so-site-tag">Hard &amp; Soft Palate</span>
-        <span class="so-site-tag">Gingiva (gums)</span>
-        <span class="so-site-tag">Oropharynx</span>
-        <span class="so-site-tag">Retromolar Trigone</span>
-      </div>
+     <ul class="so-site-list">
+    <li>Tongue (lateral border)</li>
+    <li>Floor of the Mouth</li>
+    <li>Lips</li>
+    <li>Buccal Mucosa (inner cheek)</li>
+    <li>Hard &amp; Soft Palate</li>
+    <li>Gingiva (gums)</li>
+    <li>Oropharynx</li>
+    <li>Retromolar Trigone</li>
+</ul>
       <p class="so-body-text">
         Pre-cancerous lesions such as leukoplakia (white patches) and erythroplakia (red patches)
         often precede malignant transformation and are critical to identify during routine
@@ -264,231 +264,239 @@
   </section>
 
   <!-- ─── CLINICAL EVIDENCE ─── -->
-  <section class="so-clinical-section" id="clinical">
-    <div class="so-section-inner">
+ <section class="so-clinical-section" id="clinical">
+  <div class="so-section-inner">
+    <header class="so-section-header">
       <h2 class="so-section-title">Oral Surgical Mucosal Defects</h2>
       <div class="so-divider-bar"></div>
-      <p class="so-section-desc">Two independent clinical studies confirming the superior wound healing performance of
-        Surgicoll-Mesh<sup>®</sup> in oral mucosal defects.</p>
+      <p class="so-section-desc">
+        Two independent clinical studies confirming the superior wound healing performance of
+        Surgicoll-Mesh<sup>®</sup> in oral mucosal defects.
+      </p>
+    </header>
 
-      <div class="so-studies-tabs">
-        <button class="so-tab-btn active" onclick="showTab('study1', this)">Study 1 - Shanmugam et al. (2018)</button>
-        <button class="so-tab-btn" onclick="showTab('study2', this)">Study 2 - Kalyani P et al. (2024)</button>
-      </div>
+    <!-- CASE STUDY 1 -->
+    <article class="so-case-study-card" id="case-study-1">
+      <header class="so-study-header">
+        <span class="so-case-badge">Case Study 1</span>
+        <div class="so-study-header-text">
+          <h3>Evaluation of Bovine-Derived Collagen Membrane in Oral Surgical Mucosal Defects</h3>
+          <p class="so-study-meta">
+            J. Maxillofac. Oral Surg. · Devakumari Shanmugam &amp; Neil Dominic · Indira Gandhi Medical College &amp; Research Institute, Puducherry · Published Nov 2018
+          </p>
+        </div>
+      </header>
 
-      <!-- Study 1 -->
-      <div class="so-study-panel active" id="study1">
-        <div class="so-study-card">
-          <div class="so-study-header">
+      <div class="so-study-body">
+        <div class="so-study-col">
+          <h4 class="so-study-section-label">Study Overview</h4>
+          <p class="so-study-text">
+            A clinical study evaluating the effectiveness of bovine-derived collagen (Surgicoll-Mesh<sup>®</sup>, 0.5 mm) in surgical oral mucosal defects. Thirty-two patients (8 female, 24 male, ages 18–65) who underwent surgery for benign, premalignant, and malignant oral cavity lesions were enrolled from 2012–2018. Cases included leukoplakia, oral submucous fibrosis (OSMF), mucocele, fibromas, and malignant lesions.
+          </p>
+          <p class="so-study-text">
+            The membrane was soaked in normal saline for a minimum of 5 minutes, adapted to the mucosal defect, trimmed with scissors, and secured with 3-0 Vicryl sutures. Patients were evaluated at Day 3, 7, 30, and 3 months using the Bessho et al. scoring criteria.
+          </p>
+        </div>
 
-            <div class="so-study-header-text">
-              <h3>Evaluation of Bovine-Derived Collagen Membrane in Oral Surgical Mucosal Defects</h3>
-              <p>J. Maxillofac. Oral Surg. Devakumari Shanmugam &amp; Neil Dominic · Indira Gandhi Medical College &amp;
-                Research Institute, Puducherry · Published Nov 2018</p>
-            </div>
+        <div class="so-study-col">
+          <h4 class="so-study-section-label">Clinical Outcome Results (%)</h4>
+          <div class="so-table-wrapper">
+            <table class="so-results-table">
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Good</th>
+                  <th>Fair</th>
+                  <th>Poor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Haemostasis</td>
+                  <td><span class="so-badge-good">81.25%</span></td>
+                  <td>18.75%</td>
+                  <td>0%</td>
+                </tr>
+                <tr>
+                  <td>Pain Relief</td>
+                  <td><span class="so-badge-good">68.75%</span></td>
+                  <td>31.25%</td>
+                  <td>0%</td>
+                </tr>
+                <tr>
+                  <td>Granulation Tissue</td>
+                  <td><span class="so-badge-good">87.5%</span></td>
+                  <td>12.5%</td>
+                  <td>0%</td>
+                </tr>
+                <tr>
+                  <td>Epithelialisation</td>
+                  <td><span class="so-badge-good">93.75%</span></td>
+                  <td>6.25%</td>
+                  <td>0%</td>
+                </tr>
+                <tr>
+                  <td>Contracture Control</td>
+                  <td><span class="so-badge-good">62.5%</span></td>
+                  <td>25%</td>
+                  <td>12.5%</td>
+                </tr>
+                <tr>
+                  <td><strong>Overall Effectiveness</strong></td>
+                  <td><span class="so-badge-good">81.25%</span></td>
+                  <td>18.75%</td>
+                  <td>0%</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="so-study-body">
-            <div>
-              <p class="so-study-section-label">Study Overview</p>
-              <p class="so-study-text">
-                A clinical study evaluating the effectiveness of bovine-derived collagen (Surgicoll-Mesh<sup>®</sup>,
-                0.5 mm)
-                in surgical oral mucosal defects. Thirty-two patients (8 female, 24 male, ages 18–65) who underwent
-                surgery for benign, premalignant, and malignant oral cavity lesions were enrolled from 2012–2018.
-                Cases included leukoplakia, oral submucous fibrosis (OSMF), mucocele, fibromas, and malignant lesions.
-              </p>
-              <br>
-              <p class="so-study-text">
-                The membrane was soaked in normal saline for minimum 5 minutes, adapted to the mucosal defect,
-                trimmed with scissors, and secured with 3-0 Vicryl sutures. Patients evaluated at day 3, 7, 30,
-                and 3 months using the Bessho et al. scoring criteria.
-              </p>
-
-            </div>
-            <div>
-              <p class="so-study-section-label">Clinical Outcome Results (%)</p>
-              <div style="overflow-x:auto;">
-              <table class="so-results-table">
-                <thead>
-                  <tr>
-                    <th>Parameter</th>
-                    <th>Good</th>
-                    <th>Fair</th>
-                    <th>Poor</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Haemostasis</td>
-                    <td><span class="so-badge-good">81.25%</span></td>
-                    <td>18.75%</td>
-                    <td>0%</td>
-                  </tr>
-                  <tr>
-                    <td>Pain Relief</td>
-                    <td><span class="so-badge-good">68.75%</span></td>
-                    <td>31.25%</td>
-                    <td>0%</td>
-                  </tr>
-                  <tr>
-                    <td>Granulation Tissue</td>
-                    <td><span class="so-badge-good">87.5%</span></td>
-                    <td>12.5%</td>
-                    <td>0%</td>
-                  </tr>
-                  <tr>
-                    <td>Epithelialisation</td>
-                    <td><span class="so-badge-good">93.75%</span></td>
-                    <td>6.25%</td>
-                    <td>0%</td>
-                  </tr>
-                  <tr>
-                    <td>Contracture Control</td>
-                    <td><span class="so-badge-good">62.5%</span></td>
-                    <td>25%</td>
-                    <td>12.5%</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Overall Effectiveness</strong></td>
-                    <td><span class="so-badge-good">81.25%</span></td>
-                    <td>18.75%</td>
-                    <td>0%</td>
-                  </tr>
-                </tbody>
-              </table>
-              </div>
-              <p style="font-size:15px; color:var(--text-light); margin-top:10px;">Within 1 week, 75% of patients
-                reverted back to normal eating habits. No allergic reactions reported in any patient.</p>
-            </div>
-          </div>
-          <div class="so-stats-grid">
-            <div class="so-stat-box">
-              <div class="so-stat-val">32</div>
-              <div class="so-stat-label">Patients Enrolled</div>
-            </div>
-            <div class="so-stat-box">
-              <div class="so-stat-val">81.25%</div>
-              <div class="so-stat-label">Overall Effectiveness — "Very Effective"</div>
-            </div>
-            <div class="so-stat-box">
-              <div class="so-stat-val">93.75%</div>
-              <div class="so-stat-label">Good Epithelialisation at 1 Month</div>
-            </div>
-            <div class="so-stat-box">
-              <div class="so-stat-val">0%</div>
-              <div class="so-stat-label">Patients Rated Ineffective</div>
-            </div>
-          </div>
+          <p class="so-study-note">Within 1 week, 75% of patients reverted back to normal eating habits. No allergic reactions were reported in any patient.</p>
         </div>
       </div>
 
-      <!-- Study 2 -->
-      <div class="so-study-panel" id="study2">
-        <div class="so-study-card">
-          <div class="so-study-header">
-            <div class="so-study-header-text">
-              <h3>Comparison of Novel Matrix-Modified Bovine Collagen Membrane (SurgiColl-Mesh<sup>®</sup>) vs.
-                Conventional Collagen - Oral Mucosal Defects</h3>
-              <p>Cureus Journal · DOI: 10.7759/cureus.53696 Kalyani P, Kathiravan Selvarasu et al. · Saveetha Dental
-                College &amp; Hospitals, Saveetha University, Chennai · Published Feb 2024</p>
-            </div>
-          </div>
-          <div class="so-study-body">
-            <div>
-              <p class="so-study-section-label">Study Design</p>
-              <p class="so-study-text">
-                Phase 1 double-blind randomized controlled clinical trial (CTRI-REF/2023/12/076231). 20 patients
-                divided into two equal groups. Group 1: novel SurgiColl-Mesh<sup>®</sup>; Group 2: conventional bovine
-                collagen
-                membrane. Parameters assessed at 2 weeks: epithelialization, granulation tissue formation, and wound
-                contraction. Independent sample t-test at 95% confidence interval.
-              </p>
+      <div class="so-stats-grid">
+        <div class="so-stat-box">
+          <div class="so-stat-val">32</div>
+          <div class="so-stat-label">Patients Enrolled</div>
+        </div>
+        <div class="so-stat-box">
+          <div class="so-stat-val">81.25%</div>
+          <div class="so-stat-label">Overall Effectiveness — "Very Effective"</div>
+        </div>
+        <div class="so-stat-box">
+          <div class="so-stat-val">93.75%</div>
+          <div class="so-stat-label">Good Epithelialisation at 1 Month</div>
+        </div>
+        <div class="so-stat-box">
+          <div class="so-stat-val">0%</div>
+          <div class="so-stat-label">Patients Rated Ineffective</div>
+        </div>
+      </div>
+    </article>
 
-            </div>
-            <div>
-              <p class="so-study-section-label">SurgiColl-Mesh<sup>®</sup> vs. Conventional Collagen (Good outcomes at 2
-                weeks)</p>
-              <div class="so-comparison-grid">
-                <div class="so-comparison-box surgicoll">
-                  <h5><i class="fas fa-star" style="color:var(--purple-brand);"></i> SurgiColl-Mesh<sup>®</sup> (Group
-                    1)</h5>
-                  <div class="so-comparison-metric">
-                    <span>Epithelialization</span>
-                    <div class="so-metric-bar-wrap">
-                      <div class="so-metric-bar" style="width:90px;">
-                        <div class="so-metric-fill" style="width:70%;"></div>
-                      </div>
-                      <span class="so-metric-pct">35%</span>
-                    </div>
-                  </div>
-                  <div class="so-comparison-metric">
-                    <span>Granulation</span>
-                    <div class="so-metric-bar-wrap">
-                      <div class="so-metric-bar" style="width:90px;">
-                        <div class="so-metric-fill" style="width:70%;"></div>
-                      </div>
-                      <span class="so-metric-pct">35%</span>
-                    </div>
-                  </div>
-                  <div class="so-comparison-metric">
-                    <span>Wound Contraction</span>
-                    <div class="so-metric-bar-wrap">
-                      <div class="so-metric-bar" style="width:90px;">
-                        <div class="so-metric-fill" style="width:80%;"></div>
-                      </div>
-                      <span class="so-metric-pct">40%</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="so-comparison-box conventional">
-                  <h5>Conventional Collagen (Group 2)</h5>
-                  <div class="so-comparison-metric">
-                    <span>Epithelialization</span>
-                    <div class="so-metric-bar-wrap">
-                      <div class="so-metric-bar" style="width:90px;">
-                        <div class="so-metric-fill" style="width:20%; background:var(--lavender-accent);"></div>
-                      </div>
-                      <span class="so-metric-pct" style="color:var(--text-light);">10%</span>
-                    </div>
-                  </div>
-                  <div class="so-comparison-metric">
-                    <span>Granulation</span>
-                    <div class="so-metric-bar-wrap">
-                      <div class="so-metric-bar" style="width:90px;">
-                        <div class="so-metric-fill" style="width:30%; background:var(--lavender-accent);"></div>
-                      </div>
-                      <span class="so-metric-pct" style="color:var(--text-light);">30%</span>
-                    </div>
-                  </div>
-                  <div class="so-comparison-metric">
-                    <span>Wound Contraction</span>
-                    <div class="so-metric-bar-wrap">
-                      <div class="so-metric-bar" style="width:90px;">
-                        <div class="so-metric-fill" style="width:20%; background:var(--lavender-accent);"></div>
-                      </div>
-                      <span class="so-metric-pct" style="color:var(--text-light);">10%</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p style="font-size:17px;color:var(--text-light);margin-top:12px;">SurgiColl-Mesh<sup>®</sup> has average
-                porosity of 20 microns (vs &gt;800 microns conventional) yielding better cell infiltration and
-                regenerative factor availability. No adverse reactions in either group.</p>
-            </div>
-          </div>
-          <div class="so-p-value-row">
-            <div class="so-p-badge"><strong>p = 0.015</strong><span>Epithelialization - Statistically Significant</span>
-            </div>
-            <div class="so-p-badge"><strong>p = 0.015</strong><span>Granulation Tissue - Statistically Significant</span>
-            </div>
-            <div class="so-p-badge"><strong>p = 0.005</strong><span>Wound Contraction - Statistically Significant</span>
-            </div>
-          </div>
+    <!-- CASE STUDY 2 -->
+    <article class="so-case-study-card" id="case-study-2">
+      <header class="so-study-header">
+        <span class="so-case-badge">Case Study 2</span>
+        <div class="so-study-header-text">
+          <h3>Comparison of Novel Matrix-Modified Bovine Collagen Membrane (SurgiColl-Mesh<sup>®</sup>) vs. Conventional Collagen - Oral Mucosal Defects</h3>
+          <p class="so-study-meta">
+            Cureus Journal · DOI: 10.7759/cureus.53696 · Kalyani P, Kathiravan Selvarasu et al. · Saveetha Dental College &amp; Hospitals, Saveetha University, Chennai · Published Feb 2024
+          </p>
+        </div>
+      </header>
+
+      <div class="so-study-body">
+        <div class="so-study-col">
+          <h4 class="so-study-section-label">Study Design</h4>
+          <p class="so-study-text">
+            Phase 1 double-blind randomized controlled clinical trial (CTRI-REF/2023/12/076231). 20 patients divided into two equal groups.
+          </p>
+          <ul class="so-study-list">
+            <li><strong>Group 1:</strong> Novel SurgiColl-Mesh<sup>®</sup></li>
+            <li><strong>Group 2:</strong> Conventional bovine collagen membrane</li>
+          </ul>
+          <p class="so-study-text">
+            Parameters assessed at 2 weeks: epithelialization, granulation tissue formation, and wound contraction. Independent sample t-test conducted at 95% confidence interval.
+          </p>
         </div>
 
+        <div class="so-study-col">
+          <h4 class="so-study-section-label">SurgiColl-Mesh<sup>®</sup> vs. Conventional Collagen (Good Outcomes at 2 Weeks)</h4>
+          
+          <div class="so-comparison-grid">
+            <div class="so-comparison-box surgicoll">
+              <h5><i class="fas fa-star"></i> SurgiColl-Mesh<sup>®</sup> (Group 1)</h5>
+              
+              <div class="so-comparison-metric">
+                <span>Epithelialization</span>
+                <div class="so-metric-bar-wrap">
+                  <div class="so-metric-bar">
+                    <div class="so-metric-fill" style="width: 70%;"></div>
+                  </div>
+                  <span class="so-metric-pct">35%</span>
+                </div>
+              </div>
+
+              <div class="so-comparison-metric">
+                <span>Granulation</span>
+                <div class="so-metric-bar-wrap">
+                  <div class="so-metric-bar">
+                    <div class="so-metric-fill" style="width: 70%;"></div>
+                  </div>
+                  <span class="so-metric-pct">35%</span>
+                </div>
+              </div>
+
+              <div class="so-comparison-metric">
+                <span>Wound Contraction</span>
+                <div class="so-metric-bar-wrap">
+                  <div class="so-metric-bar">
+                    <div class="so-metric-fill" style="width: 80%;"></div>
+                  </div>
+                  <span class="so-metric-pct">40%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="so-comparison-box conventional">
+              <h5>Conventional Collagen (Group 2)</h5>
+
+              <div class="so-comparison-metric">
+                <span>Epithelialization</span>
+                <div class="so-metric-bar-wrap">
+                  <div class="so-metric-bar">
+                    <div class="so-metric-fill conventional-fill" style="width: 20%;"></div>
+                  </div>
+                  <span class="so-metric-pct muted">10%</span>
+                </div>
+              </div>
+
+              <div class="so-comparison-metric">
+                <span>Granulation</span>
+                <div class="so-metric-bar-wrap">
+                  <div class="so-metric-bar">
+                    <div class="so-metric-fill conventional-fill" style="width: 30%;"></div>
+                  </div>
+                  <span class="so-metric-pct muted">30%</span>
+                </div>
+              </div>
+
+              <div class="so-comparison-metric">
+                <span>Wound Contraction</span>
+                <div class="so-metric-bar-wrap">
+                  <div class="so-metric-bar">
+                    <div class="so-metric-fill conventional-fill" style="width: 20%;"></div>
+                  </div>
+                  <span class="so-metric-pct muted">10%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="so-study-note">
+            SurgiColl-Mesh<sup>®</sup> has an average porosity of 20 microns (vs. &gt;800 microns in conventional membranes), yielding better cell infiltration and regenerative factor availability. No adverse reactions occurred in either group.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <div class="so-p-value-row">
+        <div class="so-p-badge">
+          <strong>p = 0.015</strong>
+          <span>Epithelialization - Statistically Significant</span>
+        </div>
+        <div class="so-p-badge">
+          <strong>p = 0.015</strong>
+          <span>Granulation Tissue - Statistically Significant</span>
+        </div>
+        <div class="so-p-badge">
+          <strong>p = 0.005</strong>
+          <span>Wound Contraction - Statistically Significant</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
 
  
 
@@ -501,7 +509,7 @@
     <div class="so-bcr-container">
 
       <div class="so-bcr-content">
-        <span class="so-bcr-tag">Breast Reconstruction</span>
+      
 
         <h2>
           What is <span>Breast Cancer Reconstruction?</span>
@@ -608,8 +616,8 @@
           <h3>1. Regenerative High Purity Type-I Collagen Scaffold for Breast Cancer Excision Repair and Reconstruction
           </h3>
           <p class="authors"><strong>(A)</strong> Skin marking of the breast tumour with concurrent axillary dissection
-            in progress. <strong>(B)</strong>Post-excision defect in
-            the upper outer quadrant demonstrating the residual cavity after tumour resection. <strong>(C)</strong>
+            in progress. <br> <strong>(B)</strong>Post-excision defect in
+            the upper outer quadrant demonstrating the residual cavity after tumour resection. <br> <strong>(C)</strong>
             Hydration and preparation
             of the high-purity type I collagen scaffold prior to implantation.</p>
           <!-- Accompanying Figure Section -->
@@ -645,8 +653,8 @@
           <h3>2: Intraoperative steps of high-purity type I collagen scaffold–
             assisted breast volume restoration following breast cancer resection</h3>
           <p class="authors"><strong>(A)</strong>Placement of the high-purity type I collagen scaffold into the excision
-            cavity to restore volume. <strong>(B)</strong> Scaffold
-            fixation secured with absorbable sutures to surrounding breast parenchyma. <strong>(C)</strong> Completed
+            cavity to restore volume. <br> <strong>(B)</strong> Scaffold
+            fixation secured with absorbable sutures to surrounding breast parenchyma. <br> <strong>(C)</strong> Completed
             layered skin closure.
             following scaffold implantation.</p>
           <!-- Accompanying Figure Section -->
@@ -715,7 +723,7 @@
           </a>
         </div>
         <div class="so-docvault-card">
-          <div class="so-docvault-icon"><i class="fa-solid fa-file-invoice"></i></div>
+          <div class="so-docvault-icon"><i class="fa-solid fa-file-pdf"></i></div>
           <h3>Cureus Clinical Trial</h3>
           <a href="../indications/Surgical%20Oncology/Breast%20Cancer%20Reconstruction/Clin%20Study_SM%20Breast%20Cancer%20Excision%20Repai.pdf"
             class="so-docvault-btn" target="_blank">
@@ -723,7 +731,7 @@
           </a>
         </div>
         <div class="so-docvault-card">
-          <div class="so-docvault-icon"><i class="fa-solid fa-file-lines"></i></div>
+          <div class="so-docvault-icon"><i class="fa-solid fa-file-pdf"></i></div>
           <h3>Technology White Paper</h3>
           <a href="../indications/Surgical%20Oncology/Breast%20Cancer%20Reconstruction/White%20paper_SM%20for%20Breast%20Cancer.pdf"
             class="so-docvault-btn" target="_blank">
@@ -737,7 +745,7 @@
   <!-- ─── SCRIPTS ─── -->
   <script>
 
-    // Tab switching for clinical evidence studies
+    // Tab switching for clinical evidence studies (kept for any legacy panel markup elsewhere)
     function showTab(panelId, btn) {
       document.querySelectorAll('.so-study-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.so-tab-btn').forEach(b => b.classList.remove('active'));

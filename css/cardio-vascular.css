@@ -1,6 +1,6 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap');
 
 /* ==========================================================================
    RESET & BASE STYLES
@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--sm-font-body);
 }
 
 html {
@@ -48,6 +48,24 @@ section {
   padding: 0 max(20px, calc((100vw - 1240px) / 2));
 }
 
+/* Skip link for keyboard/screen-reader users */
+.sm-skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: top 200ms ease;
+}
+
+.sm-skip-link:focus {
+  top: 12px;
+}
+
 /* ==========================================================================
    DESIGN TOKENS
    ========================================================================== */
@@ -66,7 +84,9 @@ section {
   --sm-transition: 250ms ease;
   --page-pad: 0 max(20px, calc((100vw - 1240px) / 2));
 
-  --sm-font-display: "Poppins", sans-serif;
+  /* Display face reserved for headline moments only; body copy stays on Poppins */
+  --sm-font-display: "Poppins", serif;
+  --sm-font-body: "Poppins", sans-serif;
   --sm-text: #655f67;
   --sm-gold: #d8a63c;
 }
@@ -77,6 +97,11 @@ section {
   max-width: 1240px;
   margin-inline: auto;
   padding-inline: 20px;
+}
+
+.sm-section{
+  background-color: var(--sm-plum-light);
+  padding-top: 40px;
 }
 
 /* ==========================================================================
@@ -121,6 +146,21 @@ section {
 .sm-hero-art span:nth-child(1) { right: 4%; top: -15%; }
 .sm-hero-art span:nth-child(2) { left: -10%; bottom: -40%; width: 48vw; }
 
+.sm-hero-art .pulse-rule {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  width: min(70vw, 640px);
+  height: 40px;
+  transform: translateX(-50%);
+  opacity: .5;
+}
+
+.sm-hero-art .pulse-rule path {
+  stroke: var(--sm-white);
+  stroke-width: 1.5;
+}
+
 .banner__bg {
   position: absolute;
   inset: 0;
@@ -133,163 +173,139 @@ section {
 .banner__title {
   position: relative;
   color: var(--sm-white);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-family: var(--sm-font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
   text-align: center;
   padding-inline: 1rem;
   margin: 0;
-  font-weight: bold;
+  font-weight: 600;
   z-index: 2;
 }
 
 /*=========================================
-    Product Hero (Surgicoll-Mesh intro)
+    Soft Tissue Reinforcement Hero
 =========================================*/
 
-.smtr-hero-section {
-  padding: 4rem 0;
-  background: var(--sm-plum-light);
+.smtr-hero-section{
+    padding:2rem 0;
+    background:var(--sm-plum-light);
 }
 
-.smtr-hero-wrapper {
-  width: var(--sm-container);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
-  gap: 4rem;
+.smtr-container{
+    width:var(--sm-container);
+    margin:0 auto;
 }
 
-.smtr-hero-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.smtr-hero-wrapper{
+    width:var(--sm-container);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:4rem;
 }
 
-.smtr-hero-title {
-  margin: 0;
-  color: var(--sm-ink);
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.1;
+.smtr-hero-content{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
 }
 
-.smtr-hero-subtitle {
-  margin: 0;
-  color: var(--sm-primary);
-  font-size: clamp(1.3rem, 2vw, 2rem);
-  font-weight: 700;
+.smtr-hero-title{
+    margin:0;
+    color:var(--sm-ink);
+    font-size:clamp(2rem,5vw,3rem);
+    line-height:1.1;
+    font-weight: 700;
 }
 
-.smtr-hero-description {
-  margin: 0;
-  color: var(--sm-ink);
-  line-height: 1.9;
-  font-size: 1.05rem;
+.smtr-hero-subtitle{
+    margin:0;
+    color:var(--sm-primary);
+    font-size:clamp(1.3rem,2vw,2rem);
+    font-weight:700;
 }
 
-.smtr-hero-actions {
-  margin-top: .5rem;
+.smtr-hero-description{
+    margin:0;
+    color:var(--sm-ink);
+    line-height:1.9;
+    font-size:1.05rem;
 }
 
-.smtr-primary-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .75rem;
-  padding: 1rem 2rem;
-  background: var(--sm-primary);
-  color: var(--sm-white);
-  text-decoration: none;
-  border-radius: 50px;
-  transition: var(--sm-transition);
+.smtr-hero-actions{
+    margin-top:.5rem;
 }
 
-.smtr-primary-btn:hover,
-.smtr-primary-btn:focus-visible {
-  background: var(--sm-deep);
+.smtr-primary-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.75rem;
+    padding:1rem 2rem;
+    background:var(--sm-primary);
+    color:var(--sm-white);
+    text-decoration:none;
+    border-radius:50px;
+    transition:var(--sm-transition);
 }
 
-.smtr-primary-btn:focus-visible {
-  outline: 2px solid var(--sm-plum);
-  outline-offset: 3px;
+.smtr-primary-btn:hover{
+       background:var(--sm-white);
+    border: 2px solid var(--sm-primary);
+    color: var(--sm-primary);
 }
 
-.smtr-hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+.smtr-hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
 }
 
-.smtr-hero-image img {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  display: block;
+.smtr-hero-image img{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    display:block;
 }
 
 /*=========================================
     Tablet
 =========================================*/
-@media (max-width: 992px) {
-  .smtr-hero-wrapper {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .smtr-hero-content {
-    order: 1;
-    text-align: left;
-  }
-  .smtr-hero-actions {
-    display: flex;
-    justify-content: center;
-  }
-  .smtr-hero-image {
-    order: 2;
-  }
-  .smtr-hero-image img {
-    max-width: 320px;
-  }
+
+@media (max-width:992px){
+
+.smtr-hero-wrapper{
+    grid-template-columns:1fr;
+    gap:3rem;
 }
 
-/*=========================================
-    Mobile
-=========================================*/
-@media (max-width: 768px) {
-  .smtr-hero-section {
-    padding: 3rem 0;
-  }
-  .smtr-hero-wrapper {
-    gap: 2rem;
-  }
-  .smtr-primary-btn {
-    width: 100%;
-    justify-content: center;
-  }
-  .smtr-hero-description {
-    font-size: 1rem;
-  }
-  .smtr-hero-image img {
-    max-width: 260px;
-  }
+.smtr-hero-content{
+    order:1;
+    text-align:left;
 }
 
-/*=========================================
-    Large Desktop
-=========================================*/
-@media (min-width: 1600px) {
-  .smtr-hero-image img {
-    max-width: 320px;
-  }
-  .smtr-hero-description {
-    font-size: 1.15rem;
-  }
+.smtr-hero-actions{
+    display:flex;
+    justify-content:center;
+}
+
+.smtr-hero-image{
+    order:2;
+}
+
+.smtr-hero-image img{
+    max-width:320px;
+}
+
 }
 
 /* ==========================================================================
-   DETAILED HERO (ECG intro)
+   DETAILED HERO
    ========================================================================== */
 .sm-hero {
   position: relative;
-  padding: clamp(40px, 6vw, 80px) 0;
+  padding: clamp(40px, 6vw, 40px) 0;
   overflow: hidden;
   isolation: isolate;
 }
@@ -307,6 +323,7 @@ section {
   max-width: 60ch;
   opacity: 0;
   animation: smRise .8s ease forwards .3s;
+  text-align: justify;
 }
 
 .sm-hero__lead + .sm-hero__lead { margin-top: 14px; }
@@ -340,7 +357,7 @@ section {
   border: 1px solid var(--sm-line);
   border-radius: 22px;
   padding: 14px;
-  box-shadow: var(--sm-shadow);
+  
 }
 
 .sm-hero__frame img {
@@ -356,7 +373,6 @@ section {
   padding: 0 4px;
   font-size: 12.5px;
   color: var(--sm-ink);
-  font-family: var(--sm-font-display);
   font-weight: 500;
 }
 
@@ -375,7 +391,6 @@ section {
   margin: 0;
   font-size: clamp(28px, 4vw, 44px);
   font-weight: bold;
-  text-align: left;
 }
 
 .title-line {
@@ -386,110 +401,130 @@ section {
   border-radius: 50px;
 }
 
-.sm-section {
-  padding: clamp(32px, 5vw, 56px) var(--page-pad);
+.inner-container {
+  padding: 30px 0;
 }
 
-.sm-section--head {
-  padding-top: clamp(56px, 8vw, 84px);
-  padding-bottom: 0;
-  background-color: var(--sm-soft);
-}
-
-.sm-section__sub {
-  margin-top: 14px;
-  color: var(--sm-ink);
-}
 
 /* ==========================================================================
-   APPLICATION CARDS
+   APPLICATIONS — GROUPED CARD LIBRARY
+   These are distinct, independent use cases rather than sequential steps,
+   so they're organized by clinical category instead of a numbered timeline.
    ========================================================================== */
 .sm-apps {
   background: var(--sm-soft);
-  padding: 20px 0 80px;
-  position: relative;
+  padding: 36px 0 80px;
 }
 
-.sm-app {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 50px);
+.sm-groups {
+  max-width: var(--sm-container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.sm-category__label {
+  display: flex;
   align-items: center;
-  padding: clamp(20px, 3vw, 32px);
-  margin-bottom: 32px;
+  gap: 14px;
+  margin-bottom: 22px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sm-primary);
+}
+
+.sm-category__label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--sm-line);
+}
+
+.sm-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.sm-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   background: #fff;
   border: 1px solid var(--sm-line);
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+  border-radius: 20px;
+  padding: clamp(20px, 3vw, 28px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+  transition: transform var(--sm-transition), box-shadow var(--sm-transition);
 }
 
-.sm-app__body {
-  padding-right: 10px;
+.sm-card:hover,
+.sm-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--sm-shadow);
 }
 
 .sm-app__title {
-  font-size: clamp(22px, 2vw, 30px);
+  font-size: clamp(19px, 1.6vw, 22px);
   font-weight: 700;
   color: var(--sm-primary);
-  margin-bottom: 14px;
   line-height: 1.3;
 }
 
 .sm-app__text {
   margin: 0;
   color: var(--sm-ink);
-  line-height: 1.9;
-  font-size: 1rem;
-}
-
-.sm-app__media {
-  position: relative;
-  width: 100%;
+  line-height: 1.8;
+  
+  text-align: justify;
 }
 
 .sm-app__card {
-  background: #fff;
+  background: var(--sm-soft);
   border: 1px solid var(--sm-line);
-  border-radius: 18px;
-  padding: 14px;
-  box-shadow: none;
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: auto;
 }
 
 .sm-app__card img {
   width: 100%;
-  border-radius: 12px;
-  min-height: clamp(200px, 30vw, 280px);
+  border-radius: 10px;
+  min-height: clamp(150px, 16vw, 190px);
   object-fit: contain;
   background: #f9f6f9;
 }
 
-/* Grid & Gallery */
+/* Grid & Gallery variants used inside a card for multi-image applications */
 .sm-app__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 12px;
 }
 
 .sm-app__figure {
   margin: 0;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid var(--sm-line);
   background: #fff;
 }
 
 .sm-app__figure img {
   width: 100%;
-  height: clamp(140px, 22vw, 200px);
+  height: clamp(100px, 14vw, 130px);
   object-fit: cover;
   display: block;
 }
 
 .sm-app__figure figcaption {
-  padding: 10px 8px;
+  padding: 8px;
   text-align: center;
-  font-size: clamp(12px, 1.4vw, 13px);
+  font-size: clamp(11px, 1.3vw, 12.5px);
   font-weight: 600;
   color: var(--sm-primary);
   background: #fff;
@@ -498,26 +533,20 @@ section {
 
 .sm-app__gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
+  gap: 10px;
 }
 
 .sm-app__gallery img {
   width: 100%;
-  height: clamp(160px, 24vw, 220px);
+  height: clamp(110px, 14vw, 140px);
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
-
-/* Flip Layout */
-.sm-app--flip .sm-app__media { order: 2; }
-.sm-app--flip .sm-app__body { order: 1; }
 
 /* ==========================================================================
    REFERENCES
    ========================================================================== */
 .sm-refs {
-  border-top: 1px solid var(--sm-line);
   width: 100%;
 }
 
@@ -548,7 +577,8 @@ section {
   align-items: center;
   font-size: 14px;
   background: var(--sm-white);
-  
+  padding: 10px 4px;
+  border-radius: 10px;
   transition: all var(--sm-transition);
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -557,12 +587,10 @@ section {
 .sm-refs li:hover {
   transform: translateX(4px);
   box-shadow: var(--sm-shadow);
-  border-color: var(--sm-plum);
 }
 
 .sm-refs li::before {
   content: counter(refcount);
-  font-family: var(--sm-font-display);
   font-weight: 700;
   font-size: 12px;
   color: var(--sm-white);
@@ -598,7 +626,7 @@ section {
 
 .sm-reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(24px);
   transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -623,38 +651,24 @@ section {
   }
 }
 
-@media (max-width: 860px) {
-  .sm-app,
-  .sm-app--flip {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 24px;
-  }
-  .sm-app--flip .sm-app__media,
-  .sm-app--flip .sm-app__body {
-    order: initial;
-  }
-  .sm-app__body {
-    padding-right: 0;
-  }
-}
-
 @media (max-width: 576px) {
-  .sm-app {
-    padding: 20px;
-    border-radius: 18px;
+  .sm-card {
+    padding: 18px;
+    border-radius: 16px;
   }
+
   .sm-app__grid,
   .sm-app__gallery {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 10px;
   }
+
   .banner {
     min-height: 180px;
   }
+
   .sm-refs li {
-    padding: 12px 14px;
-    font-size: 13px;
+    padding: 10px 8px;
     gap: 10px;
   }
   .sm-refs li:hover {

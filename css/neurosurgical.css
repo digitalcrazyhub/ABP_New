@@ -83,13 +83,13 @@ h1, h2, h3, h4 {
 }
 
 sup {
-  font-size: 11px;
-  color: var(--sm-plum);
+ 
+ 
   font-weight: 700;
 }
 
 section {
-  padding: clamp(40px, 5vw, 64px) var(--page-pad);
+  padding: clamp(40px, 5vw, 40px) var(--page-pad);
 }
 
 .gr-container, 
@@ -168,7 +168,7 @@ section {
 .banner__title {
   position: relative;
   color: var(--sm-white);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(2rem, 5vw, 4rem);
   text-align: center;
   padding-inline: 1rem;
   margin: 0;
@@ -180,7 +180,7 @@ section {
 =========================================*/
 
 .smtr-hero-section{
-    padding:4rem 0;
+    padding:2rem 0;
     background:var(--sm-plum-light);
 }
 
@@ -202,7 +202,7 @@ section {
 .smtr-hero-title{
     margin:0;
     color:var(--sm-ink);
-    font-size:clamp(2rem,5vw,4rem);
+    font-size:clamp(2rem,5vw,3rem);
     line-height:1.1;
 }
 
@@ -303,7 +303,7 @@ section {
    5. SECTIONS & CONTENT CARDS
    ========================================================================== */
 .section-strip__title {
-  color: var(--sm-primary);
+  color: var(--sm-ink);
   margin: 0;
   font-size: clamp(28px, 4vw, 44px);
   font-weight: bold;
@@ -318,9 +318,7 @@ section {
   border-radius: 50px;
 }
 
-.wp-section {
-  border-bottom: 1px solid var(--sm-line);
-}
+
 
 .wp-section:last-of-type {
   border-bottom: none;

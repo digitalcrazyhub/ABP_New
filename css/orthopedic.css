@@ -1,5 +1,4 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* ==========================================================================
    1. RESET & BASE STYLES
@@ -32,6 +31,7 @@ a {
 :root {
   --sm-primary: #762c69;
   --sm-plum: #9b3a83;
+  --sm-deep: #59214f;
   --sm-plum-light: #fff2fc;
   --sm-ink: #1b1720;
   --sm-text: #655f67;
@@ -56,7 +56,6 @@ p {
   margin: 0 0 1em;
   font-size: 1.1rem;
   color: var(--sm-ink);
-  text-align: justify;
 }
 
 h1, h2, h3, h4 {
@@ -66,7 +65,7 @@ h1, h2, h3, h4 {
 }
 
 section {
-  padding: clamp(40px, 6vw, 72px) var(--page-pad);
+  padding: clamp(40px, 6vw, 20px) var(--page-pad);
 }
 
 .container,
@@ -124,7 +123,8 @@ section {
 }
 
 .sm-hero-art {
-  background:radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
+  background: radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transparent 36%), 
+              linear-gradient(126deg, #151322 0%, #403040 45%, #8c506f 100%);
 }
 
 .sm-hero-art::before {
@@ -165,94 +165,93 @@ section {
 .banner__title {
   position: relative;
   color: var(--sm-white);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   text-align: center;
   padding-inline: 1rem;
   margin: 0;
   font-weight: bold;
 }
 
-/*=========================================
-    Soft Tissue Reinforcement Hero
-=========================================*/
-
-.smtr-hero-section{
-    padding:4rem 0;
-    background:var(--sm-plum-light);
+/* =========================================
+   5. SOFT TISSUE REINFORCEMENT HERO
+========================================= */
+.smtr-hero-section {
+  padding: 2rem 0;
+  background: var(--sm-plum-light);
 }
 
-.smtr-hero-wrapper{
-    width:var(--sm-container);
-    margin:0 auto;
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    align-items:center;
-    gap:4rem;
+.smtr-hero-wrapper {
+  width: var(--sm-container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 4rem;
 }
 
-.smtr-hero-content{
-    display:flex;
-    flex-direction:column;
-    gap:1.5rem;
+.smtr-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.smtr-hero-title{
-    margin:0;
-    color:var(--sm-ink);
-    font-size:clamp(2rem,5vw,4rem);
-    line-height:1.1;
+.smtr-hero-title {
+  margin: 0;
+  color: var(--sm-ink);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
 }
 
-.smtr-hero-subtitle{
-    margin:0;
-    color:var(--sm-primary);
-    font-size:clamp(1.3rem,2vw,2rem);
-    font-weight:700;
+.smtr-hero-subtitle {
+  margin: 0;
+  color: var(--sm-primary);
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-weight: 700;
 }
 
-.smtr-hero-description{
-    margin:0;
-    color:var(--sm-ink);
-    line-height:1.9;
-    font-size:1.05rem;
+.smtr-hero-description {
+  margin: 0;
+  color: var(--sm-ink);
+  line-height: 1.9;
+  font-size: 1.05rem;
 }
 
-.smtr-hero-actions{
-    margin-top:.5rem;
+.smtr-hero-actions {
+  margin-top: .5rem;
 }
 
-.smtr-primary-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:.75rem;
-    padding:1rem 2rem;
-    background:var(--sm-primary);
-    color:var(--sm-white);
-    text-decoration:none;
-    border-radius:50px;
-    transition:var(--sm-transition);
+.smtr-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  padding: 1rem 2rem;
+  background: var(--sm-primary);
+  color: var(--sm-white);
+  text-decoration: none;
+  border-radius: 50px;
+  transition: var(--sm-transition);
 }
 
-.smtr-primary-btn:hover{
-    background:var(--sm-deep);
+.smtr-primary-btn:hover {
+  background: var(--sm-deep);
 }
 
-.smtr-hero-image{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:0;
+.smtr-hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
-.smtr-hero-image img{
-    width:100%;
-    max-width:420px;
-    height:auto;
-    display:block;
+.smtr-hero-image img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
 }
 
 /* ==========================================================================
-   SECTION HEADING STRIP
+   6. SECTION HEADING STRIP & ORTHOPEDIC GALLERIES
    ========================================================================== */
 .section-strip__title {
   color: var(--sm-primary);
@@ -270,15 +269,10 @@ section {
   border-radius: 50px;
 }
 
-/* ==========================================================================
-   6. ORTHOPEDIC SECTIONS & GALLERIES
-   ========================================================================== */
 .section-head {
   display: flex;
   align-items: baseline;
   gap: 16px;
- 
- 
   padding-bottom: 16px;
 }
 
@@ -307,7 +301,8 @@ section {
 }
 
 .osteo-gallery,
-.exposed-gallery {
+.exposed-gallery,
+.tint-grid .osteo-gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
@@ -342,7 +337,7 @@ section {
 .exposed-gallery figcaption {
   font-family: var(--sm-font-display);
   font-weight: 700;
-  font-size:1.1rem;
+  font-size: 1.1rem;
   color: var(--sm-primary);
   text-align: center;
   line-height: 1.35;
@@ -358,7 +353,6 @@ section {
 .caption-box {
   font-family: var(--sm-font-display);
   font-weight: 600;
-  
   color: var(--sm-primary);
   background: var(--sm-plum-light);
   border-radius: 10px;
@@ -384,12 +378,14 @@ section {
 
 .link-list li strong {
   color: var(--sm-ink);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: larger;
 }
 
 .link-list a {
   word-break: break-all;
   color: var(--sm-primary);
+  font-size: larger;
 }
 
 .link-list a:hover,
@@ -414,7 +410,6 @@ section {
 
 .text-col p {
   margin-bottom: 14px;
-  
   text-align: justify;
 }
 
@@ -450,7 +445,6 @@ section {
   counter-increment: ref;
   position: relative;
   padding-left: 44px;
-  
   color: var(--sm-text);
   text-align: left;
 }
@@ -502,7 +496,8 @@ section {
   }
 
   .osteo-gallery,
-  .exposed-gallery {
+  .exposed-gallery,
+  .tint-grid .osteo-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -540,24 +535,14 @@ section {
 
   p,
   .text-col p {
-    text-align: left;
+    text-align: justify;
   }
 
   .osteo-gallery,
-  .exposed-gallery {
+  .exposed-gallery,
+  .tint-grid .osteo-gallery {
     grid-template-columns: 1fr;
     gap: 10px;
-  }
-}
-
-@media (max-width: 400px) {
-  .osteo-gallery,
-  .exposed-gallery {
-    grid-template-columns: 1fr;
-  }
-  .tint-grid .osteo-gallery, .exposed-gallery {
-    display: grid;
-    grid-template-columns: 1fr;
   }
 }
 
@@ -566,9 +551,84 @@ section {
     scroll-behavior: auto;
   }
 }
-.tint-grid .osteo-gallery, .exposed-gallery {
-    display: grid;
+/* ==========================================================================
+   EXPOSED BONES & TENDONS SECTION
+   ========================================================================== */
+
+/* Section Container */
+#exposed-bones-tendons {
+  background-color: var(--sm-plum-light, #fff2fc);
+  padding: clamp(40px, 6vw, 40px) var(--page-pad, 20px);
+}
+
+/* Gallery Grid System */
+.exposed-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+/* Individual Figure Cards */
+.exposed-gallery figure {
+  background: var(--sm-white, #ffffff);
+  border: 1px solid var(--sm-line, #e7dce5);
+  border-radius: var(--sm-radius, 14px);
+  box-shadow: var(--sm-shadow, 0 15px 35px rgba(63, 23, 55, 0.12));
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform var(--sm-transition, 250ms ease), box-shadow var(--sm-transition, 250ms ease);
+}
+
+.exposed-gallery figure:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(63, 23, 55, 0.18);
+}
+
+/* Images */
+.exposed-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Captions */
+.exposed-gallery figcaption {
+  font-family: var(--sm-font-display, "Poppins", sans-serif);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sm-primary, #762c69);
+  text-align: center;
+  line-height: 1.4;
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Tablets & Laptops (Below 1024px) */
+@media (max-width: 1024px) {
+  .exposed-gallery {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Mobile Devices (Below 560px) */
+@media (max-width: 560px) {
+  .exposed-gallery {
+    grid-template-columns: 1fr;
     gap: 14px;
-    margin: 22px 0 14px;
+  }
+  
+  .exposed-gallery figcaption {
+    font-size: 0.9rem;
+  }
 }
