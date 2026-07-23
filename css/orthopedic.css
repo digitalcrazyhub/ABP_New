@@ -601,7 +601,7 @@ section {
 .exposed-gallery figcaption {
   font-family: var(--sm-font-display, "Poppins", sans-serif);
   font-weight: 600;
-  font-size: 0.95rem;
+ 
   color: var(--sm-primary, #762c69);
   text-align: center;
   line-height: 1.4;
@@ -630,5 +630,91 @@ section {
   
   .exposed-gallery figcaption {
     font-size: 0.9rem;
+  }
+}
+
+/* Outer gallery: 2 columns — image 1 | (3-image group) */
+.osteo-gallery {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* single image : trio group */
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+/* Card styling shared by both grid items */
+.osteo-main,
+.osteo-group {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.osteo-main {
+  margin: 0;
+}
+
+.osteo-main img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.osteo-main figcaption {
+  margin-top: 10px;
+  
+  color: #6b2a6b;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Inner 3-column grid for the trio */
+.osteo-group__images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  flex: 1;
+}
+
+.osteo-group__images figure {
+  margin: 0;
+  background: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.osteo-group__images img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Shared caption under the trio */
+.osteo-group__caption {
+  margin-top: 10px;
+ 
+  color: #6b2a6b;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 900px) {
+  .osteo-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .osteo-group__images {
+    grid-template-columns: 1fr;
   }
 }

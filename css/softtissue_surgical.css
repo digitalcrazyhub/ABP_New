@@ -364,7 +364,7 @@ font-size: 28px;
 }
 
 .smtr-primary-btn:hover{
-       background: var(--sm-primary);}
+       background: var(--sm-deep);}
 
 .smtr-hero-image{
     display:flex;
