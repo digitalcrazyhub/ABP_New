@@ -250,9 +250,8 @@ section {
 }
 
 .smtr-primary-btn:hover{
-       background:var(--sm-white);
-    border: 2px solid var(--sm-primary);
-    color: var(--sm-primary);
+       background:var(--sm-deep);
+   
 }
 
 .smtr-hero-image{

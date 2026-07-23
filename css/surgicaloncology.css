@@ -35,6 +35,7 @@ a {
   --sm-primary: #762c69;
   --sm-plum: #9b3a83;
   --sm-plum-light: #fff2fc;
+   --sm-deep: #59214f;
   --sm-ink: #000;
   --sm-text: #655f67;
   --sm-soft: #fff1fc;
@@ -384,9 +385,8 @@ font-size: 28px;
 }
 
 .smtr-primary-btn:hover{
-       background:var(--sm-white);
-    border: 2px solid var(--sm-primary);
-    color: var(--sm-primary);
+       background:var(--sm-deep);
+    
 }
 
 .smtr-hero-image{
