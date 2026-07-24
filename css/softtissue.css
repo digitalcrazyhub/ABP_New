@@ -124,7 +124,7 @@ section {
 
 .btn--outline {
   background: transparent;
-  border: 1px solid var(--sm-ink);
+ 
   color: var(--sm-white);
   background: var(--sm-primary);
 }

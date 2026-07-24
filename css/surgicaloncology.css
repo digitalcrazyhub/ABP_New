@@ -63,6 +63,7 @@ p {
   margin: 0 0 1em;
   font-size: 1.1rem;
   color: var(--sm-ink);
+  line-height: 1.8;
 }
 
 h1,
@@ -588,7 +589,7 @@ font-size: 28px;
 /* Site tags */
 .so-site-list {
     display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+   
     gap: 10px 30px;
     padding-left: 20px;
     margin: 20px 0 32px;
@@ -609,7 +610,7 @@ font-size: 28px;
   
   color: var(--sm-ink);
   border-radius: var(--sm-radius);
-  padding: 36px 40px;
+  
   margin-top: 48px;
 
 }
@@ -678,8 +679,7 @@ font-size: 28px;
 }
 
 .so-video-inner{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+  
     gap:3rem;
     align-items:center;
 }
@@ -857,7 +857,7 @@ font-size: 28px;
 
 .so-study-header-text {
   min-width: 0;
-  flex: 1 1 240px;
+ 
 }
 
 .so-study-header-text h3 {
@@ -870,19 +870,23 @@ font-size: 28px;
   margin: 0;
 }
 
-.so-study-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.so-study-body-1 {
+ display: grid;
+ grid-template-columns: 1.4fr 0.6fr;
   gap: 32px;
   margin-bottom: 28px;
 }
-
+.so-study-body {
+ 
+  gap: 32px;
+  margin-bottom: 28px;
+}
 .so-study-col {
   min-width: 0;
 }
 
 .so-study-section-label {
-  font-size: 1.1rem;
+ 
   font-weight: 700;
   color: var(--sm-primary, #762c69);
   margin-bottom: 12px;
@@ -932,21 +936,21 @@ font-size: 28px;
   padding: 10px 12px;
   border-bottom: 1px solid var(--sm-line, #e7dce5);
   white-space: nowrap;
+  font-size:20px;
 }
 
 .so-results-table th {
   background: var(--sm-plum-light, #fff2fc);
   color: var(--sm-primary, #762c69);
   font-weight: 700;
-  font-size: 0.85rem;
+  
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
 .so-badge-good {
   display: inline-block;
-  background: #e8f5e9;
-  color: #2e7d32;
+
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 4px;
@@ -956,15 +960,15 @@ font-size: 28px;
 /* Stats Box Grid (Study 1) */
 .so-stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+ 
   gap: 16px;
 }
 
 .so-stat-box {
-  min-width: 0;
+ 
   background: var(--sm-plum-light, #fff2fc);
   border-radius: 10px;
-  padding: 16px;
+  
   text-align: center;
 }
 
@@ -1006,7 +1010,7 @@ font-size: 28px;
 }
 
 .so-comparison-box h5 {
-  font-size: 0.95rem;
+  font-size: 20px;
   font-weight: 700;
   color: var(--sm-primary, #762c69);
   margin-bottom: 12px;
@@ -1021,7 +1025,7 @@ font-size: 28px;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  font-size: 0.82rem;
+  font-size: 20px;
   margin-bottom: 10px;
   flex-wrap: wrap;
 }
@@ -1085,7 +1089,7 @@ font-size: 28px;
 }
 
 .so-p-badge span {
-  font-size: 0.8rem;
+  
   color: var(--sm-text, #655f67);
 }
 
@@ -1511,6 +1515,7 @@ font-size: 28px;
   margin: 0 auto 1em;
   color: var(--sm-ink);
   line-height: 1.6;
+  padding-top: 16px;
 }
 
 .so-docvault-grid {
@@ -1573,7 +1578,7 @@ font-size: 28px;
 }
 
 .so-docvault-btn:hover {
-  background: var(--sm-primary);
+  background: var(--sm-plum);
   transform: translateY(-2px);
   border: 2px solid var(--sm-plum);
   color: var(--sm-white);
@@ -1755,4 +1760,63 @@ font-size: 28px;
   .so-trial-image-wrapper {
     grid-template-columns: 1fr;
   }
+}
+.so-site-card {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+   
+    width: 100%;
+    transition: .3s ease;
+}
+
+.so-site-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+}
+
+.so-site-title {
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #762c69;
+}
+
+.so-site-list {
+    margin: 0;
+    padding-left: 22px;
+    list-style: disc;
+}
+
+.so-site-list li {
+    margin-bottom: 12px;
+    color: #444;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.so-site-list li:last-child {
+    margin-bottom: 0;
+}
+
+.so-site-list li::marker {
+    color: #762c69;
+    font-size: 1.1em;
+}
+
+/* Responsive */
+@media (max-width:768px){
+    .so-site-card{
+        padding:20px;
+    }
+
+    .so-site-title{
+        font-size:20px;
+    }
+
+    .so-site-list li{
+        font-size:16px;
+    }
 }
