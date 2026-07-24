@@ -1163,7 +1163,7 @@ font-weight: 700;
     gap: .5rem;
     padding: .8rem 1.6rem;
     border-radius: var(--sm-radius);
-    border: 1px solid var(--sm-ink);
+    
     background: var(--sm-primary);
     color: var(--sm-white);
     font-weight: 600;

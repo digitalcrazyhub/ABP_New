@@ -1,504 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Usage of Surgicoll-Mesh® for Application in Orthopedic Surgeries</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --sm-primary: #762c69;
-    --sm-plum: #9b3a83;
-    --sm-plum-light: #fff2fc;
-    --sm-ink: #000;
-    --sm-soft: #fff1fc;
-    --sm-line: #e7dce5;
-    --sm-white: #fff;
-    --sm-shadow: 0 15px 35px rgba(63, 23, 55, .12);
-    --sm-radius: 14px;
-    --sm-container: min(1240px, calc(100% - 40px));
-    --sm-transition: 250ms ease;
-    --page-pad: 0 max(20px, calc((100vw - 1240px) / 2));
-    --sm-font-display: "Poppins", sans-serif;
-    --sm-text: #655f67;
-    --sm-gold: #d8a63c;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardio-Vascular | Advanced Biotech Products [P] Ltd</title>
+  <meta name="description" content="Cardiac and cardiovascular repair concepts for Surgicoll-Mesh collagen scaffold, including septal defect closure and pericardial reconstruction.">
+  <meta property="og:title" content="Cardio-Vascular | Advanced Biotech Products [P] Ltd">
+  <meta property="og:description" content="Cardiac and cardiovascular repair concepts for Surgicoll-Mesh collagen scaffold, including septal defect closure and pericardial reconstruction.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../home/Surgicoll-Mesh%20High%20Res%20Box.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../home/ABP-symbol.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/nav_footer.css">
+  <link rel="stylesheet" href="/css/temp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: "Inter", sans-serif;
-    color: var(--sm-text);
-    background: var(--sm-white);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  img { max-width: 100%; display: block; }
-
-  a { color: var(--sm-primary); }
-
-  .wrap {
-    width: var(--sm-container);
-    margin-inline: auto;
-  }
-
-  /* ---------- Top strip ---------- */
-  .topstrip {
-    background: var(--sm-primary);
-    color: var(--sm-white);
-    font-size: .82rem;
-    letter-spacing: .02em;
-  }
-  .topstrip .wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 24px;
-    padding: 10px 0;
-    justify-content: space-between;
-  }
-  .topstrip a { color: var(--sm-white); text-decoration: none; }
-  .topstrip a:hover { text-decoration: underline; }
-
-  /* ---------- Header / Hero ---------- */
-  header.hero {
-    background:
-      radial-gradient(1100px 480px at 85% -10%, rgba(216,166,60,.18), transparent 60%),
-      linear-gradient(155deg, var(--sm-primary) 0%, var(--sm-plum) 68%, #6b2359 100%);
-    color: var(--sm-white);
-    position: relative;
-    overflow: hidden;
-  }
-  header.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 1px, transparent 1px 64px),
-      repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0 1px, transparent 1px 64px);
-    pointer-events: none;
-  }
-  .hero-inner {
-    position: relative;
-    padding: 64px 0 56px;
-    display: grid;
-    gap: 10px;
-  }
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--sm-font-display);
-    font-weight: 600;
-    font-size: .78rem;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--sm-gold);
-  }
-  .eyebrow::before {
-    content: "";
-    width: 26px;
-    height: 2px;
-    background: var(--sm-gold);
-    display: inline-block;
-  }
-  h1.title {
-    font-family: var(--sm-font-display);
-    font-weight: 800;
-    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
-    letter-spacing: -0.01em;
-    max-width: 16ch;
-  }
-  h1.title .accent { color: var(--sm-gold); }
-  .hero-sub {
-    font-family: var(--sm-font-display);
-    font-weight: 600;
-    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-    color: rgba(255,255,255,.9);
-    max-width: 46ch;
-  }
-  .hero-meta {
-    margin-top: 28px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
-    font-size: .88rem;
-    color: rgba(255,255,255,.82);
-  }
-  .hero-meta strong {
-    display: block;
-    color: var(--sm-white);
-    font-family: var(--sm-font-display);
-    font-weight: 600;
-    font-size: .78rem;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-    color: var(--sm-gold);
-  }
-
-  /* ---------- Section shell ---------- */
-  section { padding: 64px 0; }
-  section.tint { background: var(--sm-soft); }
-  .section-head {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 34px;
-    border-bottom: 2px solid var(--sm-line);
-    padding-bottom: 16px;
-  }
-  .section-head h2 {
-    font-family: var(--sm-font-display);
-    font-weight: 700;
-    font-size: clamp(1.5rem, 2.6vw, 2rem);
-    color: var(--sm-primary);
-  }
-
-  /* ---------- About: features + advantages ---------- */
-  .about-lead {
-    font-size: 1.08rem;
-    color: var(--sm-ink);
-    max-width: 78ch;
-    margin-bottom: 28px;
-  }
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 16px;
-    margin-bottom: 44px;
-  }
-  .feature-card {
-    background: var(--sm-white);
-    border: 1px solid var(--sm-line);
-    border-radius: var(--sm-radius);
-    box-shadow: var(--sm-shadow);
-    padding: 20px 20px 18px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    transition: transform var(--sm-transition), box-shadow var(--sm-transition);
-  }
-  .feature-card:hover { transform: translateY(-4px); box-shadow: 0 22px 42px rgba(63,23,55,.16); }
-  .feature-num {
-    font-family: var(--sm-font-display);
-    font-weight: 800;
-    font-size: 1.15rem;
-    color: var(--sm-white);
-    background: var(--sm-primary);
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .feature-card p { font-size: .93rem; color: var(--sm-text); }
-
-  .subhead {
-    font-family: var(--sm-font-display);
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--sm-primary);
-    margin: 0 0 18px;
-  }
-
-  /* Indications box */
-  .indications {
-    background: var(--sm-white);
-    border: 1px solid var(--sm-line);
-    border-radius: var(--sm-radius);
-    box-shadow: var(--sm-shadow);
-    overflow: hidden;
-    margin-bottom: 48px;
-  }
-  .ind-row {
-    padding: 16px 24px;
-    font-size: .95rem;
-    color: var(--sm-ink);
-    border-bottom: 1px solid var(--sm-line);
-  }
-  .ind-row:last-child { border-bottom: none; }
-  .ind-row:nth-child(odd) { background: var(--sm-plum-light); }
-  .ind-row strong { color: var(--sm-primary); }
-  .ind-row ul { margin: 0; padding-left: 1.1em; }
-  .ind-row li { margin-bottom: 4px; }
-  .ind-row li:last-child { margin-bottom: 0; }
-
-  /* Advantage list */
-  .advantages {
-    list-style: none;
-    display: grid;
-    gap: 14px;
-  }
-  .advantages li {
-    background: var(--sm-white);
-    border-left: 4px solid var(--sm-gold);
-    border-radius: 0 10px 10px 0;
-    box-shadow: var(--sm-shadow);
-    padding: 14px 20px;
-    font-size: .95rem;
-  }
-  .advantages li strong {
-    display: block;
-    font-family: var(--sm-font-display);
-    color: var(--sm-primary);
-    font-size: .98rem;
-    margin-bottom: 2px;
-  }
-
-  /* ---------- Orthopedic surgeries ---------- */
-  .ortho-block { margin-bottom: 56px; }
-  .ortho-block:last-child { margin-bottom: 0; }
-
-  .osteo-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin: 22px 0 14px;
-  }
-  .osteo-gallery figure {
-    background: var(--sm-white);
-    border: 1px solid var(--sm-line);
-    border-radius: var(--sm-radius);
-    box-shadow: var(--sm-shadow);
-    padding: 10px;
-    display: flex;
-    align-items: center;
-  }
-  .osteo-gallery img { border-radius: 6px; width: 100%; height: auto; object-fit: contain; }
-
-  .caption-row {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 16px;
-    margin-bottom: 22px;
-  }
-  .caption-box {
-    font-family: var(--sm-font-display);
-    font-weight: 600;
-    font-size: .88rem;
-    color: var(--sm-primary);
-    background: var(--sm-plum-light);
-    border-radius: 10px;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-  }
-
-  .link-list {
-    list-style: none;
-    display: grid;
-    gap: 8px;
-    font-size: .9rem;
-    margin-top: 6px;
-  }
-  .link-list li strong {
-    color: var(--sm-ink);
-    font-weight: 600;
-  }
-  .link-list a { word-break: break-all; }
-
-  .media-text {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    gap: 32px;
-    align-items: center;
-  }
-  .media-text.reverse .figure-col { order: 2; }
-  .media-text.reverse .text-col { order: 1; }
-  .text-col p { margin-bottom: 14px; font-size: .97rem; }
-  .text-col p:last-child { margin-bottom: 0; }
-  .figure-col {
-    background: var(--sm-white);
-    border: 1px solid var(--sm-line);
-    border-radius: var(--sm-radius);
-    box-shadow: var(--sm-shadow);
-    padding: 14px;
-  }
-  .figure-col img { border-radius: 8px; }
-
-  /* ---------- References ---------- */
-  .refs {
-    list-style: none;
-    counter-reset: ref;
-    display: grid;
-    gap: 14px;
-  }
-  .refs li {
-    counter-increment: ref;
-    position: relative;
-    padding-left: 44px;
-    font-size: .9rem;
-    color: var(--sm-text);
-  }
-  .refs li::before {
-    content: counter(ref);
-    position: absolute;
-    left: 0;
-    top: -2px;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--sm-primary);
-    color: var(--sm-white);
-    font-family: var(--sm-font-display);
-    font-weight: 700;
-    font-size: .82rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .refs a { word-break: break-all; }
-
-  /* ---------- Footer ---------- */
-  footer {
-    background: var(--sm-ink);
-    color: rgba(255,255,255,.72);
-  }
-  footer .wrap {
-    padding: 34px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 12px;
-    align-items: center;
-    font-size: .85rem;
-  }
-  footer strong { color: var(--sm-white); font-family: var(--sm-font-display); }
-  footer a { color: var(--sm-gold); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  /* ---------- Responsive ---------- */
-  @media (max-width: 880px) {
-    .osteo-gallery { grid-template-columns: repeat(2, 1fr); }
-    .caption-row { grid-template-columns: 1fr; }
-    .media-text, .media-text.reverse { grid-template-columns: 1fr; }
-    .media-text .figure-col, .media-text.reverse .figure-col { order: 1; }
-    .media-text .text-col, .media-text.reverse .text-col { order: 2; }
-  }
-
-  @media (max-width: 560px) {
-    .osteo-gallery { grid-template-columns: repeat(2, 1fr); }
-    header.hero .hero-inner { padding: 48px 0 40px; }
-    section { padding: 46px 0; }
-    .ind-row { padding: 14px 18px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .feature-card { transition: none; }
-  }
-</style>
 </head>
 <body>
 
-  <!-- FOR ORTHOPEDIC SURGERIES -->
-  <section class="tint" id="ortho">
-    <div class="wrap">
-      <div class="section-head"><h2>For Orthopedic Surgeries</h2></div>
+  <a class="sm-skip-link" href="#main-content">Skip to main content</a>
 
-      <!-- Osteochondral Resurfacing -->
-      <div class="ortho-block">
-        <h3 class="subhead">Osteochondral Resurfacing</h3>
+  <!-- Header -->
+  <div id="rs-header"></div>
 
-        <div class="osteo-gallery">
-          <figure><img src="/image/O1.jpeg" alt="Traditional incision (8 inches to 10 inches) versus quadriceps-sparing incision (about 4 inches) on the knee, showing thigh bone, shin bone and quadriceps tendon"></figure>
-          <figure><img src="/image/O2.jpeg" alt="Knee joint prepared with marked insertion points for minimally invasive surgery"></figure>
-          <figure><img src="/image/O3.jpeg" alt="Arthroscopic instrument inserting Surgicoll-Mesh into the knee joint"></figure>
-          <figure><img src="/image/O4.jpeg" alt="Post-operative X-ray of the knee joint after cartilage repair"></figure>
+  <main id="main-content">
+
+  <!-- PAGE BANNER -->
+  <section class="banner">
+    <div class="sm-hero-art" aria-hidden="true">
+      <span></span><span></span>
+    </div>
+    <img class="banner__bg" src="../home/page_banner.png" alt="" role="presentation">
+    <h1 class="banner__title sm-reveal">Cardio-Vascular</h1>
+  </section>
+
+  <!-- PRODUCT HERO -->
+  <section class="smtr-hero-section" aria-labelledby="smtr-hero-title">
+    <div class="smtr-container smtr-hero-wrapper sm-reveal">
+      <article class="smtr-hero-content">
+        <h1 id="smtr-hero-title" class="smtr-hero-title">
+          Surgicoll-Mesh<sup>&reg;</sup>
+        </h1>
+
+        <p class="smtr-hero-subtitle">
+          Cardio-Vascular
+        </p>
+
+        <p class="smtr-hero-description">
+          Implantable, bioresorbable, tissue regenerative sterile Type-I Collagen matrix. Designed for
+          reconstructive surgery, chronic wounds, diabetic ulcers, burns and soft tissue repair.
+        </p>
+
+        <div class="smtr-hero-actions">
+          <a class="smtr-primary-btn"
+            href="../indications/Cardio-vascular/White Paper_SM Cardiac Applications.docx"
+            target="_blank" rel="noopener noreferrer">
+            Download Brochure
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+          </a>
         </div>
+      </article>
 
-        <div class="caption-row">
-          <div class="caption-box">To treat injuries to bones, cartilage, ligaments, muscles and tendons.</div>
-          <div class="caption-box">The damaged cartilage parts can be repaired by inserting Surgicoll-Mesh or can be removed altogether and replaced with Surgicoll-Mesh.</div>
-        </div>
+      <figure class="smtr-hero-image">
+        <img src="../home/Surgicoll-Mesh High Res Box.png" alt="Surgicoll-Mesh product box" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
 
-        <ul class="link-list">
-          <li><strong>Arthroscopic Meniscus Repair of Knee PreOp URL:</strong> <a href="http://www.youtube.com/watch?v=Gc8LtPUQ13E" target="_blank" rel="noopener">http://www.youtube.com/watch?v=Gc8LtPUQ13E</a></li>
-          <li><strong>Competing product info URL:</strong> <a href="http://www.geistlich-surgery.com/chondro-gide.html" target="_blank" rel="noopener">http://www.geistlich-surgery.com/chondro-gide.html</a></li>
-        </ul>
+  <!-- DETAILED HERO -->
+  <header class="sm-hero">
+    <div class="sm-container">
+      <header class="section-strip sm-reveal">
+        <h2 id="intra-heading" class="section-strip__title">Surgicoll-Mesh<sup>®</sup> in Cardio-Vascular Applications</h2>
+        <div class="title-line"></div>
+      </header>
+    </div>
+
+    <div class="sm-container sm-hero__grid">
+      <div class="sm-reveal">
+        <p class="sm-hero__lead">Surgicoll-Mesh® is a purified Type-I collagen matrix designed to provide a biocompatible and adaptable scaffold for potential use in cardiovascular and cardiothoracic surgical repair and reconstruction. Its flexible collagen architecture allows the matrix to conform to complex anatomical surfaces while providing structural support at the surgical site.</p>
+        <p class="sm-hero__lead">Potential applications of Surgicoll-Mesh® include <strong>cardiac patches for atrial and ventricular repair, intracardiac patches, arterial and vascular patches, reinforcement of surgical suture lines as a buttress, and thoracic wall repair and reconstruction</strong>.</p>
       </div>
-
-      <!-- Synovial Tissue Implant -->
-      <div class="ortho-block">
-        <h3 class="subhead">Synovial Tissue Implant</h3>
-        <div class="media-text">
-          <div class="text-col">
-            <p>Surgicoll-Mesh can be effective in reducing inflammation of joints and in promoting repair of synovial membrane and articulating cartilage. It can be used in surgical repair of damaged joints that would cover/replace synovial membrane while also reducing pain.</p>
-            <p>Surgicoll-Mesh may readily conform to the size and structure of the human synovial capsule thereby ensuring appropriate coverage of the damaged synovial membrane. Usage of Surgicoll-Mesh could also eliminate the need for removal/replacement of the joints.</p>
-          </div>
-          <div class="figure-col">
-            <img src="/image/Synovial Tissue Implant.png" alt="Diagram showing torn or damaged synovial membrane, application of Surgicoll-Mesh over the joint, and the healed synovial membrane">
-          </div>
+      <div class="sm-hero__visual sm-reveal">
+        <div class="sm-hero__ring"></div>
+        <div class="sm-hero__frame">
+          <img src="../image/Cardiac%20Patch.png" alt="Illustration of a Surgicoll-Mesh cardiac patch used for atrial and ventricular repair" loading="lazy">
         </div>
       </div>
+    </div>
+  </header>
 
-      <!-- Repair of Rotator Cuff Tear -->
-      <div class="ortho-block">
-        <h3 class="subhead">Repair of Rotator Cuff Tear</h3>
-        <div class="media-text reverse">
-          <div class="text-col">
-            <p>Surgicoll-Mesh can be used for the treatment of both partial- and full-thickness rotator cuff tears. In case of partial-thickness tears, the product can be directly applied on the site of injury. However, in the treatment of full-thickness tears, it is advisable to repair the injury as per the Surgeon's preferred method and then apply Surgicoll-Mesh over the repaired site.</p>
-            <p>The absorbable Surgicoll-Mesh would support the body's natural healing mechanism by facilitating the formation of new tendon-like tissue at the site of rotator cuff tear. As this product gradually degrades over time, a significant increase in the overall thickness of the native tendon can be observed through the induction and remodeling of tendinous tissues.</p>
+  <!-- APPLICATIONS SECTION -->
+  <section class="sm-section sm-section--head">
+    <div class="sm-container">
+      <header class="section-strip sm-reveal">
+        <h2 id="potential-heading" class="section-strip__title">Potential Applications</h2>
+        <div class="title-line"></div>
+      </header>
+      <p class="sm-section__sub sm-reveal">Surgicoll-Mesh® supports a range of cardiovascular and thoracic surgical procedures, grouped below by the type of repair each is designed for.</p>
+    </div>
+
+    <div class="sm-apps">
+      <div class="sm-container">
+        <div class="sm-groups">
+
+          <!-- Category: Cardiac & Intracardiac Repair -->
+          <div class="sm-category" aria-labelledby="cat-cardiac">
+            <div class="sm-card-grid">
+
+              <article class="sm-card sm-reveal">
+                <div class="sm-app__body">
+                  <h4 class="sm-app__title">Cardiac Patch</h4>
+                  <p class="sm-app__text">Atrial and ventricular repair and reconstruction. It may also help promote cardiac function through myocardium regeneration for the treatment of myocardial infarction caused by ischemia.</p>
+                </div>
+                <div class="sm-app__card">
+                  <img src="../image/Cardiac%20Patch.png" alt="Cardiac patch used for atrial and ventricular repair" loading="lazy">
+                </div>
+              </article>
+
+              <article class="sm-card sm-reveal">
+                <div class="sm-app__body">
+                  <h4 class="sm-app__title">Intracardiac Patch</h4>
+                  <p class="sm-app__text">Repair and reconstruction of intracardiac defects.</p>
+                </div>
+                <div class="sm-app__card">
+                  <img src="../image/Intra_cardiac%20Patch.png" alt="Intracardiac patch used for repair of intracardiac defects" loading="lazy">
+                </div>
+              </article>
+
+              <article class="sm-card sm-reveal">
+                <div class="sm-app__body">
+                  <h4 class="sm-app__title">Tissue Repair After Tumor Removal</h4>
+                  <p class="sm-app__text">Supports the regeneration and repair of tissue following tumor excision, including in the reconstruction of cardiac structures after removal of tumors such as right atrial leiomyosarcoma, right atrial metastasis of malignant melanoma, and large left atrial myxoma.</p>
+                </div>
+                <div class="sm-app__card">
+                  <img src="../image/healed_thoracic.png" alt="Tissue repair and integration following tumor removal" loading="lazy">
+                </div>
+              </article>
+
+            </div>
           </div>
-          <div class="figure-col">
-            <img src="/image/Rotator Cuff Tear.png" alt="Rotator cuff tears diagram showing supraspinatus, bursa, subscapularis and teres minor, and Surgicoll-Mesh placed over the tear and secured with sutures">
+
+          <!-- Category: Vascular & Arterial Repair -->
+          <div class="sm-category" aria-labelledby="cat-vascular">
+            <div class="sm-card-grid">
+
+              <article class="sm-card sm-reveal">
+                <div class="sm-app__body">
+                  <h4 class="sm-app__title">Arterial &amp; Vascular Patch</h4>
+                  <p class="sm-app__text">Patch applications in vascular and arterial repair. In case of septal defects, Surgicoll-Mesh as a patch (secondary repair) would eventually facilitate the growth of heart tissue around and over the patch, becoming incorporated into the muscle.</p>
+                </div>
+                <div class="sm-app__card">
+                  <img src="../image/Atrial%20Septal%20Defect.png" alt="Illustration of arterial and vascular patch repair for a septal defect" loading="lazy">
+                </div>
+              </article>
+
+              <article class="sm-card sm-reveal">
+                <div class="sm-app__body">
+                  <h4 class="sm-app__title">Patch Aortoplasty for Coarctation of Aorta</h4>
+                  <p class="sm-app__text">A cut is made across the narrowed section of the aorta, and a Surgicoll-Mesh patch is sewn in place to widen the vessel &mdash; particularly useful when the coarctation involves a long segment of the aorta.</p>
+                </div>
+                <div class="sm-app__card">
+                  <img src="../image/Patch%20Aortoplasty.png" alt="Patch aortoplasty for coarctation of the aorta" loading="lazy">
+                </div>
+              </article>
+
+              <article class="sm-card sm-reveal">
+                <div class="sm-app__body">
+                  <h4 class="sm-app__title">Patch Angioplasty</h4>
+                  <p class="sm-app__text">Uses a patch graft to close an arteriotomy following procedures such as femoral and carotid endarterectomy. Surgicoll-Mesh is highly pliable, allowing for easy handling and precise suturing during vascular reconstruction.</p>
+                </div>
+                <div class="sm-app__card sm-app__gallery">
+                  <img src="../image/Patch%20Angioplasty%201.png" alt="Patch angioplasty step one" loading="lazy">
+                  <img src="../image/Patch%20Angioplasty%202.png" alt="Patch angioplasty step two" loading="lazy">
+                </div>
+              </article>
+
+            </div>
           </div>
+
+          <!-- Category: Structural Reinforcement & Reconstruction -->
+          <div class="sm-category" aria-labelledby="cat-structural">
+            <div class="sm-card-grid">
+
+              <article class="sm-card sm-reveal">
+                <div class="sm-app__body">
+                  <h4 class="sm-app__title">Suture-Line Buttress</h4>
+                  <p class="sm-app__text">Reinforcement and support of surgical suture lines.</p>
+                </div>
+                <div class="sm-app__card">
+                  <img src="../image/Suture%20Line%20Buttress.png" alt="Suture line buttress reinforcement" loading="lazy">
+                </div>
+              </article>
+
+              <article class="sm-card sm-reveal">
+                <div class="sm-app__body">
+                  <h4 class="sm-app__title">Thoracic Wall Repair Patch</h4>
+                  <p class="sm-app__text">Support for thoracic wall repair and reconstruction following trauma, surgery, and other tissue loss.</p>
+                </div>
+                <div class="sm-app__card sm-app__grid">
+                  <figure class="sm-app__figure">
+                    <img src="../image/thoracic-1.png" alt="Thoracic wall defect" loading="lazy">
+                    <figcaption>Thoracic Wall Defect</figcaption>
+                  </figure>
+                  <figure class="sm-app__figure">
+                    <img src="../image/thoracic-2.png" alt="Patch placement over thoracic wall defect" loading="lazy">
+                    <figcaption>Patch Placement</figcaption>
+                  </figure>
+                  <figure class="sm-app__figure">
+                    <img src="../image/thoracic-3.png" alt="Repair process structural support" loading="lazy">
+                    <figcaption>Structural Support</figcaption>
+                  </figure>
+                  <figure class="sm-app__figure">
+                    <img src="../image/healed_thoracic.png" alt="Healed thoracic wall after repair" loading="lazy">
+                    <figcaption>Tissue Integration</figcaption>
+                  </figure>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
   <!-- REFERENCES -->
-  <section id="references">
-    <div class="wrap">
-      <div class="section-head"><h2>References</h2></div>
-      <ul class="refs">
-        <li>Gunasekaran S, Inventor. US Patent 5814328. Preparation of collagen using papain and a reducing agent. 1998.</li>
-        <li>Gunasekaran S, Inventor. US Patent 6548077. Purifying type I collagen using two papain treatments and reducing and delipidation agents. 2003.</li>
-        <li>Gunasekaran S KM, Dhanraj P. Bioactive Collagen Dressing for the Treatment of Burns, Donor Sites, and Ulcers. World Biomaterials Congress Meeting. 2008.</li>
-        <li>Dhanraj P GS, DeWeese J, Sutkin H. How Native, Pure Type-I Collagen Dressing Cures Ulcers Better Than Other Comparable Skin Substitutes. Association of Plastic Surgeons of India. 2008.</li>
-        <li>Gunasekaran S KM, Dhanikachalam A, Narayan R. A comparative second-degree burn treatment trial collagen dressing vs. silver sulphadiazine alone. American Society for Dermatological Surgery. 2005.</li>
-        <li><a href="https://www.advanced-biotech.com/img/Comparison_of_type_I_collagen_with_Integra_skin_substitute_2015.pdf" target="_blank" rel="noopener">https://www.advanced-biotech.com/img/Comparison_of_type_I_collagen_with_Integra_skin_substitute_2015.pdf</a></li>
-      </ul>
+  <section class="sm-refs sm-reveal" id="references" aria-labelledby="refs-heading">
+    <div class="sm-refs__inner">
+      <header class="section-strip">
+        <h2 id="refs-heading" class="section-strip__title">References</h2>
+        <div class="title-line"></div>
+      </header>
+      <ol>
+        <li><a href="https://online.boneandjoint.org.uk/doi/full/10.1302/0301-620X.90B8.20938" target="_blank" rel="noopener noreferrer">https://online.boneandjoint.org.uk/doi/full/10.1302/0301-620X.90B8.20938</a></li>
+        <li><a href="http://www.mayfieldchiaricenter.com/chiari_surgery.php" target="_blank" rel="noopener noreferrer">http://www.mayfieldchiaricenter.com/chiari_surgery.php</a></li>
+        <li><a href="https://clinicaltrials.gov/study/NCT07360730" target="_blank" rel="noopener noreferrer">https://clinicaltrials.gov/study/NCT07360730</a></li>
+      </ol>
     </div>
   </section>
 
+  </main>
+
+  <!-- Footer -->
+  <div id="rs-footer"></div>
+
   <script>
-    // Reveal-on-scroll for content blocks (respects reduced motion).
-    (function () {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const targets = document.querySelectorAll('.feature-card, .advantages li, .ortho-block, .refs li');
+    // Load Navigation
+    fetch("../page/nav.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("rs-header").innerHTML = data;
+        if (typeof initNavbar === "function") initNavbar();
+      })
+      .catch(err => console.error("Nav load error:", err));
 
-      if (reduceMotion || !('IntersectionObserver' in window)) {
-        return;
+    // Load Footer
+    fetch("../page/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("rs-footer").innerHTML = data;
+      })
+      .catch(err => console.error("Footer load error:", err));
+
+    // Intersection Observer for reveal animations
+    document.addEventListener('DOMContentLoaded', function () {
+      const els = document.querySelectorAll('.sm-reveal');
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        els.forEach(el => obs.observe(el));
+      } else {
+        els.forEach(el => el.classList.add('is-visible'));
       }
-
-      targets.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(14px)';
-        el.style.transition = 'opacity 500ms ease, transform 500ms ease';
-      });
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      targets.forEach(el => io.observe(el));
-    })();
+    });
   </script>
 
+  <script src="../js/nav.js"></script>
 </body>
 </html>
