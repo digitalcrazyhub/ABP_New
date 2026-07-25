@@ -419,7 +419,16 @@ font-size: 28px;
     order:1;
     text-align:left;
 }
+ .smtr-hero-title {
+   text-align: center;
+}
+.smtr-hero-subtitle {
+  text-align: center;
+}
 
+.smtr-hero-description {
+  text-align: center;
+}
 .smtr-hero-actions{
     display:flex;
     justify-content:center;
@@ -506,7 +515,7 @@ font-size: 28px;
    intro
 ==================================================================== */
 .so-section-inner {
-  max-width: var(--sm-container, 1240px);
+ 
   margin: 0 auto;
 }
 
@@ -567,7 +576,7 @@ font-size: 28px;
 
 .so-body-text {
   line-height: 1.7;
-
+text-align: justify;
   color: var(--sm-ink);
   margin-bottom: 20px;
 }
@@ -589,7 +598,7 @@ font-size: 28px;
 /* Site tags */
 .so-site-list {
     display: grid;
-   
+   grid-template-columns: repeat(2, 1fr);
     gap: 10px 30px;
     padding-left: 20px;
     margin: 20px 0 32px;
@@ -970,6 +979,7 @@ font-size: 28px;
   border-radius: 10px;
   
   text-align: center;
+  align-content: center;
 }
 
 .so-stat-val {
@@ -1153,10 +1163,11 @@ font-size: 28px;
 .so-trial-showcase-container {
   display: grid;
   gap: 24px;
-  background: linear-gradient(135deg, var(--sm-plum-light), var(--sm-soft));
-  border: 1px solid var(--sm-line);
+  padding: 20px;
+ 
+ 
   border-radius: var(--sm-radius);
-  padding: 30px;
+ 
   box-shadow: 0 20px 45px rgba(63, 23, 55, .18);
   align-items: center;
   margin: 20px auto;
@@ -1302,7 +1313,7 @@ font-size: 28px;
 
 
 .so-bcr-content p {
-  
+  text-align: justify;
   line-height: 1.9;
   color: #000;
   margin-bottom: 35px;
@@ -1702,15 +1713,15 @@ font-size: 28px;
   }
 
   .so-study-header {
-    padding: 24px;
+    
     flex-direction: column;
     gap: 10px;
   }
-
-  .so-process-summary,
-  .so-highlight-box {
-    padding: 24px;
-  }
+.so-study-body-1{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+  
 }
 
 @media (max-width: 480px) {
@@ -1734,7 +1745,7 @@ font-size: 28px;
   }
 
   .so-process-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:  1fr;
   }
 
   .so-docvault-grid {
@@ -1767,8 +1778,8 @@ font-size: 28px;
     border-radius: 16px;
     padding: 28px;
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
-   
-    width: 100%;
+   margin: 0 auto;
+    width: 60%;
     transition: .3s ease;
 }
 
@@ -1810,6 +1821,7 @@ font-size: 28px;
 @media (max-width:768px){
     .so-site-card{
         padding:20px;
+        width: 100%;
     }
 
     .so-site-title{

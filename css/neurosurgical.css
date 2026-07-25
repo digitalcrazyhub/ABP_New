@@ -98,7 +98,7 @@ section {
 .sm-container, 
 .container,
 .wp-container {
-  max-width: var(--sm-container);
+ 
   margin: 0 auto;
 }
 

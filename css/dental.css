@@ -371,6 +371,7 @@ section:hover .title-line {
   color: var(--sm-ink);
   margin-top: 0.4rem;
   text-align: center;
+  padding: 15px;
 }
 
 .last-images {
@@ -479,9 +480,9 @@ section:hover .title-line {
 
 /* ===== CTA / CONCLUSION ===== */
 .gr-cta {
-  max-width: 900px;
+
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
 }
 
 .gr-cta h1 {
@@ -505,7 +506,7 @@ section:hover .title-line {
 
 .section-desc {
   color: var(--sm-ink);
-  text-align: left;
+  text-align: justify;
 }
 
 .cases-grid, .cases-grid-3 {
