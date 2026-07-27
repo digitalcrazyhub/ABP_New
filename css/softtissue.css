@@ -487,6 +487,16 @@ font-size: 28px;
 .smtr-hero-image img{
     max-width:260px;
 }
+ .smtr-hero-title {
+   text-align: center;
+}
+.smtr-hero-subtitle {
+  text-align: center;
+}
+
+.smtr-hero-description {
+  text-align: center;
+}
 
 }
 
@@ -622,6 +632,7 @@ section:hover .title-line {
   box-shadow: var(--sm-shadow);
   width: 100%;
   border: 1px solid var(--sm-line);
+  height: 458px;
 }
 
 .hernia-types__image figcaption {
@@ -814,7 +825,7 @@ section:hover .title-line {
 }
 
 .card--gallery {
-  padding: 18px 0 0 0;
+ 
   text-align: center;
   transition: transform var(--sm-transition);
 }

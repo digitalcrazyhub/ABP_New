@@ -171,7 +171,7 @@ img {
 }
 
 .stat-desc {
-  font-size: clamp(12.5px, 1vw, 14px);
+ 
   color: var(--text-light);
   line-height: 1.35;
 }

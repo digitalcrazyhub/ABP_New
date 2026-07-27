@@ -430,6 +430,9 @@ section:hover .title-line {
   gap: 8px;
   font-size: .9rem;
   margin-top: 6px;
+  border: 2px solid var(--sm-primary);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .link-list li strong {
@@ -683,7 +686,9 @@ section:hover .title-line {
   .text-col p {
     text-align: justify;
   }
-
+.smtr-hero-title{
+  text-align: left;
+}
   .exposed-gallery {
     grid-template-columns: 1fr;
     gap: 14px;
