@@ -632,6 +632,7 @@ section:hover .title-line {
   box-shadow: var(--sm-shadow);
   width: 100%;
   border: 1px solid var(--sm-line);
+  height: 458px;
 }
 
 .hernia-types__image figcaption {
