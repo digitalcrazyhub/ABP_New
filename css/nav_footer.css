@@ -302,9 +302,7 @@
         transition: 0.3s ease;
     }
 
-    .mv-dropdown-link:hover {
-        background: var(--sm-primary);
-    }
+   
     .mv-nav-logo img {
     width: 250px;
 }
@@ -390,6 +388,7 @@
     line-height:1.8;
     max-width:500px;
     margin-bottom:30px;
+    font-size: 16px;
 }
 
 /*==========================

@@ -1098,10 +1098,6 @@ text-align: justify;
   color: var(--sm-primary, #762c69);
 }
 
-.so-p-badge span {
-  
-  color: var(--sm-text, #655f67);
-}
 
 /* Hero Presentation Styling */
 .so-hero-grid {
@@ -1163,12 +1159,12 @@ text-align: justify;
 .so-trial-showcase-container {
   display: grid;
   gap: 24px;
-  padding: 20px;
+  
  
  
   border-radius: var(--sm-radius);
  
-  box-shadow: 0 20px 45px rgba(63, 23, 55, .18);
+ 
   align-items: center;
   margin: 20px auto;
 }
@@ -1331,6 +1327,7 @@ text-align: justify;
   border-radius: 18px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   transition: 0.3s ease;
+  
 }
 
 .so-bcr-card:hover {
@@ -1344,7 +1341,7 @@ text-align: justify;
 }
 
 .so-bcr-card p {
- 
+ text-align: left;
   margin: 0;
   line-height: 1.7;
 }
@@ -1485,7 +1482,7 @@ text-align: justify;
 .so-process-summary {
   background: #f7f1fa;
   border-top: 1px solid var(--sm-line);
-  padding: 40px;
+  padding: 15px;
 }
 
 .so-process-summary p {
@@ -1675,7 +1672,9 @@ text-align: justify;
   .so-image-grid-horizontal {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
+.so-stat-box{
+    padding:15px;
+  }
   .so-stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1730,7 +1729,7 @@ text-align: justify;
   }
 
   .so-study-text {
-    font-size: 1rem;
+   
     color: var(--sm-ink);
     line-height: 1.75;
     padding: 10px;
