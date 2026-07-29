@@ -604,6 +604,7 @@ section:hover .title-line {
 .quick-facts li {
   padding-left: 1.4rem;
   position: relative;
+  color: #000;
 }
 
 .quick-facts li::before {

@@ -279,7 +279,7 @@ background: radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transpa
    ========================================================================== */
 .sm-hero {
   position: relative;
- padding: 40px;
+ padding: 20px;
   overflow: hidden;
   isolation: isolate;
 }
@@ -409,7 +409,7 @@ section:hover .title-line {
   max-width: 350px;
   height: 350px;
   object-fit: contain;
-  transition: .4s;
+  
 }
 
 .split-card:hover .split-image > img {
@@ -480,7 +480,7 @@ section:hover .title-line {
   object-fit: contain;
   background: var(--sm-white);
   border-radius: var(--sm-radius);
-  box-shadow: var(--sm-shadow);
+ 
   padding: 10px;
   transition: .4s;
 }

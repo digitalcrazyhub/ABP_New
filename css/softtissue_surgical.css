@@ -979,7 +979,7 @@ color: #000;
 .so-video-text {
   text-align: left;
   color: #000;
-  margin-left: 20px;
+
 }
 
 
@@ -1235,6 +1235,7 @@ font-weight: 700;
   .video-container {
     padding-bottom: 56.25%;
   }
+  
 }
 
 /* Large Mobile (480px - 767px) */

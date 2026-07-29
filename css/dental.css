@@ -388,13 +388,11 @@ section:hover .title-line {
 }
 
 .gr-section-head {
-  text-align: center;
+  
   margin: 0 auto clamp(2.2rem, 4.5vw, 3rem);
 }
 
-.gr-section-head.center {
-  text-align: center;
-}
+
 
 .gr-label {
   display: block;
@@ -695,11 +693,17 @@ section.sm-section {
     grid-template-columns: 1fr;
   }
   .gr-timeline {
-    padding-left: 1.5rem;
+    padding-left: 0rem;
   }
 
   .sm-container {
     padding: 15px;
+  }
+  .gr-timeline::before{
+    content: none;
+  }
+  .gr-tl-item::before{
+    content: none;
   }
 }
 
