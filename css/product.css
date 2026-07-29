@@ -535,9 +535,9 @@ margin-bottom: 15px;
     }
 
     .sc-da-card-text {
-        font-size: 14px;
+        font-size: 1.1rem;
         line-height: 1.6;
-        text-align: left;
+        text-align: justify;
     }
 
     .sc-da-ref {
