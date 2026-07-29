@@ -502,7 +502,7 @@ section:hover .title-line {
   background: var(--sm-white);
   border-radius: var(--sm-radius);
   box-shadow: var(--sm-shadow);
-  padding: 10px;
+ 
   transition: .4s;
 }
 
@@ -588,18 +588,14 @@ section:hover .title-line {
   gap: 12px;
   align-items: center;
   font-size: 14px;
-  background: var(--sm-white);
+ 
   padding: 10px 4px;
-  border-radius: 10px;
+ 
   transition: transform var(--sm-transition), box-shadow var(--sm-transition);
   word-break: break-word;
   overflow-wrap: anywhere;
 }
 
-.sm-refs li:hover {
-  transform: translateX(6px);
-  box-shadow: var(--sm-shadow);
-}
 
 .sm-refs li::before {
   content: counter(refcount);
@@ -692,13 +688,17 @@ section:hover .title-line {
   }
 
   .sm-app__grid,
-  .sm-app__gallery,
-  .sm-app__gallery_thr {
+  .sm-app__gallery
+   {
     grid-template-columns: 1fr;
     gap: 10px;
     max-width: 280px;
   }
-
+.sm-app__gallery_thr {
+   grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 280px;
+}
   .sm-app__gallery img,
   .sm-app__figure img {
     height: 220px;
@@ -716,7 +716,7 @@ section:hover .title-line {
   .split-image img {
     width: 100%;
     max-width: 240px;
-    height: 240px;
+    height: 155px;
     margin: 0 auto;
   }
 

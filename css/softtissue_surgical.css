@@ -490,7 +490,7 @@ font-size: 28px;
 .section-strip__title {
   color: var(--sm-primary);
   margin: 0;
-  font-size: 44px;
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 44px);
 }
 
 .title-line {
@@ -1235,6 +1235,9 @@ font-weight: 700;
   .video-container {
     padding-bottom: 56.25%;
   }
+  h1{
+    font-size: 28px;
+  }
   
 }
 
@@ -1254,6 +1257,9 @@ font-weight: 700;
 
   .abp-nano__steps {
     grid-template-columns: repeat(2, 1fr);
+  }
+  h1{
+    font-size: 28px;
   }
 }
 

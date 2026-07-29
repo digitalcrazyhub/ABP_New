@@ -102,7 +102,7 @@ img {
 }
 
 .summary-card p {
-  font-size: clamp(1rem, 1vw + 0.6rem, 1.1rem);
+  font-size: clamp(1.1rem, 1vw + 0.6rem, 1.1rem);
   color: #000;
   line-height: 1.7;
 }
@@ -232,7 +232,7 @@ img {
 }
 
 .finding-item p {
-  font-size: clamp(1rem, 1vw + 0.6rem, 1.1rem);
+  font-size: clamp(1.1rem, 1vw + 0.6rem, 1.1rem);
   color: #000;
   line-height: 1.55;
 }
@@ -253,7 +253,7 @@ img {
 }
 
 .context-card p {
-  font-size: clamp(1rem, 1vw + 0.6rem, 1.1rem);
+  font-size: clamp(1.1rem, 1vw + 0.6rem, 1.1rem);
   color: #000;
   line-height: 1.65;
   margin-bottom: 0.9rem;
@@ -311,7 +311,7 @@ img {
 }
 
 .about-block p {
-  font-size: clamp(1rem, 1vw + 0.6rem, 1.1rem);
+  font-size: clamp(1.1rem, 1vw + 0.6rem, 1.1rem);
   color: var(--text-mid);
   line-height: 1.6;
 }
