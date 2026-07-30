@@ -331,10 +331,10 @@ background: radial-gradient(ellipse at 80% 80%, rgba(190, 67, 174, 0.7), transpa
   transition: transform var(--sm-transition), box-shadow var(--sm-transition);
 }
 
-.sm-hero__frame:hover {
+/* .sm-hero__frame:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(63, 23, 55, 0.16);
-}
+} */
 
 .sm-hero__frame img {
   border-radius: 14px;
@@ -467,8 +467,8 @@ section:hover .title-line {
   max-width: 400px;
 }
 .sm-app__gallery_thr {
-  display: grid;
- grid-template-columns: repeat(2, 1fr);
+  /* display: grid;
+ grid-template-columns: repeat(2, 1fr); */
   gap: 16px;
   width: 100%;
   max-width: 400px;
@@ -843,5 +843,176 @@ section:hover .title-line {
   @media (min-width: 1920px) {
     .sc-disclaimer__text {
       font-size: 15px;
+    }
+  }
+.sc-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 48px 24px;
+    background: #fff;
+    border-radius: 20px;
+  }
+ 
+  /* Content block */
+  .sc-panel__content {
+    max-width: 720px;
+  }
+ 
+  .sc-panel__content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    color: var(--sm-primary);
+    margin: 0 0 12px;
+  }
+ 
+  .sc-panel__content p {
+    font-family: 'Poppins', sans-serif;
+  
+    line-height: 1.6;
+    color: var(--navy-brand, #1F2A44);
+    margin: 0;
+  }
+ 
+  /* Image grid — images only */
+  .sc-panel__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+ 
+  .sc-panel__item {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+ 
+  .sc-panel__item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+ 
+  .sc-panel__item figcaption {
+    padding: 14px 16px 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--navy-brand, #1F2A44);
+  }
+ 
+  .sc-panel__item figcaption h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--purple-brand, #6B4EA0);
+    margin: 0 0 4px;
+  }
+ 
+  /* 9-tier responsive breakpoints */
+  @media (max-width: 1024px) {
+    .sc-panel__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+ 
+  @media (max-width: 480px) {
+    .sc-panel {
+      padding: 32px 16px;
+      gap: 24px;
+    }
+    .sc-panel__grid {
+      grid-template-columns: 1fr;
+    }
+    .sc-panel__content h3 {
+      font-size: 26px;
+    }
+    .sc-panel__content p {
+      font-size: 16px;
+    }
+  }
+ 
+  @media (min-width: 1920px) {
+    .sc-panel {
+      padding: 64px 32px;
+    }
+    .sc-panel__grid {
+      gap: 28px;
+    }
+  }
+  .sc-procedure {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 48px 24px;
+    background-color: #fff;
+border-radius: 20px;  }
+ 
+  /* Content block */
+  
+ 
+  .sc-procedure__content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    color: var(--sm-primary);
+    margin: 0 0 12px;
+  }
+ 
+  .sc-procedure__content p {
+    font-family: 'Poppins', sans-serif;
+   
+    line-height: 1.6;
+    color: var(--navy-brand, #1F2A44);
+    margin: 0;
+  }
+ 
+  .sc-procedure__content sup {
+    color: var(--purple-brand, #6B4EA0);
+    font-size: 0.65em;
+  }
+ 
+  /* Image grid — 2 images side by side */
+  .sc-procedure__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+ 
+  .sc-procedure__grid img {
+    
+   
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+ 
+  /* 9-tier responsive breakpoints */
+  @media (max-width: 480px) {
+    .sc-procedure {
+      padding: 32px 16px;
+      gap: 20px;
+    }
+    .sc-procedure__grid {
+      grid-template-columns: 1fr;
+    }
+    .sc-procedure__content h3 {
+      font-size: 26px;
+    }
+    .sc-procedure__content p {
+      font-size: 16px;
+    }
+  }
+ 
+  @media (min-width: 1920px) {
+    .sc-procedure {
+      padding: 64px 32px;
+    }
+    .sc-procedure__grid {
+      gap: 28px;
     }
   }
