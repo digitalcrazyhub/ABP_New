@@ -293,28 +293,7 @@ tbody tr:nth-child(even){
     color:#666;
 }
 
-/*=========================
-  FOOTER NOTE
-=========================*/
-.footer-note{
-    margin-top:35px;
-    background:var(--grad-contact);
-    color:var(--sm-white);
-    padding:25px;
-    border-radius:12px;
-    display:flex;
-    gap:15px;
-    align-items:flex-start;
-}
 
-.footer-note a{
-    color:#6bc4ff;
-    text-decoration:none;
-}
-
-.footer-note a:hover{
-    text-decoration:underline;
-}
 
 /*=========================
   LINKS
@@ -459,9 +438,6 @@ td{
     font-size:16px;
 }
 
-.footer-note{
-    padding:20px;
-    font-size:14px;
-}
+
 
 }
