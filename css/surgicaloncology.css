@@ -1381,36 +1381,10 @@ text-align: justify;
    no responsive fallback; consolidated into this single definition with
    full breakpoint coverage)
 =========================== */
-.so-case-study {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
-.so-case-study-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-}
 
-.so-case_video {
-  width: 100%;
-  display: block;
-}
 
 /* Aspect-ratio responsive container wrapper for Google Drive IFrames */
-.so-video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 75%;
-  /* 4:3 aspect ratio matching the 640x480 source (480/640 = 75%) */
-  height: 0;
-  overflow: hidden;
-  border: 4px solid var(--sm-primary);
-  border-radius: var(--sm-radius);
-  box-shadow: 0 4px 12px rgba(63, 23, 55, .08);
-}
 
 .so-video-container iframe {
   position: absolute;

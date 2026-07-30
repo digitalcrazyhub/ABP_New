@@ -614,42 +614,8 @@ section.sm-section {
 }
 
 /* Interactive Tabs Section */
-.sm-tabs {
-  display: flex;
-  gap: 10px;
-  border-bottom: 2px solid var(--sm-line);
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
 
-.sm-tab-btn {
-  background: var(--sm-plum-light);
-  color: var(--sm-primary);
-  border: 1px solid var(--sm-line);
-  padding: 10px 20px;
-  border-radius: var(--sm-radius) var(--sm-radius) 0 0;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 600;
-  transition: background var(--sm-transition), color var(--sm-transition);
-}
 
-.sm-tab-btn.active, .sm-tab-btn:hover {
-  background: var(--sm-plum);
-  color: var(--sm-white);
-}
-
-.sm-tab-content {
-  display: none;
-  background: var(--sm-plum-light);
-  padding: 20px;
-  border-radius: var(--sm-radius);
-  border: 1px solid var(--sm-line);
-}
-
-.sm-tab-content.active {
-  display: block;
-}
 
 /* ==========================================================================
    SCROLL REVEAL ANIMATIONS

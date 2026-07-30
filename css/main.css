@@ -232,6 +232,7 @@ section {
     color:var(--sm-ink);
     font-size:1.05rem;
     line-height:1.9;
+    text-align: justify;
 }
 
 /*=====================================
@@ -245,7 +246,7 @@ section {
 }
 
 .image-box img{
-    width:100%;
+    width:80%;
     max-width:500px;
     height:auto;
     display:block;
@@ -263,6 +264,8 @@ section {
 
 .image-box img{
     max-width:620px;
+    margin: 0 auto;
+    margin-top: 66px;
 }
 
 .hero-text{

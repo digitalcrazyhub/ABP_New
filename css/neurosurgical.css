@@ -390,10 +390,10 @@ section:hover .title-line {
   transition: transform var(--sm-transition), box-shadow var(--sm-transition);
 }
 
-.wp-figure:hover {
+/* .wp-figure:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(63, 23, 55, 0.16);
-}
+} */
 
 .wp-figure img {
   border-radius: calc(var(--sm-radius) - 6px);
@@ -403,9 +403,9 @@ section:hover .title-line {
   transition: transform var(--sm-transition);
 }
 
-.wp-figure:hover img {
+/* .wp-figure:hover img {
   transform: scale(1.02);
-}
+} */
 
 .wp-figure.wp-figure--narrow img {
   max-width: 460px;
@@ -455,8 +455,8 @@ section:hover .title-line {
 .wp-refs li::before {
   content: counter(refs);
   flex: none;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--sm-primary);
   color: var(--sm-white);
@@ -472,6 +472,7 @@ section:hover .title-line {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color var(--sm-transition), color var(--sm-transition);
+  font-size: 1.1rem;
 }
 
 .wp-refs a:hover,
