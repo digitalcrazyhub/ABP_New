@@ -310,17 +310,7 @@ section:hover .title-line {
   margin: 0;
 }
 
-.subhead {
-  font-family: var(--sm-font-display);
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--sm-primary);
-  margin: 0 0 18px;
-}
 
-.ortho-block {
-  margin-bottom: 56px;
-}
 
 .ortho-block:last-child {
   margin-bottom: 0;
@@ -346,11 +336,11 @@ section:hover .title-line {
   transition: transform var(--sm-transition), box-shadow var(--sm-transition);
 }
 
-.osteo-main:hover,
+/* .osteo-main:hover,
 .osteo-group:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(63, 23, 55, 0.16);
-}
+} */
 
 .osteo-main {
   margin: 0;
@@ -388,9 +378,9 @@ section:hover .title-line {
   transition: transform var(--sm-transition);
 }
 
-.osteo-group__images figure:hover {
+/* .osteo-group__images figure:hover {
   transform: scale(1.02);
-}
+} */
 
 .osteo-group__images img {
   width: 100%;
@@ -406,23 +396,7 @@ section:hover .title-line {
   text-align: center;
 }
 
-.caption-row {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 16px;
-  margin-bottom: 22px;
-}
 
-.caption-box {
-  font-family: var(--sm-font-display);
-  font-weight: 600;
-  color: var(--sm-primary);
-  background: var(--sm-plum-light);
-  border-radius: 10px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-}
 
 .link-list {
   list-style: none;
@@ -487,10 +461,10 @@ section:hover .title-line {
   transition: transform var(--sm-transition), box-shadow var(--sm-transition);
 }
 
-.figure-col:hover {
+/* .figure-col:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(63, 23, 55, 0.16);
-}
+} */
 
 .figure-col img {
   border-radius: 8px;
@@ -525,10 +499,7 @@ section:hover .title-line {
   transition: transform var(--sm-transition), box-shadow var(--sm-transition);
 }
 
-.exposed-gallery figure:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(63, 23, 55, 0.18);
-}
+
 
 .exposed-gallery img {
   width: 100%;
@@ -539,9 +510,6 @@ section:hover .title-line {
   transition: transform var(--sm-transition);
 }
 
-.exposed-gallery figure:hover img {
-  transform: scale(1.02);
-}
 
 .exposed-gallery figcaption {
   font-family: var(--sm-font-display, "Poppins", sans-serif);

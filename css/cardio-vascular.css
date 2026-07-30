@@ -389,9 +389,9 @@ section:hover .title-line {
   transition: .4s;
 }
 
-.split-card:hover {
+/* .split-card:hover {
   transform: translateY(-8px);
-}
+} */
 
 .reverse {
   flex-direction: row-reverse;
@@ -412,9 +412,9 @@ section:hover .title-line {
   
 }
 
-.split-card:hover .split-image > img {
+/* .split-card:hover .split-image > img {
   transform: scale(1.05);
-}
+} */
 
 .split-content {
   flex: 1;
@@ -455,109 +455,6 @@ section:hover .title-line {
   line-height: 1.8;
 }
 
-/* ==========================================================================
-   MULTI-IMAGE GALLERY (used inside .split-image for cards with more
-   than one supporting image, e.g. Patch Angioplasty / Thoracic Wall Repair)
-   ========================================================================== */
-.sm-app__gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  width: 100%;
-  max-width: 400px;
-}
-.sm-app__gallery_thr {
-  /* display: grid;
- grid-template-columns: repeat(2, 1fr); */
-  gap: 16px;
-  width: 100%;
-  max-width: 400px;
-}
-.sm-app__gallery img {
-  width: 100%;
-  max-width: 442px;
-  height: 317px;
-  object-fit: contain;
-  background: var(--sm-white);
-  border-radius: var(--sm-radius);
- 
-  padding: 10px;
-  transition: .4s;
-}
-
-.sm-app__figure {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-}
-
-.sm-app__figure img {
-  width: 100%;
-  max-width: none;
-  height: 160px;
-  object-fit: contain;
-  background: var(--sm-white);
-  border-radius: var(--sm-radius);
-  box-shadow: var(--sm-shadow);
- 
-  transition: .4s;
-}
-
-.sm-app__figure figcaption {
-  font-size: 13px;
-  color: var(--sm-text);
-  text-align: center;
-  font-weight: 500;
-}
-
-.split-card:hover .sm-app__gallery img {
-  transform: scale(1.05);
-}
-
-@media (max-width: 992px) {
-  .split-card {
-    flex-direction: column;
-    padding: 40px;
-    text-align: center;
-    gap: 35px;
-  }
-
-  .reverse {
-    flex-direction: column;
-  }
-
-  .split-content span {
-    margin: auto auto 20px;
-  }
-
-  .split-image img {
-    width: 280px;
-    height: 280px;
-  }
-
-  .sm-app__gallery,
-  .sm-app__gallery_thr {
-    margin-inline: auto;
-  }
-
-  .split-content h3 {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .sm-app__gallery_thr {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 320px;
-  }
-
-  .sm-app__figure img {
-    height: 140px;
-  }
-}
 
 /* ==========================================================================
    REFERENCES
@@ -603,8 +500,8 @@ section:hover .title-line {
   font-size: 12px;
   color: var(--sm-white);
   background: var(--sm-primary);
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -616,6 +513,7 @@ section:hover .title-line {
   font-weight: 500;
   text-decoration: none;
   transition: color var(--sm-transition);
+  font-size: 1.1rem;
 }
 
 .sm-refs a:hover,
@@ -694,11 +592,6 @@ section:hover .title-line {
     gap: 10px;
     max-width: 280px;
   }
-.sm-app__gallery_thr {
-   grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    max-width: 280px;
-}
   .sm-app__gallery img,
   .sm-app__figure img {
     height: 220px;
@@ -893,7 +786,6 @@ section:hover .title-line {
  
   .sc-panel__item img {
     width: 100%;
-    aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
   }
